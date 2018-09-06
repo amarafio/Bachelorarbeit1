@@ -94,10 +94,10 @@
 %subsection:Einführung in die Garbentheorie%
 
 \subsection{Einführung in die Garbentheorie}
-Hier wird zunächst eine Einführung in die Theorie der Garben gegeben, welche sich mithilfe der Garbenkohomologie als nützliches Werkzeug für die Untersuchung der Riemannschen Flächen erweisen werden.
-Diese wird im nächsten Abschnitt erläutert.  Motivierende Beispiele für die gegeben Definitionen lassen sich darunter finden.
+Hier wird zunächst eine Einführung in die Theorie der Garben gegeben, welche sich mithilfe der Garbenkohomologie als sehr nützliches Werkzeug für die Untersuchung der Riemannschen Flächen erweisen wird. 	Unter den ersten Definitionen lassen sich motivierende Beispiele finden.
+
 \begin{defi}[Prägarbe]\thlabel{defi:praegarbe}
-Sei X ein topologischer Raum und $\mathcal{T}$ die Topologie auf X. Eine \emph{Prägarbe} abelscher Gruppen ist ein Paar $(\mathcal{F},\rho)$, bestehend aus:
+Sei $X$ ein topologischer Raum und $\mathcal{T}$ die Topologie auf X. Eine \emph{Prägarbe} abelscher Gruppen ist ein Paar $(\mathcal{F},\rho)$, bestehend aus:
 
 \begin{itemize}
 \item
@@ -107,37 +107,33 @@ Einer Familie $\rho=(\rho^U_V)_{U,V\in\mathcal{T}, V \subset
 U}$ von Gruppenhomomorphismen $\rho^U_V:\mathcal{F}(U)\rightarrow \mathcal{F}(V)$.
 \end{itemize}
 Diese sollen auf natürliche Weise zusammenpassen, das bedeutet:
-\begin{equation}
-\rho^U_U = \id_{\mathcal{F}(U)}
-\end{equation}
-und das folgende Diagramm soll kommutieren
-\newline
-\begin{center}
-\begin{tikzcd}
-\mathcal{F}(U) \arrow{d}[swap]{\rho^U_V} \arrow{r}{\rho^U_W}
-& \mathcal{F}(W) \\
-\mathcal{F}(V) \arrow{ur}[swap]{\rho^V_W}
+\begin{enumerate}
+\item $
+\rho^U_U =\textstyle{ \id_{\mathcal{F}(U)}}
+$
+\item $\rho_V^W\circ \rho_V^U=\rho_W^U$
+\end{enumerate}
 
-\end{tikzcd}
 
-\end{center}
+
 für alle $W\subset V\subset U$ offen in $X$.
 Die Elemente in $\mathcal{F}(U)$ für $U\subset X$ offen heißen \emph{(lokale) Schnitte} und die Elemente in $\mathcal{F}(X)$ heißen \emph{globale Schnitte}.
-Wir schreiben für einen Schnitt $f\in\mathcal{F}(U)$ auch $p^U_V(f)=f \mid V$ und nennen die $p^U_V$ Einschränkungshomomorphismen. Außerdem schreibt man oft nur $\mathcal{F}$ statt $(\mathcal{F},p)$, wenn die Einschränkungshomomorphismen in natürlicher Weise gegeben sind (siehe dazu die Beispiele).
+Wir schreiben für einen Schnitt $f\in\mathcal{F}(U)$ auch $p^U_V(f)=f \mid V$ und nennen die $p^U_V$ \emph{Einschränkungshomomorphismen}. Außerdem schreibt man oft nur $\mathcal{F}$ statt $(\mathcal{F},p)$, wenn die Einschränkungshomomorphismen in natürlicher Weise gegeben sind (siehe dazu die Beispiele).
 \end{defi}
+
 \begin{defi}[Garbe]\thlabel{defi:garbe}
-Sei X ein topologischer Raum und $(\mathcal{F},p)$ eine Prägarbe abelscher Gruppen auf X.
+Sei X ein topologischer Raum und $(\mathcal{F},p)$ eine Prägarbe abelscher Gruppen auf $X$.
 Falls nun für jede offene Menge $U\subset X$ und jede Familie von offenen Mengen $U_i\subset U$ mit $U = \bigcup_{i\in I}$ gilt:
 \renewcommand{\labelenumi}{(\roman{enumi})}
 \begin{enumerate}
 \item
-Für $f,g\in \mathcal{F}(U)$ mit $f\mid U_i = g\mid U_i$ gilt $f=g$
+Für $f,g\in \mathcal{F}(U)$ mit $f\mid U_i = g\mid U_i$ gilt $f=g$,
 \item
 Gegeben $f_i\in U_i$ mit 
 $f_i\mid U_i\cap U_j = f_j\mid U_i\cap U_j$ für alle $i,j\in I$,
 so gibt es ein $f\in \mathcal{F}(U)$, sodass $f\mid U_i= f_i$ für alle $i\in I$,
 \end{enumerate}
-dann heißt $(\mathcal{F},p)$ \emph{Garbe}.
+dann heißt $(\mathcal{F},p)$ \emph{Garbe}. Diese Eigenschaften nennt man \emph{Garbenaxiome}.
 \end{defi}
 \begin{bem}
 Analog dazu lassen sich Prägarben, sowie Garben auch auf Vektorräumen,Ringen und weiteren algebraischen Objekten definieren. 
@@ -148,21 +144,27 @@ Analog dazu lassen sich Prägarben, sowie Garben auch auf Vektorräumen,Ringen u
 \begin{enumerate}
 \item
 Für einen topologischen Raum $X$ und $U\subset X$ offen sei $\mathcal{C}(U)$ der Vektorraum aller stetigen Funktionen $f:U\rightarrow \mathbb{C}$.
-Für $V\subset U $ offen sei $p^U_V: \mathcal{C}(U)\rightarrow \mathcal{C}(V)$ der übliche Einschränkungshomomorphismus. Dann ist $\mathcal C = (\mathcal C,p)$ eine Garbe, genannt Garbe der stetigen Funktionen auf X.
+Für $V\subset U $ offen sei $p^U_V: \mathcal{C}(U)\rightarrow \mathcal{C}(V)$ der übliche Einschränkungshomomorphismus. Dann ist $\mathcal C = (\mathcal C,p)$ eine Garbe von Vektorräumen, genannt Garbe der stetigen Funktionen auf X.
 \item
 Seien $X$ eine Riemannsche Fläche und und $\mathcal{O}(U)$ für $U\subset X$ offen die holomorphen Funktionen 
-$f:U\rightarrow \mathbb{C}$. Mit dem üblichen Einschränkungshomomorphismus bildet auch $\mathcal{O}$ die Garbe der holomorphen Funktionen auf X.
+$f:U\rightarrow \mathbb{C}$. Mit dem üblichen Einschränkungshomomorphismus bildet auch $\mathcal{O}$ eine Garbe von Vektorräumen, genannt Garbe der holomorphen Funktionen.
 Analog bildet $\mathcal{M}$ die Garbe der meromorphen Funktionen auf X und $\mathcal{E}$ die der stetigen.
+\item  Sei $\mathcal{B}(U) $  für $U\subset \mathbb{C}$  offen die Menge aller beschränkten, holomorphen Funktionen $f:U\rightarrow \mathbb{C}$. Zusammen mit den natürlichen Einschränkungshomomorphismen ist $ \mathcal{B}$ eine Prägarbe. Seien $U_i=\{ z\in\mathbb{C};|z|<i\}$ für $i\in\mathbb{N}$,  dann bilden diese Mengen eine offene Überdeckung von $\mathbb{C}$.  Betrachten wir nun die Funktionen $f_i (z)\in \mathcal{B}(U_i)$,  dann gilt $f_i\mid U_i\cap U_j= f_j\mid U_i\cap U_j$ für alle $i,j\in \mathbb{N}$, aber es gibt keinen globalen Schnitt $f\in\mathcal{B}(\mathbb{C})$ mit $f\mid U_i = f_i$, denn diese Funktion wäre unbeschränkt. Damit wird das zweite Garbenaxiom nicht erfüllt und $\mathcal{B}$ ist keine Garbe.
+
+
+
 \end{enumerate}
+
+
 \end{bsp}
 
-Die in dem Beispiel gegebenen Garben sind alles Garben von Vektorräumen bzw. Ringen. Als nächstes interessiert uns, wie die Elemente der $\mathcal{F}(U)$ in der Nähe eines Punktes $a\in X$ aussehen. Wir betrachten dazu die disjunkte Vereinigung
+Als nächstes interessiert uns, wie die Elemente der $\mathcal{F}(U)$ in der Nähe eines Punktes $a\in X$ aussehen. Wir betrachten dazu die disjunkte Vereinigung
 \[
 \dot{\bigcup_{U\in \mathcal{T},a\in U}} \mathcal{F}(U).
 \]
 
 \begin{defi}[Halm,Keim]\thlabel{defi:halm}
-Sei $\mathcal{F}$ eine Garbe auf dem topologischen Raum $X$. Zwei Elemente $f\in\mathcal{F}(U)$ und $g\in \mathcal{F}(V)$ für $U,V\subset X$ offen und $a\in U\cap V$ heißen äquivalent,
+Sei $\mathcal{F}$ eine Garbe auf dem topologischen Raum ($X,\mathcal{T}$). Zwei Elemente $f\in\mathcal{F}(U)$ und $g\in \mathcal{F}(V)$ für $U,V\subset X$ offen und $a\in U\cap V$ heißen äquivalent,
 \[
 f\sim_a g,
 \]
@@ -170,7 +172,7 @@ genau dann, wenn es eine offene Menge $W\subset X$ mit $a\in W\subset U\cap V$ g
 \[
 f\mid W = g\mid W.
 \]
-In anderen Worten sind diese in der Nähe von $a$ gleich. Dann ist die Menge(abelsche Gruppe, Vektorraum, etc.)
+In anderen Worten sind diese in der Nähe von $a$ gleich. Dann ist die Menge (abelsche Gruppe, Vektorraum, etc.)
 \[
 \mathcal{F}_a \coloneqq \left( \dot{\bigcup_{U\ni a}} \mathcal{F}(U) \right) /\sim_a
 \]
@@ -186,13 +188,13 @@ schreiben. Dann repräsentieren zwei Funktionen den selben Keim genau dann, wenn
 \[
 \mathcal{O}_a \cong \mathbb{C}\{ z-a \},
 \]
-wobei letzeres der Ring der konvergenten Potenzreihen um $(z-a)$ mit komplexen Koeffizienten ist.
+wobei letzteres der Ring der konvergenten Potenzreihen um $(z-a)$ mit komplexen Koeffizienten ist.
 \end{bsp}
 
 Man kann für Garben nun auch Homomorphismen definieren und damit den Begriff der exakten Sequenz.
 
 \begin{defi}[Garbenhomomorphismus]\thlabel{defi:garbenhomomorhpismus}
-Seien $\mathcal{F},\mathcal{G}$ Garben abelscher Gruppen über dem topologischen Raum $X$. 
+Seien $(\mathcal{F},\rho),(\mathcal{G},\rho')$ Garben abelscher Gruppen über dem topologischen Raum $X$. 
 Als \emph{Garbenhomomorpismus} bezeichnen wir eine Familie von Gruppenhomomorphismen 
 \[
 \alpha_U :\mathcal{F}(U)\rightarrow \mathcal{F}(V)
@@ -211,46 +213,46 @@ Sind alle $\alpha_u$ Gruppenisomorphismen, so heißt $\alpha$ \emph{Garbenisomor
 Analog kann man die Definition für Ringe und Vektorräume formulieren.
 \end{defi}
 
-\begin{defi}[Exakte Sequenz]\thlabel{defi:exakte.sequenz}
+\begin{defi}[Exakte Sequenz]\thlabel{defi:exakte sequenz}
 Ein Garbenhomomorphismus $\alpha : \mathcal{F}\rightarrow \mathcal{G}$ induziert für alle $x\in X$ einen Homomorphismus der Halme 
 \[
 \alpha_x : \mathcal{F}_x \rightarrow \mathcal{G}_x.
 \]
 Wir nennen dann eine Sequenz
 \begin{center}
-\begin{tikzcd}
+\begin{tikzcd}[row sep =small, column sep = small]
 \mathcal{F}\rar{\alpha}&\mathcal{G}\rar{\beta}&\mathcal{H}
 \end{tikzcd}
 \end{center}
 von Garbenhomomorphismen \emph{exakt}, falls die Sequenz
 \begin{center}
-\begin{tikzcd}
+\begin{tikzcd}[row sep =small, column sep = small]
 \mathcal{F}_x\rar{\alpha_x}&\mathcal{G}_x\rar{\beta_x}& \mathcal{H}
 \end{tikzcd}
 \end{center}
 exakt ist , also $\ker \beta_x =\Ima \alpha_x$.
 Analog nennen wir die Sequenz
 \begin{center}
-\begin{tikzcd}
+\begin{tikzcd}[row sep =small, column sep = small]
 \mathcal{F}_1\ar{r}{\alpha_1} & \mathcal{F}_2\ar{r}{\alpha_2}&\ldots \ar{r}{\alpha_{n-2}}&\mathcal{F}_{n-1}\ar{r}{\alpha_{n-1}} & \mathcal{F}_n\\
 \end{tikzcd}
 \end{center}
 \emph{exakt}, falls für $1\leq k\leq n-2$ die Sequenzen
 \begin{center}
-\begin{tikzcd}
+\begin{tikzcd}[row sep =small, column sep = small]
 \mathcal{F}_k\ar{r}{\alpha_k} &\mathcal{F}_{k+1}\ar{r}{\alpha_{k+1}} &\mathcal{F}_{k+2}
 \end{tikzcd}
 \end{center}
 exakt sind.
 Ein Garben\emph{monomorphismus} ist ein Garbenhomomorphismus, sodass 
 \begin{center}
-\begin{tikzcd}
+\begin{tikzcd}[row sep =small, column sep = small]
 0\rar &\mathcal{F}\rar{\alpha} &\mathcal{G}
 \end{tikzcd}
 \end{center}
 exakt ist und ein Garben\emph{epimorphismus} ein solcher, sodass
 \begin{center}
-\begin{tikzcd}
+\begin{tikzcd}[row sep =small, column sep = small]
 \mathcal{F}\rar{\alpha} &\mathcal{G}\rar{} & 0
 \end{tikzcd}
 \end{center}
@@ -260,20 +262,25 @@ exakt ist.
 %subsection:Garbenkohomologie%
 
 \subsection{Garbenkohomologie}
-In diesem Abschnitt werden wir nun die Kohomologie von Garben erläutern, um die erste Kohomologiegruppe $H^1(X,\mathcal{F})$ für eine Riemannschen Fläche $X$ und eine Garbe abelscher Gruppen $\mathcal{F}$ zu definieren, das Objekt unserer Betrachtung in dieser Arbeit.
+In diesem Abschnitt werden wir nun die Kohomologie von Garben erläutern, um die erste Kohomologiegruppe $H^1(X,\mathcal{F})$ für eine Riemannschen Fläche $X$ und eine Garbe $\mathcal{F}$ zu definieren.
 \begin{defi}[Kokettengruppe]\thlabel{defi:kokettengruppe}
 Sei $X$ ein topologischer Raum und $\mathcal{F}$ eine Garbe abelscher Gruppen auf $X$. Außerdem sei eine offene Überdeckung $\mathfrak{U}= (U_i)_{i\in I}$ von $X$ gegeben.
 Definiere für $q =0,1,2,...$ die \emph{q-te Kokettengruppe} von $\mathcal(F)$ bezüglich der Überdeckung $\mathfrak{U}$ als 
 \[
-C^q(\mathfrak{U},\mathcal{F}) \coloneqq \prod_{(i_0,...,i_q)\in I^{q+1}} \mathcal{F}(U_{i_0}\cap ...\cap U_{i_q}). 
+C^q(\mathfrak{U},\mathcal{F}) \coloneqq \prod_{(i_0,...,i_q)\in I^{q+1}} \mathcal{F}(U_{i_0}\cap \cdots\cap U_{i_q}). 
 \]
 Die Elemente von $C^q(\mathfrak{U},\mathcal{F})$ heißen \emph{q-Koketten} und sind Familien
+$
+(f_{i_0,...,i_q})_{i_0,...,i_q\in I}, 
+$
+sodass
 \[
-(f_{i_0,...,i_q})_{i_0,...,i_q\in I}, \text{ sodass } f_{i_0,...,i_q}\in\mathcal{F}(U_{i_0}\cap ... U_{i_q})
+ f_{i_0,...,i_q}\in\mathcal{F}(U_{i_0}\cap \ldots \cap U_{i_q})
 \]
-für alle $(i_0,...,i_q)\in I^{q+1}$.
-Die Addition zweier Koketten ist komponentenweise definiert.
+für alle $(i_0,\ldots,i_q)\in I^{q+1}$.
+Die Addition zweier Koketten sei komponentenweise definiert.
 \end{defi}
+
 \begin{defi}[Kozykel, Koränder]\thlabel{defi:kozykel}
 Seien die \emph{Korandoperatoren}
 \begin{align*}
@@ -293,12 +300,12 @@ Für $(f_{i,j})_{i,j\in I}\in C^1(\mathfrak{U}, \mathcal{F})$ sei $\delta ((f_{i
 \[
 g_{i,j,k}\coloneqq f_{j,k}-f_{i,k}+f_{i,j} \in \mathcal{F}(U_i\cap U_j \cap U_k).
 \]
-Wieder werden hier die Komponenten auf der rechten Seite eingeschränkt auf $U_i\cap U_j\cap U_k$.
+Wieder werden hier die Komponenten auf der rechten Seite zunächst eingeschränkt auf $U_i\cap U_j\cap U_k$.
 \end{enumerate}
 \vspace{0.5cm}
-Diese Korandoperatoren bilden Gruppenhomomorphismen, da die Addition der q-Koketten Komponentenweise definiert war. Sei nun
+Wegen der komponentenweisen Addition bilden die Korandoperatoren Gruppenhomomorphismen. Seien nun
 \begin{align*}
-&Z^1(\mathfrak{U}, \mathcal{F}) \coloneqq \ker {(\delta:C^1(\mathfrak{U}, \mathcal{F}) \overset{\delta}{\rightarrow} C^2(\mathfrak{U},\mathcal{F}))} \\
+&Z^1(\mathfrak{U}, \mathcal{F}) \coloneqq \ker {(\delta:C^1(\mathfrak{U}, \mathcal{F}) \overset{\delta}{\rightarrow} C^2(\mathfrak{U},\mathcal{F}))}, \\
 &B^1(\mathfrak{U}, \mathcal{F}) \coloneqq \Ima {(\delta:C^0(\mathfrak{U}, \mathcal{F}) \overset{\delta}{\rightarrow} C^1(\mathfrak{U},\mathcal{F}))}.
 \end{align*}
 Die Elemente aus $Z^1(\mathfrak{U}, \mathcal{F})$ heißen \emph{(1-)Kozykel} und die aus $B^1(\mathfrak{U}, \mathcal{F})$ \emph{(1-)Koränder}.
@@ -310,16 +317,17 @@ f_{i_k} = f_{i,j}+f_{j,k} \text{ auf } U_i\cap U_j\cap U_k
 \]
 für alle $i,j,k\in I$ gilt.
  Man nennt dies die \emph{Kozykelrelation}. Es folgt, dass $f_{i,i} = 0$ und $f_{i,j} = -f_{j,i}$ gilt, wenn man $i=j=k$ bzw. für letzteres $k=i$ setzt. 
-Außerdem ist jeder Korand demnach ein Kozykel und wird auch \emph{zerfallender Kozykel}genannt.
-Ein 1-Kozykel $(f_{i,j})\in Z^1(\mathfrak{U}, \mathcal{F})$ zerfällt genau dann, wenn eine $0-Kokette (g_i) \in C^0(\mathfrak{U}, \mathcal{F})$ existiert, sodass 
+
+Außerdem ist jeder Korand demnach ein Kozykel und wird auch \emph{zerfallender Kozykel} genannt.
+Ein 1-Kozykel $(f_{i,j})\in Z^1(\mathfrak{U}, \mathcal{F})$ zerfällt genau dann, wenn eine 0-Kokette $ (g_i) \in C^0(\mathfrak{U}, \mathcal{F})$ existiert, sodass 
 \[
 f_{i,j} = g_j-g_i \text{ auf } U_i\cap U_j
 \]
-für alle $i,j\in I$
+für alle $i,j\in I$.
 \begin{defi}[1.Kohomologiegruppe bzgl. der Überdeckung $\mathfrak{U}$]
 Die Quotientengruppe 
 \[
-H^1(\mathfrak{U},\mathcal{F})\coloneqq \faktor {Z^1(\mathfrak{U}, \mathcal{F})}{B^1(\mathfrak{U}, \mathcal{F})} 
+H^1(\mathfrak{U},\mathcal{F})\coloneqq  {Z^1(\mathfrak{U}, \mathcal{F})}/{B^1(\mathfrak{U}, \mathcal{F})} 
 \]
 heißt \emph{1. Kohomologiegruppe} mit Koeffizienten in $\mathcal{F}$ bezüglich der Überdeckung $\mathfrak{U}$.
 Die Elemente heißen \emph{Kohomologieklassen} und zwei Kozykel in der selben Kohomologieklasse heißen \emph{kohomolog}.
@@ -341,37 +349,38 @@ existiert, genannt \emph{Verfeinerungsabbildung}. Das bedeutet, dass jedes $V_k$
 
 Diese Abbildung induziert eine Abbildung
 \begin{align*}
-t_{\mathfrak{V}}^{\mathfrak{U}}:& Z^1(\mathfrak{U},\mathcal{F})\rightarrow Z^1(\mathfrak{V},\mathcal{F})\\
+\tau_{\mathfrak{V}}^{\mathfrak{U}}:& Z^1(\mathfrak{U},\mathcal{F})\rightarrow Z^1(\mathfrak{V},\mathcal{F})\\
 &(f_{i,j})\mapsto (g_{k,l}),
 \end{align*}
 wobei 
 \[
-g_{k,l} \coloneqq  f_{\tau k,\tau l}\mid V_k\cap V_l
+g_{k,l} \coloneqq  f_{\tau k,\tau l}\mid V_k\cap V_l\text{ für } k,l\in K.
 \]
-für $k,l\in K$.
-Folglich bleibt das Zerfallen eines Kozykels unter der Abbildung erhalten, das heißt mit der Quotientenabbildung  wird auch eine Abbildung 
+
+Folglich bleibt das Zerfallen eines Kozykels unter der Abbildung erhalten, das es wird auch eine Abbildung 
 \[
 \tau_{\mathfrak{V}}^{\mathfrak{U}}:H^1(\mathfrak{U},\mathcal{O})\rightarrow H^1(\mathfrak{V},\mathcal{O})
 \]
 induziert.
 \end{defi}
-Es muss noch folgendes gezeigt werden, damit diese Abbildung wohldefiniert ist und wir sie zur Definition der Kohomologiegruppe nutzen können.
+Es muss noch folgendes gezeigt werden, damit diese Abbildung wohldefiniert ist und wir sie zur Definition der Kohomologiegruppe nutzen können:
 \begin{lemma}\thlabel{lemma:verfeinerungsabbildung}
 Die oben genannte induzierte Abbildung zwischen Kohomologiegruppen  hängt nicht von der Wahl der Verfeinerungsabbildung ab und ist injektiv.
 \end{lemma}
 \begin{proof}
-Zunächst wird der erste Teil gezeigt. Sei also eine weitere Verfeinerungsabbildung  $\tilde{\tau}:K\rightarrow I, (f_{i,j}\mapsto \tilde{g}_{k,l}$ gegeben. Dann ist $V_K\subset U_{\tau k}\cap U_{\tilde{\tau}k}$ für alle $k\in K$, folglich ergibt die Definition 
+Zunächst wird der erste Teil gezeigt. Sei also eine weitere Verfeinerungsabbildung  $\tilde{\tau}:K\rightarrow I, (f_{i,j})\mapsto (\tilde{g}_{k,l})$ gegeben. Dann ist $V_K\subset U_{\tau k}\cap U_{\tilde{\tau}k}$ für alle $k\in K$, folglich ergibt die Definition 
 \[
 h_k\coloneqq f_{\tau k,\tilde{\tau} k}\mid V_k\in \mathcal{F}(V_k)
 \]
 Sinn. Schließlich gilt auf $V_k\cap V_l$
 \begin{align*}
 g_{k,l}-\tilde{g}_{k,l} & =f_{\tau k,\tau l}-f_{\tilde{\tau}k,\tilde{\tau}l}\\
-& =f_{\tau k,\tau l} +f_{\tau l,\tilde{\tau}k}-f_{\tau l,\tilde{\tau}k}-f_{\tau k,\tilde{\tau}l}\\ 
+& =f_{\tau k,\tau l} +f_{\tau l,\tilde{\tau}k}-f_{\tau l,\tilde{\tau}k}-f_{\tilde{
+\tau} k,\tilde{\tau}l}\\ 
 						& = f_{\tau k, \tilde{\tau}k}-f_{\tau l,\tilde{\tau}l}\\
 					& = h_k-h_l.\\
 \end{align*}
-Folglich zerfällt $g_{k,l})-(\tilde{g}_ {k,l})$, also sind die Kozykel kohomolog und damit sind die induzierten Abbildungen gleich.
+Folglich zerfällt $(g_{k,l})-(\tilde{g}_ {k,l})$, also sind die Kozykel kohomolog und damit sind die induzierten Abbildungen gleich.
 Für Injektivitiät zeigen wir:\\
 Für einen Kozykel $(f_{i,j})\in Z^1(\mathfrak{U},\mathcal{F})$, dessen Bild unter der induzierten Abbildung in $Z^1(\mathfrak{V},\mathcal{•})$, muss auch der Kozykel selbst zerfallen.  Dann ist der Kern der induzierten Abbildung zwischen den Kohomologiegruppen $0$, also folgt Injektivität.\\
 Sei also $f_{\tau k,\tau l}=g_k-g_l$ auf $V_k\cap V_l$, wobei $g_k\in \mathcal{F}(V_k)$. Es gilt dann nach Kozykelrelation auf $U_i\cap V_k\cap V_l$, dass
