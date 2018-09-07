@@ -401,9 +401,9 @@ f_{i,j} = f_{i,\tau k}+f_{\tau k,j} = f_{i,\tau k}+g_k-f_{j,\tau k}-g_k=h_i-h_j.
 \]
 Der Index $k$ war beliebig, also muss die obige Gleichung nach dem ersten Garbenaxiom auch auf ganz $U_i\cap U_j$ gelten. Damit zerfällt $(f_{i,j})$ auf $\mathfrak{U}$.
 \end{proof}
-Nun können wir eine Äquivalenzrelation auf der disjunkten Vereinigung aller Überdeckungen einführen, ähnlich zur Definition von \thref{defi:halm}.
+Nun können wir eine Äquivalenzrelation auf der disjunkten Vereinigung aller Überdeckungen einführen, ähnlich zu \thref{defi:halm}.
 \begin{defi}
-	Zwei Kohomologieklassen $\xi\in H^1(\mathfrak{U},\mathcal{F})$ und $\eta\in H^1(\mathfrak{U'},\mathcal{F})$ heißen äquivalent ($\xi\sim\eta$), falls es eine offene Überdeckung $\mathfrak{U}$ mit $\mathfrak{V}\subset\mathfrak{U}$ und $\mathfrak{V}\subset \mathfrak{U'}$ gibt, sodass $t^{\mathfrak{U}}_{\mathfrak{V}}(\xi)=t^{\mathfrak{U'}}_{\mathfrak{V}}(\eta).$
+	Zwei Kohomologieklassen $\xi\in H^1(\mathfrak{U},\mathcal{F})$ und $\eta\in H^1(\mathfrak{U'},\mathcal{F})$ heißen äquivalent ($\xi\sim\eta$), falls es eine offene Überdeckung $\mathfrak{V}$ mit $\mathfrak{V}<\mathfrak{U}$ und $\mathfrak{V}< \mathfrak{U'}$ gibt, sodass $t^{\mathfrak{U}}_{\mathfrak{V}}(\xi)=t^{\mathfrak{U'}}_{\mathfrak{V}}(\eta).$
 	Die Menge der Äquivalenzklassen heißt \emph{induktiver Limes} der Kohomologiegruppen $H^1(\mathfrak{U},\mathcal{F}).$
 \end{defi}
 
@@ -414,28 +414,16 @@ H^1(X,\mathcal{F}) \coloneqq \underset{\mathfrak{U}}{\underrightarrow{\lim}} H^1
 $$
 \end{defi}
 \begin{bem}
-Wenn die Garbe aus Vektorräumen besteht, wie in dem hier betrachteten Fall $\mathcal{O}$, so bilden die Kokettengruppen auch Vektorräume. Damit genau so die Kozyklen- und Korändergruppen als Bild und Kern einer linearen Abbildung zwischen Vektorräumen. Folglich bildet auch die erste Kohomologiegruppe als Quotientengruppe auch einen Vektorraum. Dies ist vom großem Vorteil, denn schließlich lassen sich endlich-dimensionale Vektorräume deutlich leichter auf Isomorphie untersuchen oder unterscheiden als Gruppen.
+Wenn die betrachtete Garbe eine Garbe von Vektorräumen ist, wie im Fall $\mathcal{O}$, so sind die Kokettengruppen auch Vektorräume, als Bild und Kern einer linearen Abbildung somit auch die Kozykel- und Korandgruppe und als Quotient von Vektorräumen auch die 1.Kohomologiegruppe bezüglich einer offenen Überdeckung. Genau so bildet auch die 1. Kohomologiegruppe einer Riemannschen Fläche aus der obigen Definition einen Vektorraum.
 \end{bem}
-Für die folgenden Beispiele siehe (Forster, einfügen!).
-\begin{bsp}\thlabel{bsp:kohomologie}
-\renewcommand{\labelenumi}{(\roman{enumi})}
-\begin{enumerate}
-\item
-$H^1(X,\mathcal{E})=0$, wobei mit $\mathcal{E}$ die Garbe der differenzierbaren Funktionen bezeichnet wird.
-\item
-$H^1(X,\mathbb{C})= 0$, wobei mit $\mathbb{C}$ die Garbe der konstanten Funktionen $X\rightarrow\mathbb{C}$ bezeichnet wird und $X$ einfach zusammenhängend ist.
-\item
-$H^1(X,\mathbb{Z})=0$ analog zu (ii).
-\item Falls $X$ eine offene Kreisscheibe in $\mathbb{C}$ ist, gilt $H^1(X,\mathcal{O})=0$.
-\end{enumerate}
-\end{bsp}
-Ein wichtiger Satz, der bei der Bestimmung der Kohomologiegruppen hilft, ist der folgende Satz, benannt nach dem Mathematiker Jean Leray.
+Im Allgemeinen ist die Definition zum tatsächlichen Ausrechnen der Kohomologiegruppen nicht gut geeignet; ein nützliches Werkzeug liefert der Satz von Leray:
+
 \begin{satz}[Leray]\thlabel{satz:leray}
 Sei $\mathcal{F}$ eine Garbe abelscher Gruppen auf einem topologischen Raum $X$. Falls es eine offene Überdeckung $\mathfrak{U}=(U_i)_{i\in I}$ gibt, sodass $H^1(U_i,X)=0$ für jedes $i\in I$, dann gilt
 \[
 H^1(X,\mathcal{F})\cong H^1(\mathfrak{U},\mathcal{X}).
 \]
-$\mathfrak{U}$ heißt dann \emph{Leraysche Überdeckung}
+$\mathfrak{U}$ heißt dann \textbf{Leraysche Überdeckung}.
 \end{satz}
 \begin{proof}
 	Wir zeigen, dass
@@ -463,6 +451,17 @@ $\mathfrak{U}$ heißt dann \emph{Leraysche Überdeckung}
 	\end{align*}
 	Damit zerfällt $(F_{\tau k,\tau l})-(f_{k,l})$, die beiden Kozykel sind also kohomolog. Somit ist die Abbildung surjektiv.
 \end{proof}
+
+\begin{bsp}\thlabel{bsp:kohomologie}
+\begin{enumerate}
+    \item
+    $H^1(X,\mathcal{E})=0$ \cite[~S.92,12.6]{forster}
+    \item
+    Falls $X$ eine offene Kreisscheibe in $\mathbb{C}$ ist, gilt $H^1(X,\mathcal{O})=0$. \cite[S.98,13.4]{forster}
+\end{enumerate}
+\end{bsp}
+
+
 Die Definitionen lassen sich auch auf höher dimensionale Kohomologiegruppen fortführen, falls man Mannigfaltigkeiten von höherer Dimension betrachtet. Es ist aber auch möglich, die 0-te Kohomologiegruppe zu definieren.
 \begin{defi}\thlabel{defi:nullte kohomologiegruppe}
 	Sei $\mathcal{F}$ eine Garbe abelscher Gruppen auf einem topologischen Raum $X$. Analog zu den vorherigen Definitionen sei
@@ -1406,6 +1405,6 @@ $A\Subset B$ & $A$ liegt relativ kompakt in $B$\\
 $\mathfrak{V}\ll\mathfrak{V}$ & $\mathfrak{V}$ ist Schrumpfung von $\mathfrak{U}$  7\\
 \end{longtable}
 
-\bibliographystyle{acm}
+\bibliographystyle{alpha}
 \bibliography{bibliographie}
 \end{document}
