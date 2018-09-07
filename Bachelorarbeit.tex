@@ -381,9 +381,9 @@ g_{k,l}-\tilde{g}_{k,l} & =f_{\tau k,\tau l}-f_{\tilde{\tau}k,\tilde{\tau}l}\\
 					& = h_k-h_l.\\
 \end{align*}
 Folglich zerfällt $(g_{k,l})-(\tilde{g}_ {k,l})$, also sind die Kozykel kohomolog und damit sind die induzierten Abbildungen gleich.
-Für Injektivitiät zeigen wir:\\
-Für einen Kozykel $(f_{i,j})\in Z^1(\mathfrak{U},\mathcal{F})$, dessen Bild unter der induzierten Abbildung in $Z^1(\mathfrak{V},\mathcal{•})$, muss auch der Kozykel selbst zerfallen.  Dann ist der Kern der induzierten Abbildung zwischen den Kohomologiegruppen $0$, also folgt Injektivität.\\
-Sei also $f_{\tau k,\tau l}=g_k-g_l$ auf $V_k\cap V_l$, wobei $g_k\in \mathcal{F}(V_k)$. Es gilt dann nach Kozykelrelation auf $U_i\cap V_k\cap V_l$, dass
+Für Injektivität zeigen wir:\\
+Für einen Kozykel $(f_{i,j})\in Z^1(\mathfrak{U},\mathcal{F})$, dessen Bild unter der induzierten Abbildung in $Z^1(\mathfrak{V},\mathcal{F})$ zerfällt, muss auch der Kozykel selbst zerfallen.  Dann ist der Kern der induzierten Abbildung zwischen den Kohomologiegruppen $0$, also folgt Injektivität.\\
+Sei also $f_{\tau k,\tau l}=g_k-g_l$ auf $V_k\cap V_l$, wobei $g_k\in \mathcal{F}(V_k)$. Es gilt dann nach der Kozykelrelation auf $U_i\cap V_k\cap V_l$, dass
 \[
 g_k-g_l= f_{\tau k,\tau l}=f_{\tau k,i}+f_{i,\tau l}=f_{i,\tau l}-f_{i,\tau k}.
 \]
@@ -391,7 +391,7 @@ Daraus folgt
 \[
 f_{i,\tau k}+g_k = f_{i,\tau l}+g_l.
 \]
-Dann kann man auf $(U_i\cap V_k)_{k\in K}$ die Garbeneigenschaft anwenden und erhält  ein $h_i\in \mathcal{F}(U_i)$ mit
+Dann kann man auf $(U_i\cap V_k)_{k\in K}$ das zweite Garbenaxiom anwenden und erhält  ein $h_i\in \mathcal{F}(U_i)$ mit
 \[
 h_i\mid U_i\cap V_k = f_{i,\tau k}+g_k.
 \]
@@ -399,9 +399,9 @@ Daraus ergibt sich auf $U_i\cap U_j\cap V_k$
 \[
 f_{i,j} = f_{i,\tau k}+f_{\tau k,j} = f_{i,\tau k}+g_k-f_{j,\tau k}-g_k=h_i-h_j.
 \]
-Der Index $k$ war beliebig, also muss die obige Gleichung nach der Garbeneigenschaft auch auf ganz $U_i\cap U_j$ gelten. Damit zerfällt $(f_{i,j})$ auf $\mathfrak{U}$.
+Der Index $k$ war beliebig, also muss die obige Gleichung nach dem ersten Garbenaxiom auch auf ganz $U_i\cap U_j$ gelten. Damit zerfällt $(f_{i,j})$ auf $\mathfrak{U}$.
 \end{proof}
-Damit lässt sich nun eine Äquivalenzrelation auf der disjunkten Vereinigung aller Überdeckungen einführen, ähnlich zur Definition von \thref{defi:halm}.
+Nun können wir eine Äquivalenzrelation auf der disjunkten Vereinigung aller Überdeckungen einführen, ähnlich zur Definition von \thref{defi:halm}.
 \begin{defi}
 	Zwei Kohomologieklassen $\xi\in H^1(\mathfrak{U},\mathcal{F})$ und $\eta\in H^1(\mathfrak{U'},\mathcal{F})$ heißen äquivalent ($\xi\sim\eta$), falls es eine offene Überdeckung $\mathfrak{U}$ mit $\mathfrak{V}\subset\mathfrak{U}$ und $\mathfrak{V}\subset \mathfrak{U'}$ gibt, sodass $t^{\mathfrak{U}}_{\mathfrak{V}}(\xi)=t^{\mathfrak{U'}}_{\mathfrak{V}}(\eta).$
 	Die Menge der Äquivalenzklassen heißt \emph{induktiver Limes} der Kohomologiegruppen $H^1(\mathfrak{U},\mathcal{F}).$
