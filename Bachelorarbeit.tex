@@ -260,7 +260,7 @@ exakt ist.
 \end{defi}
 
 %subsection:Garbenkohomologie%
-
+%subsection:Garbenkohomologie%
 \subsection{Garbenkohomologie}
 In diesem Abschnitt werden wir nun die Kohomologie von Garben erläutern, um die erste Kohomologiegruppe $H^1(X,\mathcal{F})$ für eine Riemannschen Fläche $X$ und eine Garbe $\mathcal{F}$ zu definieren.
 \begin{defi}[Kokettengruppe]\thlabel{defi:kokettengruppe}
@@ -462,33 +462,34 @@ $\mathfrak{U}$ heißt dann \textbf{Leraysche Überdeckung}.
 \end{bsp}
 
 
-Die Definitionen lassen sich auch auf höher dimensionale Kohomologiegruppen fortführen, falls man Mannigfaltigkeiten von höherer Dimension betrachtet. Es ist aber auch möglich, die 0-te Kohomologiegruppe zu definieren.
+Die Definitionen lassen sich auch auf höhere Definition, falls man Mannigfaltigkeiten von höherer Dimension betrachtet. Es ist aber auch möglich, die 0-te Kohomologiegruppe zu definieren.
 \begin{defi}\thlabel{defi:nullte kohomologiegruppe}
 	Sei $\mathcal{F}$ eine Garbe abelscher Gruppen auf einem topologischen Raum $X$. Analog zu den vorherigen Definitionen sei
 	\begin{align*}
-		&Z^0(\mathfrak{U},\mathcal{F})\coloneqq \ker\left( C^0(\mathfrak{U},\mathcal{F}) \overset{\delta}{\rightarrow} C^1(\mathfrak{U},\mathcal{F}\right),\\
+		&Z^0(\mathfrak{U},\mathcal{F})\coloneqq \ker\left( C^0(\mathfrak{U},\mathcal{F}) \overset{\delta}{\rightarrow} C^1(\mathfrak{U},\mathcal{F})\right),\\
 		&B^0(\mathfrak{U},\mathcal{F})\coloneqq 0,\\
 		&H^0(\mathfrak{U},\mathcal{F})\coloneqq Z^0(\mathfrak{U},\mathcal{F})/B^0(\mathfrak{U},\mathcal{F})=Z^0(\mathfrak{U},\mathcal{F}).\end{align*}
 	
 \end{defi}
-Dann gehört eine 0-Kokette $(f_i)_{i\in I}$ genau dann zu $Z^0(\mathfrak{U},\mathcal{F})$, wenn $f_i\mid U_i\cap U_j=f_j\mid U_i\cap U_j$ für alle $i,j\in I$. Mit der Garbeneigenschaft kann man diese Elemente zu einem globalen Element $f\in \mathcal{F}(X)$ fortsetzen, somit ergibt sich eine Isomorphie
+Dann gehört eine 0-Kokette $(f_i)_{i\in I}$ genau dann zu $Z^0(\mathfrak{U},\mathcal{F})$, wenn $f_i\mid U_i\cap U_j=f_j\mid U_i\cap U_j$ für alle $i,j\in I$. Mit dem 2.Garbenaxiom kann man diese Elemente zu einem globalen Element $f\in \mathcal{F}(X)$ fortsetzen, somit ergibt sich eine Isomorphie
 \[ H^0(\mathfrak{U},\mathcal{F})=Z^0(\mathfrak{U},\mathcal{F}\cong \mathcal{F}(X).
 \] 
 Dies motiviert die folgende Definition:
-\begin{defi}
+\begin{defi}[0.Kohomologiegruppe]\thlabel{defi:0.kohomologiegruppe}
 	Die nullte Kohomologiegruppe des topologischen Raums $X$ bezüglich der Garbe abelscher Gruppen $\mathcal{F}$ ist
 	\[H^0(X,\mathcal{F})\coloneqq \mathcal{F}(X)\]
 \end{defi}
+%subsection:Differentialformen%
 \subsection{Differentialformen}
-Wir wollen knapp die lokale Gestalt einer Differentialform 1. Ordnung auf einer Riemannschen Fläche angeben, sowie die Ableitung einer Funktion und die verschiedenen Garben von Differentialformen definieren. Für eine exakte Definition des Begriffs Differentialform siehe\cite[Kapitel 9,S.54]{forster}. 
+Wir wollen knapp die lokale Gestalt einer Differentialform 1. Ordnung auf einer Riemannschen Fläche angeben, sowie die Ableitung einer Funktion und die verschiedenen Garben von Differentialformen definieren. Für eine exakte Definition des Begriffs Differentialform siehe \cite[Kapitel 9,S.54]{forster}. 
 \begin{defi}
-	Sei $f$ eine differenzierbare Funktion auf einer offenen Teilmenge $Y\subset X$ der Riemannschen Fläche $X$ . Lokal auf $U\cap Y$ für jede komplexe Karte $(U,z)$ mit $z=x+iy$ ist die Ableitung von $f$
+	Sei $f$ eine differenzierbare Funktion auf einer offenen Teilmenge $Y\subset X$ der Riemannschen Fläche $X$. Lokal auf $U\cap Y$ für jede komplexe Karte $(U,z)$ mit $z=x+iy$ ist die Ableitung von $f$
 	\[
 	\dif f = \frac{\partial f(z)}{\partial x}\dif x +\frac{\partial f(z)}{\partial y}\dif y.
 	\]
 	Dann ist die Ableitung der Karten $z,\overline{z}:U\rightarrow \mathbb{C}$
 	\[
-	\dif z = \dif x +i\dif y, \dif \overline{z}=\dif x-i\dif y.
+	\dif z = \dif x +i\dif y,~ \dif \overline{z}=\dif x-i\dif y.
 	\]
 	Zusammen mit den Differentialoperatoren des "Wirtinger Kalküls"
 	\[
@@ -496,17 +497,20 @@ Wir wollen knapp die lokale Gestalt einer Differentialform 1. Ordnung auf einer 
 	\] 
 	kann man also auf $U\cap Y$
 	\[
-	\dif f = \frac{\partial f(z)}{\partial z}\dif z+\frac{\partial f(z)}{\partial \overline{z}}\dif \overline{z}\eqqcolon \dif' f+\dif'' f.
+	\dif f = \frac{\partial f(z)}{\partial z}\dif z+\frac{\partial f(z)}{\partial \overline{z}}\dif \overline{z}\eqqcolon \dif' f+\dif'' f
 	\]
 	schreiben. 
 \end{defi}
+\begin{bem}
+    Eine differenzierbare Funktion $f:U\rightarrow \mathbb{C}$, $U\subset\mathbb{C}$ ist genau dann holomorph, wenn $\dif '' f =0$. Dies folgt direkt aus den Cauchy-Riemannschen Differentialgleichungen. \cite[~S.8]{funktheo}.
+\end{bem}
 
 \begin{defi}[lokale Gestalt von Differentialformen]\thlabel{defi:differentialformen}
 Sei $\omega $ eine Differentialform auf der offenen Teilmenge $Y\subset X$ der Riemannschen Fläche $X$. Dann kann man auf $U\cap Y$ für jede Karte $(U,z)$ mit $z=x+iy$ schreiben
 \[
-\omega = f\dif x+g\dif y
+\omega = f\dif x+g\dif y,
 \]
-für Funktionen $f,g:U\rightarrow \mathbb{C}$. Mit einer Umformung analog zum Wirtinger Kalkül
+wobei $f,g:U\rightarrow \mathbb{C}$. Mit der Umformung
 
 	\[
 \phi \coloneqq \frac{1}{2}\left(f-ig\right), \psi \coloneqq \frac{1}{2}\left(f+ig\right)
@@ -517,28 +521,30 @@ auch als
 \]
 Falls $\omega $ sich bezüglich jeder komplexen Karte $(U,z)$ auf $U\cap Y$ schreiben lässt als
 \begin{enumerate}
-	\item $\omega = f\dif z+g\dif \overline{z}$, wobei $f,g\in \mathcal{E}(U\cap Y)$, so heißt $\omega$ \emph{differenzierbar}, $\omega\in \mathcal{E}^{(1)}(Y)$. Falls für alle $f,g$ gilt $f\equiv 0$ bzw. $g\equiv =0$ so ist $\omega \in \mathcal{E}^{1,0}(Y)$ bzw. $\omega \in \mathcal{E}^{0,1}(Y)$.
+	\item $\omega = f\dif z+g\dif \overline{z}$, wobei $f,g\in \mathcal{E}(U\cap Y)$, so heißt $\omega$ \emph{differenzierbar}, $\omega\in \mathcal{E}^{(1)}(Y)$. Falls für alle $f,g$ gilt $f\equiv 0$ bzw. $g\equiv 0$ so ist $\omega \in \mathcal{E}^{1,0}(Y)$ bzw. $\omega \in \mathcal{E}^{0,1}(Y)$.
 	\item $\omega = f\dif z$, wobei $f\in\mathcal{O}(U\cap Y)$, so heißt $\omega$ \emph{holomorph},
 	$\omega\in \Omega$.
 \end{enumerate}
 Falls $\omega$ auf einer offenen Teilmenge $Y'\subset Y$ holomorph ist, sodass $Y\setminus Y'$ nur aus isolierten Punkten besteht und $\omega$ in jedem Punkt $a\in Y\setminus Y'$ einen Pol hat, so heißt $\omega$ \emph{meromorph}, $\omega \in \mathcal{M}^{(1)}(Y)$.
-Zusammen mit den natürlichen Einschränkungsabbildungen sind $\mathcal{E}^{(1)},\mathcal{E}^{1,0},\mathcal{E}^{0,1},\Omega,\mathcal{M}^(1) $ Garben von Vektorräumen über $X$.
+Zusammen mit den natürlichen Einschränkungsabbildungen sind $\mathcal{E}^{(1)},\mathcal{E}^{1,0},\mathcal{E}^{0,1},\Omega,\mathcal{M}^{(1)} $ Garben von Vektorräumen über $X$.
 \end{defi}
+
  \begin{defi}[Rücktransport von Differentialformen]
- 	Jede holomorphe Abbildung $f:X\rightarrow Y$ zwischen zwei Riemannschen Flächen induziert für jede offene Menge $U\subset X$ einen Homomorphismus
+ 	Jede holomorphe Abbildung $F:X\rightarrow Y$ zwischen zwei Riemannschen Flächen induziert für jede offene Menge $U\subset X$ einen Homomorphismus
  	\[
- 	F*:\mathcal{E}(U)\rightarrow \mathcal{E}(F^{-1}(U)),~F*(f)\coloneqq f\circ F.
+ 	F^*:\mathcal{E}(U)\rightarrow \mathcal{E}(F^{-1}(U)),~F^*(f)\coloneqq f\circ F.
  	\]
- 	Analog kann man diesen für Differentialformen 1. Ordnung definieren. Wir wissen aus den vorigen Definitionen, dass sich diese lokal als endliche Summe $\sum f_j\dif g_j$ schreiben lassen. Sei
+ 	Analog kann man diesen für Differentialformen 1. Ordnung definieren. Wir wissen aus den vorherigen Definitionen, dass sich diese lokal als endliche Summe $\sum f_j\dif g_j$ schreiben lassen. Sei
  	\[
- 	F*(\sum f_j\dif g_j)\coloneqq \sum (F*f_j)\dif(F*g_j).
+ 	F^*(\sum f_j\dif g_j)\coloneqq \sum (F^*f_j)\dif(F^*g_j).
  	\]
  	Für ein $f\in\mathcal{E}(U)$ gilt also
  	\[
- 	F*(\dif f) = \dif (F*f).
+ 	F^*(\dif f) = \dif (F^*f).
  	\]
  	Analog für die Operatoren $\dif'$ und $\dif''$.
- \end{defi}-
+ \end{defi}
+ %subsection:Überlagerungen und Vielfachheit%
 \subsection{Überlagerungen}
 Es werden kurz der Begriff der Überlagerung und elementare Eigenschaften dieser erläutert. Wir erinnern uns zunächst an elementare topologische Definitionen:\\
 Eine Teilmenge $A\subset X$ eines topologischen Raumes $X$ heißt diskret falls jedes $a\in Y$ eine Umgebung $V$ besitzt mit $V\cap A= \{a\}$. Eine Abbildung $p:Y\rightarrow X$ heißt diskret, falls $p^{-1}(x)\subset Y$  für jedes $x\in X$ diskret ist. Die Abbildung heißt offen, falls $f(U)\subset X$ für alle offenen Teilmengen $U\subset Y$ auch offen ist.
@@ -546,9 +552,21 @@ Eine Teilmenge $A\subset X$ eines topologischen Raumes $X$ heißt diskret falls 
 Eine Abbildung $p:Y\rightarrow X$ heißt \emph{Überlagerung}, falls sie offen, diskret und stetig ist.\\
 Für $y\in Y$ und $x\coloneqq p(y)$, sagt man \emph{$y$ liegt über $x$} und nennt $x$ den \emph{Spurpunkt} von $y$.\\
 Ein Punkt $y\in Y$ heißt \emph{Verzweigungspunkt} von $p$, falls es keine Umgebung $V$ von $y$ gibt, sodass $p\mid Y$ injektiv ist.Falls es keinen solchen Punkt gibt, heißt $p$ \emph{unverzweigt}.\\
-Die Mächtigkeit der Mengen $p^{-1}(x)$ heißt \emph{Blätterzahl in $X$}. Falls diese global konstant ist, heißt sie \emph{Blätterzahl} der Überlagerung.
+Die Mächtigkeit der Mengen $p^{-1}(x)$ heißt \emph{Blätterzahl in $x$}. Falls diese global konstant ist, heißt sie \emph{Blätterzahl} der Überlagerung.
 \end{defi}
-Es folgt direkt, dass jede nicht konstante Abbildung zwischen Riemannschen Flächen eine Überlagerung ist.\cite[S.18]{forster}
+Es folgt direkt, dass jede nicht konstante, holomorphe Abbildung zwischen Riemannschen Flächen eine Überlagerung ist. \cite[S.18]{forster}.
+\begin{defi}[Vielfachheit]
+\begin{enumerate}
+    \item
+    Sei $f:X\rightarrow Y$ eine nicht konstante, holomorphe Abbildung zwischen zwei Riemannschen Flächen $X,Y$. Dann gibt es für jede Umgebung $U_0$ von $a\in X$ eine Umgebung $U\subset U_0$ von $a$ und eine Umgebung $W\subset Y$ von $b=f(a)$, sodass die Menge $f^{-1}(y)\cap U$ genau $k$ Elemente für jedes $y\in W$ mit $y\neq b$ enthält. Diese Zahl $k$ nennen wir die \emph{Vielfachheit} von $f$ im Punkt $a$, notiert mit $k=v(f,a)$.
+    \item
+    Wir sagen die Abbildung $f$ nimmt den Wert $c\in Y$ \emph{mit Vielfachheit gerechnet m-mal} an, falls
+    \[
+    m =\sum_{x\in f^{-1}(c)} v(f,x).
+    \]
+    \end{enumerate}
+\end{defi}
+
 \newpage
 %-------------------------------------------------------------------------------------------------%
 %------------------------------------2 DER ENDLICHKEITSSATZ---------------------------------------%
@@ -576,38 +594,22 @@ Dieses Skalarprodukt ist wohldefiniert, da für alle $z\in D$ gilt, dass $\langl
 \item
 Sei $B=B(a,r)=\left\{ z\in\mathbb{C}: |z-a|<r\right\}$ die Kreissscheibe mit Radius $r\in\mathbb{R}$ und Mittelpunkt $a\in\mathbb{C}$ und $\psi_n(z) = (z-a)^n$ für $n\in \mathbb{N}$. Dann gilt 
 $$
-\langle\psi_n,\psi_m \rangle = \iint\limits_B \psi_n(z)\overline{\psi_m(z)}\,\mathrm{d}x\,\mathrm{d}y = \int_0^{r}\int_0^{2\pi}
-t^{n+m}e^{i(n-m)}t\,\mathrm{d}t\,\mathrm{d}\phi.
+\langle\psi_n,\psi_m \rangle = \iint\limits_B \psi_n(z)\overline{\psi_m(z)}\,\dif x\dif y = \int_0^{r}\int_0^{2\pi} t^{n+m}e^{i(n-m)}t\dif \phi\dif t.
 $$
-Für $n\neq m$ verschwindet das Integral und für $n=m $ ergibt sich $$
-\norm{\psi_n}_{\mathcal{L}^2(B)}= \sqrt{\langle \psi_n,\psi_n \rangle} = \dfrac{\sqrt{\pi} r^{n+1}}{\sqrt{n+1}}$$.
+Für $n\neq m$ verschwindet das Integral, also sind die Funktionen paarweise orthogonal und für $n=m $ ergibt sich $$
+\norm{\psi_n}_{\mathcal{L}^2(B)}= \sqrt{\langle \psi_n,\psi_n \rangle} = \dfrac{\sqrt{\pi} r^{n+1}}{\sqrt{n+1}}.$$
 \item
 Sei $f\in \mathcal{L}^2(B,\mathcal{O})$ mit der Taylorentwicklung 
 $$
 f(z) = \sum_{n=0}^{\infty} c_n(z-a)^n
 $$
-um den Punkt $a$. Dann gilt nach der Parsevalschen Gleichung 
+um den Punkt $a$. Dann gilt nach der Parsevalschen Gleichung \cite[~S.255]{funkana}
 $$
 \norm{f}_{\mathcal{L}^2(B)}^2 =\sum_{n=0}^{\infty} |c_n|^2 \frac{\pi r^{2n+2}}{n+1}.
 $$
 \end{enumerate}
 \end{bsp}
-\begin{satz}
-Sei $D\subset\mathbb{C}$ offen und $D_r \coloneqq \left\{
-z\in \mathbb{C}: B(z,r)\subset \mathbb{D}\right\}$ die Menge aller Punkte in $D$, deren Distanz zum Rand kleiner oder gleich $r$ ist.
-Dann gilt für $f\in \mathcal{L}^2(D,\mathcal{O})$, dass
-$$
-\norm{f}_{D_r} \leq \frac{1}{\sqrt{\pi}r}\norm{f}_{\mathcal{L}^2(D)},
-$$
-wobei $\norm{f}_{D_r} = \mathrm{sup}_{z\in D_r} |f(z)|$ die Supremumsnorm ist.
-\end{satz}
-\begin{proof}
-Sei $a\in D_r$ und $f(z) = \sum_{n=0}^{\infty}c_n(z-a)^n$ die Taylorentwicklung von $f$ um $a$. Dann folgt mithilfe von Beispiel 3.1.1, dass
-$$
-|f(a)| = |c_0| \leq \frac{1}{\sqrt{\pi}r}\norm{f}_{\mathcal{L}^2(B(a,r))}\leq \frac{1}{\sqrt{\pi}r}\norm{f}_{\mathcal{L}^2(D)},
-$$
-wobei der letzte Schritt aus $B(a,r)\subset D $ folgt. Da $a\in D_r$ beliebig war, ist die Aussage bewiesen.
-\end{proof}
+
 Mithilfe zu der obigen Definition können wir die $\mathcal{L}^2-Norm$ auch für Koketten bezüglich der Garbe der holomorphen Funktionen definieren, da deren Komponenten genau holomorphe Funktionen darstellen.
 \begin{defi}\thlabel{kozykelnorm}
 Sei $X$ eine riemannsche Fläche und $\left( U_i^{*},z_i\right)_{1\leq i\leq n}$ eine endliche Familie von Karten, sodass $z_i(U_i^{*})\subset \mathcal{C}$ Kreisscheiben sind und seien die Mengen $U_i\subset U_i^{*}$ offen. Wir schreiben $\mathfrak{U}\coloneqq\left( U_i \right)_{1\leq i\leq n}$ und $\mathfrak{U}^{*}\coloneqq\left( U_i^{*}\right)_{1\leq i\leq n}$ .
