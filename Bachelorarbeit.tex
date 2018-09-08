@@ -581,15 +581,15 @@ Sei $D\in \mathbb{C}$ offen und $f\in \mathcal{O}(U)$ eine holomorphe Funktion. 
 $$
 \norm{f}_{\mathcal{L}^2(D)}\coloneqq \left( \iint \limits_D |f(x+iy)|^2 \mathrm{d}x\,\mathrm{d}y \right)^{\frac{1}{2}}.
 $$
-\end{defi}
 Falls $\norm{f}_{\mathcal{L}^2(D)} < \infty$, nennen wir $f$ \emph{quadratisch integrierbar}, den Raum der quadratisch integrierbaren holomorphen Funktionen nennen wir $\mathcal{L}^2(D,\mathcal{O})$.
 Für $f,g \in \mathcal{L}^2(D,\mathcal{O})$ definieren wir das Skalarprodukt 
 $$
 \langle f,g\rangle \coloneqq \iint\limits_D f(x+iy)\overline{g(x+iy)} \,\mathrm{d}x\,\mathrm{d}y.
 $$
 Dieses Skalarprodukt ist wohldefiniert, da für alle $z\in D$ gilt, dass $\langle f,g\rangle \leq \norm{f}_{\mathcal{L}^2(D)}\norm{g}_{\mathcal{L}^2(D)}$ nach der Cauchy-Schwarz-Ungleichung.
-\begin{bsp}\thlabel{norm}
-
+\end{defi}
+Es lässt sich damit zeigen, dass $\mathcal{L}^2(U)$ damit einen Hilbertraum bildet \cite{forster}. 
+\begin{bsp}\thlabel{bsp:norm}
 \begin{enumerate}
 \item
 Sei $B=B(a,r)=\left\{ z\in\mathbb{C}: |z-a|<r\right\}$ die Kreissscheibe mit Radius $r\in\mathbb{R}$ und Mittelpunkt $a\in\mathbb{C}$ und $\psi_n(z) = (z-a)^n$ für $n\in \mathbb{N}$. Dann gilt 
@@ -612,7 +612,7 @@ $$
 
 Mithilfe zu der obigen Definition können wir die $\mathcal{L}^2-Norm$ auch für Koketten bezüglich der Garbe der holomorphen Funktionen definieren, da deren Komponenten genau holomorphe Funktionen darstellen.
 \begin{defi}\thlabel{kozykelnorm}
-Sei $X$ eine riemannsche Fläche und $\left( U_i^{*},z_i\right)_{1\leq i\leq n}$ eine endliche Familie von Karten, sodass $z_i(U_i^{*})\subset \mathcal{C}$ Kreisscheiben sind und seien die Mengen $U_i\subset U_i^{*}$ offen. Wir schreiben $\mathfrak{U}\coloneqq\left( U_i \right)_{1\leq i\leq n}$ und $\mathfrak{U}^{*}\coloneqq\left( U_i^{*}\right)_{1\leq i\leq n}$ .
+Sei $X$ eine riemannsche Fläche und $\left( U_i^{*},z_i\right)_{1\leq i\leq n}$ eine endliche Familie von Karten, sodass $z_i(U_i^{*})\subset \mathbb{C}$ Kreisscheiben sind und seien die Mengen $U_i\subset U_i^{*}$ offen. Wir schreiben $\mathfrak{U}\coloneqq\left( U_i \right)_{1\leq i\leq n}$ und $\mathfrak{U}^{*}\coloneqq\left( U_i^{*}\right)_{1\leq i\leq n}$ .
 \begin{enumerate}
 \item
 Für eine $0$-Kokette $\eta = (f_i)\in C^0(\mathfrak{U},\mathcal{O})$ sei
@@ -631,14 +631,14 @@ $$
 $$ 
 und 
 $$
-\norm{f_{i,j}}_{\mathcal{L}^2(U_{i,j})}\coloneqq \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i\cap U_j)}.
+\norm{f_{i,j}}_{\mathcal{L}^2(U_{i,j})}\coloneqq \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i\cap U_j))}.
 $$
 Analog heißt eine Kokette \emph{quadratisch integrierbar}, falls die Norm endlich ist. \\Den Raum der quadratisch integrierbaren Koketten bezeichnen wir mit $C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ für $q=0,1$ und den Raum der Kozykel in $C^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ mit $Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$. Dieser bildet einen abgeschlossenen Untervektorraum.
 \end{defi}
 \begin{bem}
-Die Mengen $(U^*_i)_{1\leq i\leq n }$ müssen für diese Definition nicht $X$ überdecken.
+Die Mengen $(U^*_i)_{1\leq i\leq n }$ müssen für diese Definition nicht $X$ überdecken und auch die Räume $C^q_{\mathcal{L}^2}(\mathfrak{U})$ bilden Hilberträume.
 \end{bem}
-Dieses Lemma wird für den Beweis des darauffolgenden Lemmas, dem Schlüssel zu dem Endlichkeitssatz, benötigt.
+
 \begin{lemma}\thlabel{kodim}
 Seien $D\subset\mathbb{C}$ offen, $a_1,\ldots,a_k\in\mathbb{C}$ und $n\in\mathbb{N}$. Dann gilt für die Menge \[A\coloneqq \left\{ f\in \mathcal{L}^2(D); f(a_j)=f'(a_j)=\ldots=f^{(n-1)}(a_j)= 0,  j=1,\ldots,n\right\}\]
 aller quadratisch integrierbaren Funktionen, die in allen $a_j$ mindestens eine $n$- fache Nullstelle haben:
@@ -649,39 +649,40 @@ aller quadratisch integrierbaren Funktionen, die in allen $a_j$ mindestens eine 
 Wir definieren uns die lineare Hilfsabbildung
 
 \begin{align*}
-T:\mathcal{L^2(D)}/A 	&\longrightarrow 	\mathbb{C}^{k\times n}\\
+T:\mathcal{L}^2(D)/A 	&\longrightarrow 	\mathbb{C}^{k\times n}\\
   f 					&\longmapsto 			     \begin{bmatrix}
   													f(a_1) &\cdots & f^{(n-1)}\\
   													\vdots & &\vdots\\
   													f(a_k) &\cdots & f^{(n-1)}(a_k)\\
 													\end{bmatrix}. \\
 \end{align*} 
-Diese ist wohldefiniert, da für $f,g\in \mathcal{L}^2(D)$ mit $f-g\in A$ gilt, dass $T(f-g)=0$, also $T(f)=T(g)$. Des weiteren ist die Abbildung injektiv , da per Definition $T(f)=0$ genau dann, wenn $f\in A$ und somit $f$ das neutrale Element im Quotientenraum definiert.\\ Damit ist Dimension des linken Raumes kleiner oder gleich des rechten, also $\leq kn$.
+Diese ist wohldefiniert, da für $f,g\in \mathcal{L}^2(D)$ mit $f-g\in A$ gilt, dass $T(f-g)=0$, also $T(f)=T(g)$. Außerdem ist die Abbildung injektiv, da per Definition $T(f)=0$ genau dann, wenn $f\in A$ und somit $f$ das neutrale Element im Quotientenraum repräsentiert.
+\\ Damit ist Dimension des linken Raumes kleiner oder gleich des rechten, also $\leq kn$.
 \end{proof}
 
 Nun können wir zu einer ersten Endlichkeitsaussage kommen, welche sich als sehr wichtig für den Beweis des Endlichkeitssatzes erweisen wird.
 
 
 \begin{lemma}
-Seien $D' \subset D\subset \mathbb{C}$ offene Mengen und $D'$ relativ Kompakt in $D$ (Notation $D'\Subset D$). Für alle $\varepsilon >0$ gibt es einen abgeschlossenen Untervektorraum mit endlicher Kodimension $A\subset \mathcal{L}^2(D,\mathcal{O})$, sodass
-$$
-\norm{f}_{\mathcal{L}^2(D')} \leq \varepsilon \norm{f}_{\mathcal{L}^2(D)},\text{ für } f\in A.
-$$
+Seien $D' \subset D\subset \mathbb{C}$ offene Mengen und $D'$ relativ Kompakt in $D$ (Notation $D'\Subset D$). Für alle $\varepsilon >0$ gibt es einen abgeschlossenen Untervektorraum mit endlicher Kodimension $A\subset \mathcal{L}^2(D,\mathcal{O})$, sodass für alle $f\in A$ gilt
+\[
+\norm{f}_{\mathcal{L}^2(D')} \leq \varepsilon \norm{f}_{\mathcal{L}^2(D)}.
+\]
 \end{lemma}
 \begin{proof}
 Aus der relativen Kompaktheit von $D'$ folgt, dass man endlich viele komplexe Zahlen $a_1,\ldots,a_k\in\mathbb{C}$ wählen kann, sodass:
 \begin{enumerate}
 \item $B(a_j,r)\subset D$ für $j=1,\ldots,k$
-\item $D'\subset D\subset\bigcup_{j=1}^k B(a_j,r/2)$.
+\item  $D\subset\bigcup_{j=1}^k B(a_j,r/2)$.
 \end{enumerate}
 Sei $\varepsilon>0$ beliebig und wähle $n\in\mathbb{N}$, sodass $2^{-n-1}k>\varepsilon$.\\
 Sei $A$ wie in \thref{kodim}, dann hat $A$ endliche Kodimension und ist abgeschlossen. Eine Funktion $f\in A$ hat um $a_j$ die Taylorentwicklung 
 \[
 f(z)=\sum_{i=n}^{\infty} c_i(z-a_j)^i,
 \]
-wobei $c_i\in\mathbb{C}$. Deshalb gilt nach \thref{norm}
+wobei $c_i\in\mathbb{C}$. Deshalb gilt nach \thref{bsp:norm}
 \[
-\norm{f}_{\mathcal{L}^2(B(a_j,r/2)}^2=\sum_{i=n}^{\infty}2^{-2i-2}\frac{\pi r^{2i+2}}{i+1}|c_i|^2\leq 2^{-2n-2}\norm{f}_{\mathcal{L}^2(B(a_j,r)}^2.
+\norm{f}_{\mathcal{L}^2(B(a_j,r/2)}^2=\sum_{i=n}^{\infty}2^{-2i-2}\frac{\pi r^{2i+2}}{i+1}|c_i|^2\leq 2^{-2n-2}\norm{f}_{\mathcal{L}^2(B(a_j,r))}^2.
 \]
 Die Eigenschaften i) und ii) implizieren
 \[
@@ -689,12 +690,15 @@ Die Eigenschaften i) und ii) implizieren
 \]
 sowie
 \[
-\norm{f}_{\mathcal{L}^2(D')}\leq \sum_{j=1}^{k}\norm{f}_{\mathcal{L}^2(B(a_j,r/2)}.
+\norm{f}_{\mathcal{L}^2(D')}\leq \sum_{j=1}^{k}\norm{f}_{\mathcal{L}^2(B(a_j,r/2))}.
 \]
-Dies ergibt
-\[
-\norm{f}_{\mathcal{L}^2(D')}\leq k2^{-n-1}\norm{f}_{\mathcal{L}^2(D)}\leq\varepsilon\norm{f}_{\mathcal{L}^2(D)}.
-\]
+Setzt man alles zusammen, erhält man
+\begin{align*}
+    \norm{f}_{\mathcal{L}^2(D')} & \leq \sum_{j=1}^{k}\norm{f}_{\mathcal{L}^2(B(a_j,r/2))}\\
+                                &\leq 2^{-n-1}\sum_{j=1}^{k}\norm{f}_{\mathcal{L}^2(B(a_j,r))}\\
+                                &\leq 2^{-n-1}k \norm{f}_{\mathcal{L}^2(D)}\\
+                                &\leq \varepsilon \norm{f}_{\mathcal{L}^2(D)}.
+\end{align*}
 
 
 \end{proof}
