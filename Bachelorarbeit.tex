@@ -631,7 +631,7 @@ $$
 $$ 
 und 
 $$
-\norm{f_{i,j}}_{\mathcal{L}^2(U_{i,j})}\coloneqq \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i\cap U_j))}.
+\norm{f_{i,j}}_{\mathcal{L}^2(U_i\cap U_j)}\coloneqq \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i\cap U_j))}.
 $$
 Analog heißt eine Kokette \emph{quadratisch integrierbar}, falls die Norm endlich ist. \\Den Raum der quadratisch integrierbaren Koketten bezeichnen wir mit $C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ für $q=0,1$ und den Raum der Kozykel in $C^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ mit $Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$. Dieser bildet einen abgeschlossenen Untervektorraum.
 \end{defi}
@@ -663,7 +663,7 @@ Diese ist wohldefiniert, da für $f,g\in \mathcal{L}^2(D)$ mit $f-g\in A$ gilt, 
 Nun können wir zu einer ersten Endlichkeitsaussage kommen, welche sich als sehr wichtig für den Beweis des Endlichkeitssatzes erweisen wird.
 
 
-\begin{lemma}
+\begin{lemma}\thlabel{lemma:normendlich}
 Seien $D' \subset D\subset \mathbb{C}$ offene Mengen und $D'$ relativ Kompakt in $D$ (Notation $D'\Subset D$). Für alle $\varepsilon >0$ gibt es einen abgeschlossenen Untervektorraum mit endlicher Kodimension $A\subset \mathcal{L}^2(D,\mathcal{O})$, sodass für alle $f\in A$ gilt
 \[
 \norm{f}_{\mathcal{L}^2(D')} \leq \varepsilon \norm{f}_{\mathcal{L}^2(D)}.
@@ -703,15 +703,42 @@ Setzt man alles zusammen, erhält man
 
 \end{proof}
 
-Direkt hieraus folgt die analoge Aussage für integrierbare Kozykel:
+\begin{defi}[Schrumpfung]\thlabel{defi:schrumpfung}
+Seien $\mathfrak{U}=(U_I)_{i\in I},\mathfrak{W}=(W_i)_{i\in I}$ zwei Familien von offenen Mengen für eine beliebige Indexmenge $I$. Falls $W_i\Subset U_i$ für alle $i\in I$ gilt, heißt $\mathfrak{V}$ \emph{Schrumpfung} von $\mathfrak{U}$ und wir schreiben $\mathfrak{V}\ll\mathfrak{U}$.
+\end{defi}
+
+Damit können wir eine ähnliche Aussage zu \thref{kozykelnorm} treffen.
+
 \begin{koro}\thlabel{norm}
-Sei $\mathfrak{V}=(V_i)_{1\leq i\leq n}$, $\mathfrak{U}=(U_i)_{1\leq i\leq n}$ und $V_i\Subset U_i$ für $i=1,...,n$. Dies schreiben wir ab jetzt als $\mathfrak{V}\ll\mathfrak{U}$, wobei $\mathfrak{V}$ \emph{Schrumpfung} von $\mathfrak{U}$ heißt.\\
-Dann gibt es zu jedem $\varepsilon>0$ einen abgeschlossenen Untervektorraum $A\subset Z^1_{\mathcal{L^2}}(U,\mathcal{O})$ mit endlicher Kodimesion, sodass
+Seien $\mathfrak{U}$ und $(z_i)_{1\leq i\leq n}$ wie in \thref{kozykelnorm} und sei eine Schrumpfung $\mathfrak{V}\ll \mathfrak{U}$ gegeben, dann gilt für alle $\xi\in C^q(\mathfrak{U},\mathcal{O})$, dass $\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}<\infty$. \\
+Außerdem gibt es für jedes $\varepsilon>0$ einen abgeschlossenen Untervektorraum $A\subset Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ von endlicher Kodimension, sodass
 \[
-\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}\leq \varepsilon\norm{\xi}_{\mathcal{L}^2(\mathfrak{U})}
+\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}\leq \varepsilon \norm{\xi}_{\mathcal{L}^2(\mathfrak{U})}
 \]
 für alle $\xi\in A$ gilt.
+
 \end{koro}
+\begin{proof}
+  Sei $\xi=(f_i)\in C^0(\mathfrak{U},\mathcal{O})$, dann folgt der erste Teil der Aussage aus
+    \[\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}^2=\sum_i \norm{f_i}_{\mathcal{L}^2(V_i)}^2\leq\sum_i \norm{f_i}_{\mathcal{L}^2(\overline{V_i})}^2.\]
+    Da $\overline{V_i}$ kompakt sind, so auch deren Bilder unter einer Karte und damit sind alle Normen auf der rechten Seite endlich. Analog lässt sich dies für $\xi\in C^q(\mathfrak{U},\mathcal{O})$ zeigen.
+    
+    Der zweite Teil der Aussage gilt nach \thref{lemma:normendlich} bereits für $z_i(V_i\cap V_j)\Subset z_i(U_i\cap U_j)$\footnote{
+                        $\overline{V_i},\overline{V_j}$ sind kompakt, also ist im Haussdorfraum $X$ ihr Schnitt auch kompakt und $\overline{V_i}\cap\overline{V_j}=\overline{V_i\cap V_j}\subset U_i\cap U_j.$ Dies bleibt unter der holomorphen Abbildung $z_i$ erhalten.
+                        }.
+    Sei also $\varepsilon>0$ beliebig. Dann gibt es für alle $1\leq i,j\leq n$ einen abgeschlossenen Untervektorraum $A_{i,j}\subset \mathcal{L}^2(z_i(U_i\cap U_j))$, sodass für alle $f_{i,j}\in \mathcal{O}(U_i\cap U_j)$ mit $f_{i,j}\circ z_i^{-1}\in \mathcal{L}^2(z_i(U_i\cap U_j)$ gilt
+    \[
+    \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(V_i\cap V_j))}\leq \varepsilon \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i\cap U_j))}.
+    \]
+    Man $\xi\coloneqq(f_{i,j})\in \prod_{i,j}A_{i,j}\eqqcolon A$ setzen, dann ist $\xi\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ und da die Funktionen beliebig waren auch $A\subset Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O}) $. Dieser Raum hat selbstverständlich endliche Kodimension. Quadrieren und Summieren der obigen Ungleichung liefert
+    \[
+    \sum_{i,j}\norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(V_i\cap V_j))}^2\leq \varepsilon^2 \sum_{i,j} \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i\cap U_j))}^2,
+    \]
+    also
+    \[
+    \norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}^2\leq \varepsilon^2 \norm{\xi}^2_{\mathcal{L}^2(\mathfrak{U})}.
+    \]
+\end{proof}
 Wir können also die Norm von Kozykeln über einer Schrumpfung durch die über größeren Überdeckung abschätzen, und das sogar beliebig klein respektive dem Vektorraum $A$. Dass dieser eine endliche Kodimension hat, werden wir im Beweis des nächsten Lemmas benutzen.
 
 
