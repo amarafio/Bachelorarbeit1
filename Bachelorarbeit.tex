@@ -546,8 +546,15 @@ Zusammen mit den natürlichen Einschränkungsabbildungen sind $\mathcal{E}^{(1)}
  	\]
  	Analog für die Operatoren $\dif'$ und $\dif''$.
  \end{defi}
+ Die folgende Aussage werden wir in mehreren Beweisen benutzen, den Beweis findet man in \cite[~S.97]{forster}.
+ \begin{satz}[Lemma von Dolbeault]\thlabel{satz:dolbeault}
+   Sei $X=\{ z\in\mathbb{C}; |z|<R\},0<R\leq\infty$  und  $g\in\mathcal{E}(X)$ eine differenzierbare Funktion. Dann gibt es ein $f\in \mathcal{E}(X)$, sodass
+   \[
+   \frac{\partial f}{\partial \overline{z}}= g.
+   \]
+ \end{satz}
  %subsection:Überlagerungen und Vielfachheit%
-\subsection{Überlagerungen}
+\subsection{Überlagerungen und Vielfachheit}
 Es werden kurz der Begriff der Überlagerung und elementare Eigenschaften dieser erläutert. Wir erinnern uns zunächst an elementare topologische Definitionen:\\
 Eine Teilmenge $A\subset X$ eines topologischen Raumes $X$ heißt diskret falls jedes $a\in Y$ eine Umgebung $V$ besitzt mit $V\cap A= \{a\}$. Eine Abbildung $p:Y\rightarrow X$ heißt diskret, falls $p^{-1}(x)\subset Y$  für jedes $x\in X$ diskret ist. Die Abbildung heißt offen, falls $f(U)\subset X$ für alle offenen Teilmengen $U\subset Y$ auch offen ist.
 \begin{defi}[Überlagerung]\thlabel{defi:überlagerung}
@@ -638,7 +645,7 @@ $$
 Analog heißt eine Kokette \emph{quadratisch integrierbar}, falls die Norm endlich ist. \\Den Raum der quadratisch integrierbaren Koketten bezeichnen wir mit $C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ für $q=0,1$ und den Raum der Kozykel in $C^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ mit $Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$. Dieser bildet einen abgeschlossenen Untervektorraum.
 \end{defi}
 \begin{bem}
-Die Mengen $(U^*_i)_{1\leq i\leq n }$ müssen für diese Definition nicht $X$ überdecken und auch die Räume $C^q_{\mathcal{L}^2}(\mathfrak{U})$ bilden Hilberträume.
+Die Mengen $(U^*_i)_{1\leq i\leq n }$ müssen für diese Definition nicht $X$ überdecken und auch die Räume $C^q_{\mathcal{L}^2}(\mathfrak{U})$ bilden Hilberträume (vgl. \cite[~S.112]{forster}.
 \end{bem}
 
 \begin{lemma}\thlabel{kodim}
@@ -708,8 +715,11 @@ Setzt man alles zusammen, erhält man
 \begin{defi}[Schrumpfung]\thlabel{defi:schrumpfung}
 Seien $\mathfrak{U}=(U_I)_{i\in I},\mathfrak{W}=(W_i)_{i\in I}$ zwei Familien von offenen Mengen für eine beliebige Indexmenge $I$. Falls $W_i\Subset U_i$ für alle $i\in I$ gilt, heißt $\mathfrak{V}$ \emph{Schrumpfung} von $\mathfrak{U}$ und wir schreiben $\mathfrak{V}\ll\mathfrak{U}$.
 \end{defi}
+\begin{bem}
+    Für eine Schrumpfung $\mathfrak{V}\ll\mathfrak{U}$ und $|\mathfrak{U}|\coloneqq U_1\cup\ldots\cup U_n, |\mathfrak{V}|\coloneqq V_1\cap\ldots\cap V_n$ gilt $|\mathfrak{V}|\Subset |\mathfrak{U}|$.
+\end{bem}
 
-Damit können wir eine ähnliche Aussage zu \thref{kozykelnorm} treffen.
+Damit können wir eine ähnliche Aussage zu \thref{lemma:normendlich} treffen.
 
 \begin{koro}\thlabel{norm}
 Seien $\mathfrak{U}$ und $(z_i)_{1\leq i\leq n}$ wie in \thref{kozykelnorm} und sei eine Schrumpfung $\mathfrak{V}\ll \mathfrak{U}$ gegeben, dann gilt für alle $\xi\in C^q(\mathfrak{U},\mathcal{O})$, dass $\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}<\infty$. \\
@@ -745,20 +755,23 @@ Wir können also die Norm von Kozykeln über einer Schrumpfung durch die über g
 
 
 \begin{lemma}\thlabel{schrumpfung}
-Sei $X$ eine riemannsche Fläche und $\mathfrak{U}^*$ eine endliche Familie von Karten auf X, definiert wie in \thref{kozykelnorm}. 
+Sei $X$ eine Riemannsche Fläche und $\mathfrak{U}^*$ eine endliche Familie von Karten auf $X$ wie in \thref{kozykelnorm}. 
 Seien außerdem die Schrumpfungen $\mathfrak{W}\ll\mathfrak{V}\ll\mathfrak{U}\ll\mathfrak{U}^*$ gegeben.
 Dann gibt es ein $C>0$, sodass gilt:\\
-Für alle $\xi\in Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O})$ gibt es $\zeta\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ und $\eta\in C^0_{\mathcal{L}^2(\mathfrak{W}),\mathcal{O}}$ mit
+Für alle $\xi\in Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O})$ gibt es $\zeta\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ und $\eta\in C^0_{\mathcal{L}^2}(\mathfrak{W}),\mathcal{O}$ mit
 \[
 \zeta = \xi+\delta\eta
 \]
 über $\mathfrak{W}$ und
 \[
-\mathrm{max}\left( \norm{\zeta}_{\mathcal{L}^2(\mathfrak{U})},\norm{\eta}_{\mathcal{L}^2(\mathfrak{W})}\right)\leq C\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}.
+\max\left( \norm{\zeta}_{\mathcal{L}^2(\mathfrak{U})},\norm{\eta}_{\mathcal{L}^2(\mathfrak{W})}\right)\leq C\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}.
 \]
 \end{lemma}
 \begin{proof}
-Zunächst zeigen wir die Zerlegung. Sei also $\xi=(f_{i,j}\in Z^1_{\mathcal{L}}(\mathfrak{V},\mathcal{O})$ gegeben, dann kann man $f$ auch als Element in $Z^1(\mathfrak{V},\mathcal{E})$ auffassen. Da $H^1(X,\mathcal{E})=0$\footnote{vgl. Forster}, zerfällt jeder Kozykel in $Z^1(\mathfrak{V},\mathcal{E})$, folglich gibt es $(g_i)\in C^0(\mathfrak{V},\mathcal{E})$ mit
+Zunächst zeigen wir die Zerlegung. Sei also $\xi=(f_{i,j})\in Z^1_{\mathcal{L}}(\mathfrak{V},\mathcal{O})$ gegeben, dann kann man $\xi $ auch als Element in $Z^1(\mathfrak{V},\mathcal{E})$ auffassen\footnote{
+Die holomorphen Komponentenfunktionen sind insbesondere differenzierbar
+}.
+Da $H^1(X,\mathcal{E})=0$ \cite[~S.92,12.6]{forster} zerfällt jeder Kozykel in $Z^1(\mathfrak{V},\mathcal{E})$, folglich gibt es $(g_i)\in C^0(\mathfrak{V},\mathcal{E})$ mit
 \[
 f_{i,j}=g_j-g_i\text{ auf } V_i\cap V_j.
 \]
@@ -766,11 +779,12 @@ Wegen Holomorphie ist $\mathrm{d}''f_{i,j}=0$, also
 \[
 \mathrm{d}''g_j = \mathrm{d}''g_i\text{ auf } V_i\cap V_j.
 \]
-Nach der Garbeneigenschaft gibt es folglich eine Differentialform $\omega\in\mathcal{E}^{0,1}$ mit $\omega|V_i=g_i$. Da $|\mathfrak{W}|\Subset|\mathfrak{V}|$ gibt es eine differenzierbare Funktion $\psi\in\mathcal{E}(X)$, sodass
+Nach dem 2. Garbenaxiom gibt es folglich eine Differentialform $\omega\in\mathcal{E}^{0,1}$ mit $\omega|V_i=g_i$. Da $|\mathfrak{W}|\Subset|\mathfrak{V}|$ gibt es eine differenzierbare Funktion $\psi\in\mathcal{E}(X)$, sodass
 \[
-\mathrm{supp}(\psi)\subset|\mathfrak{V}|\text{ und } \psi|~|W|=1. 
+\mathrm{supp}(\psi)\subset|\mathfrak{V}|\text{ und } \psi|(|\mathfrak{W}|)\equiv 1. 
 \]
-Also lässt sich $\psi\omega$ mit $\psi\omega|(|\mathfrak{U}^*|\setminus|\mathfrak{W}|=0,~\psi\omega|~|\mathfrak{W}|=1$ als Element von $\mathcal{E}(|\mathfrak{U}^*|)$ auffassen. Nach dem Lemma von Dolbeault\footnote{Forster S.97} gibt es Funktionen $h_i\in\mathcal{E}(U_i^*)$, sodass
+Mit $\mathrm{supp}$ ist hier der Träger $\mathrm{supp}(\psi)\overline{\coloneqq \{x\in X; \psi(x)\neq 0\}}$ gemeint.
+Also lässt sich $\psi\omega$ mit $\psi\omega|(|\mathfrak{U}^*|\setminus|\mathfrak{W}|)\equiv 0,~\psi\omega|(|\mathfrak{W}|)\equiv \omega$ als Element von $\mathcal{E}(|\mathfrak{U}^*|)$ auffassen. Nach dem Lemma von Dolbeault (\ref{satz:dolbeault}) gibt es Funktionen $h_i\in\mathcal{E}(U_i^*)$, sodass
 \[
 \mathrm{d}''h_i=\psi\omega\text{ auf } U_i^*.
 \]
@@ -778,13 +792,13 @@ Aus $\mathrm{d}''h_i=\mathrm{d}''h_j$ auf $U_i^* \cap U_j^*$ folgt
 \[
 F_{i,j}\coloneqq h_j-h_i\in\mathcal{O}(U_i^*\cap U_j^*).
 \]
-Wir setzen $\zeta\coloneqq (F_{i,j})|\mathfrak{U}$, dann erfüllt es die Kozykelrelation. Da $\mathfrak{U}\ll\mathfrak{U}^*$, ist außerdem $\zeta\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$.\\
+Wir setzen $\zeta\coloneqq (F_{i,j})|\mathfrak{U}$, dann erfüllt es die Kozykelrelation. Da $\mathfrak{U}\ll\mathfrak{U}^*$, ist außerdem $\zeta\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ nach \thref{norm}.\\
 Auf $W_i$ gilt $\mathrm{d}''h_i=\psi\omega=\omega=\mathrm{d}''g_i$, also ist $h_i-g_i\in\mathcal{O}(W_i)$.
 Nach Konstruktion ist $h_i-g_i$ auch beschränkt auf $W_i$, daher gilt
 \[
 \eta\coloneqq (h_i-g_i)|\mathfrak{W}\in C^0_{\mathcal{L}^2}(\mathfrak{W},\mathcal{O}).
 \]
-Des weiteren ist $F_{i,j}-f_{i,j}=(h_j-g_j)-(h_i-g_i)$ auf $W_i\cap W_j$. Aus diesem Grund gilt
+Dann gilt $F_{i,j}-f_{i,j}=(h_j-g_j)-(h_i-g_i)$ auf $W_i\cap W_j$. Schließlich ergibt sich
 \[
 \zeta-\xi=\delta\eta\text{ auf }\mathfrak{W},
 \]
@@ -797,16 +811,16 @@ mit der Norm
 \[
 \norm{(\zeta,\xi,\eta)}_{H}\coloneqq \left( \norm{\zeta}_{\mathcal{L}^2(\mathfrak{U})}^2+\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}^2+\norm{\eta}_{\mathcal{L}^2(\mathfrak{W})}^2\right)^{1/2}.
 \]
-Dieser ist als Produkt von Hilberträumen \footnote{Forster...} auch ein Hilbertraum. Sei 
+Dieser ist als Produkt von Hilberträumen auch ein Hilbertraum. Sei 
 \[
 L\coloneqq\left\{ (\zeta,\xi,\eta)\in H; \zeta=\xi+\delta\eta\text{ auf } \mathfrak{W}\right\}.
 \]
-Dieser Raum ist abgeschlossen, also auch ein Hilbertraum. Nach dem ersten Teil des Beweises ist die Abbildung
+Dieser Raum ist abgeschlossen, also auch ein Hilbertraum. Nach dem ersten Teil des Beweises ist die lineare Abbildung
 \[
 \pi:L\rightarrow Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O}),~(\zeta,\xi,\eta)\mapsto \xi
 \]
 surjektiv. 
-Nach dem Satz von Banach\footnote{EINFÜGEN} gibt es eine Konstante $C>0$, sodass für alle $\xi\in Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O})$ ein $x=(\zeta,\xi,\eta)\in L$ existiert mit $\pi(x))\xi$ und $\norm{x}_H\leq C\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}$.
+Nach dem Satz von der offenen Abbildung ist $\pi$ offen \cite[~S.168]{funkana} und es gibt dann nach \cite[~S.169]{funkana} eine Konstante $C>0$, sodass für alle $\xi\in Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O})$ ein $x=(\zeta,\xi,\eta)\in L$ existiert mit $\pi(x))\xi$ und $\norm{x}_H\leq C\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}$ .
 Damit ist die zweite Aussage des Satzes erfüllt.
 \end{proof}
 Nun kommen wir zu einer ähnlichen Aussage, die aber nicht die Integrierbarkeit der jeweiligen Elemente voraussetzt und daher zu einem wichtigen Resultat über die Kohomologiegruppen führt.
@@ -835,20 +849,20 @@ Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O}) = A\oplus S.
 \]
 Wir konstruieren zunächst per vollständiger Induktion Elemente 
 \[
-\zeta_n\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O}),\eta_n\in C^0_{\mathcal{L}^2}(\mathfrak{W},\mathcal{O}),\xi_n\in A, \sigma_n\in S
+\zeta_n\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O}),~\eta_n\in C^0_{\mathcal{L}^2}(\mathfrak{W},\mathcal{O}),~\xi_n\in A, ~\sigma_n\in S
 \]
 mit den folgenden Eigenschaften:
 \begin{enumerate}
 \item $\zeta_n = \xi_{n-1}+\delta \eta_n$ auf $\mathfrak{W}$
 \item $\zeta_n = \xi_n+\sigma_n$
-\item $\mathrm{max}\left(\norm{\zeta_n}_{\mathcal{L}^2(\mathfrak{U})},\norm{\eta_n}_{\mathcal{L}^2{\mathfrak{W}}}\right)\leq 2^{-n}CM$
+\item $\max\left(\norm{\zeta_n}_{\mathcal{L}^2(\mathfrak{U})},\norm{\eta_n}_{\mathcal{L}^2{\mathfrak{W}}}\right)\leq 2^{-n}CM$
 \end{enumerate}
 \paragraph*{Induktionsanfang}
 Sei nun $\xi\in Z^1(\mathfrak{U},\mathcal{O})$ beliebig. Aus $\mathfrak{V}\ll \mathfrak{U}$ folgt
 \[
 \norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}\eqqcolon M <\infty.
 \]
-Also gibt es nach \thref{schrumpfung} $\zeta_0\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ und $\eta_0\in C^0_{\mathcal{L}^2}(\mathfrak{W},\mathcal{O})$ mit
+Also gibt es nach \thref{schrumpfung} Elemente $\zeta_0\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ und $\eta_0\in C^0_{\mathcal{L}^2}(\mathfrak{W},\mathcal{O})$ mit
 \[
 \zeta_0 = \xi + \delta\eta_0 \text{ auf } \mathfrak{W}
 \]
@@ -862,7 +876,7 @@ Mit $\xi_{-1}\coloneqq \xi$ ist damit der Induktionsanfang getan.
 \paragraph*{Induktionsschritt} $n\mapsto n+1$\\
 Gelte nun die Aussage für $n\in\mathbb{N}$, fest aber beliebig. Es gibt also die orthogonale Zerlegung $\zeta_n=\xi_n+\sigma_n$, daraus folgt
 \[
-\norm{\xi_n}_{\mathcal{L}^2(\mathfrak{U})}\leq \norm{\zeta_n}_{\mathcal{L}^2(\mathfrak{U})}^2\leq 2^{-n}CM.
+\norm{\xi_n}_{\mathcal{L}^2(\mathfrak{U})}\leq \norm{\zeta_n}_{\mathcal{L}^2(\mathfrak{U})}^2\leq 2^{-n}CM
 \]
 und somit
 \[
@@ -878,7 +892,7 @@ und
 \mathrm{max}(\norm{\zeta_{n+1}}_{\mathcal{L}^2(\mathfrak{U})},\norm{\eta_{n+1}}_{\mathcal{L}^2(\mathfrak{W})})\leq C\norm{\xi_n}_{\mathcal{L}^2(\mathfrak{V})}\leq 2^{-n-1}CM.
 \]
 Außerdem gibt es die orthogonale Zerlegung $\zeta_{n+1}=\xi_{n+1}+\sigma_{n+1}$ mit $\xi_{n+1}\in A$ und $\sigma_{n+1}\in S$. Damit ist der Induktionsschritt beendet.\par
-Fasst man alle Gleichungen für $n=1,\ldots,k$ zusammen, erhält man 
+Fasst man alle Gleichungen für $n=1,\ldots,k$ zusammen und summiert auf, erhält man 
 \[
 \xi_k+\sum_{n=0}^k \sigma_n = \xi+\delta\left(\sum_{n=0}^k \eta_n\right)\text{ auf } \mathfrak{W}
 \]
@@ -888,12 +902,12 @@ und
 \]
 Daher gilt $\lim_{k\rightarrow\infty}\xi_k=0$ und folglich konvergieren die Reihen 
 \[
-\sigma \coloneqq \sum_{n=0}^{\infty}\sigma_n\in S,\\
+\sigma \coloneqq \sum_{n=0}^{\infty}\sigma_n\in S,~
 \eta \coloneqq \sum_{n=0}^{\infty}\eta_n\in C^0_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O}).
 \]
-Auf $\mathfrak{W}$ gilt nun $\sigma = \xi +\delta\eta.$
+Wir haben auch ausgenutzt, dass die integrierbaren Kozykel einen Hilbertraum bilden. Auf $\mathfrak{W}$ gilt nun $\sigma = \xi +\delta\eta.$
 \end{proof}
-Im nächsten Schritt, dem wichtigsten für den Beweis des Endlichkeitssatzes, wird die Aussage des endlichdimensionalen Bildes von Überdeckungen auf offene Teilmengen einer riemannschen Fläche erweitert.
+Im nächsten Schritt, dem wichtigsten für den Beweis des Endlichkeitssatzes, wird die Aussage des endlich-dimensionalen Bildes von Überdeckungen auf offene Teilmengen einer riemannschen Fläche erweitert.
 \begin{bem}
 Sei $X$ eine Riemannsche Fläche und $Y\subset X$ offen. Für eine Überdeckung $\mathfrak{U}=(U_i)_{i\in I}$ ist $\mathfrak{U}\cap Y\coloneqq (U_i\cap Y)_{i\in I}$ eine Überdeckung von $Y$. Dann lässt sich der Einschränkungshomomorphismus 
 \[
