@@ -25,8 +25,6 @@
 \addtokomafont{subsection}{\Large}
 \addtokomafont{subsubsection}{\large}
 
-\renewcommand{\theequation}{\thesubsection.\arabic{equation}}
-\renewcommand{\thefigure}{\thesubsection.\arabic{equation}}
 
 
 \oddsidemargin=0.in
@@ -35,6 +33,7 @@
 \textwidth=16cm
 \title{{\Huge Bachelorarbeit} \\[18pt] Ein Endlichkeitssatz für die 1. Kohomologiegruppe von kompakten Riemannschen Flächen \\[18pt]}
 \author{Aurelio Marafioti}
+
 %Theoreme%
 \newtheoremstyle{thm}{20pt}{20pt}{\itshape}{}{\bfseries}{.}{1em}{}
 \newtheoremstyle{def}{20pt}{20pt}{}{}{\bfseries}{.}{1em}{}
@@ -47,22 +46,30 @@
 \newtheorem{bsp}{Beispiel}[section]
 \theoremstyle{remark}
 \newtheorem*{bem}{Bemerkung}
-\DeclareMathOperator*{\id}{id}
-\DeclareMathOperator*{\Ima}{Im}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\intbar}{\mathcal{L}^2}
-\newcommand{\einschraenkung}{\,\rule[-5pt]{0.4pt}{12pt}\,{}}
-\DeclareMathOperator*{\ord}{ord}
-\newcommand*\dif{\mathop{}\!\mathrm{d}}
-\DeclareMathOperator{\degr}{deg}
 
-
-
-\renewcommand{\labelenumi}{(\roman{enumi})}
+%Operatoren%
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\ord}{ord}
 
 
 
 
+%Befehle%
+\newcommand*{\norm}[1]{\left\lVert#1\right\rVert} %Eine Norm%
+\newcommand*\dif{\mathop{}\!\mathrm{d}}\newcommand{\einschraenkung}{\,\rule[-5pt]{0.4pt}{12pt}\,{}} %Ein d für dx%
+
+%erneuerte Befehle%
+\renewcommand{\labelenumi}{(\roman{enumi})} %Aufzählungen mit römischen Schriftzeihen%
+\renewcommand{\theequation}{\thesubsection.\arabic{equation}} %Equations und figures mit arabaischen Zahlen nummerieren%
+\renewcommand{\thefigure}{\thesubsection.\arabic{equation}}
+
+
+%Einstellungen für Paragraphen%
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{15pt plus 1pt minus 1pt}
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
 
 \date{\today}
 \begin{document}
@@ -826,7 +833,8 @@ Damit ist die zweite Aussage des Satzes erfüllt.
 Nun kommen wir zu einer ähnlichen Aussage, die aber nicht die Integrierbarkeit der jeweiligen Elemente voraussetzt und daher zu einem wichtigen Resultat über die Kohomologiegruppen führt.
 
 \begin{lemma}\thlabel{endlichdimensional}
-Mit den selben Voraussetzungen wie in \thref{schrumpfung} gibt es einen endlich-dimensionalen Untervektorraum $S\subset Z^1(\mathfrak{U},\mathcal{O})$, sodass gilt:
+Mit den selben Voraussetzungen wie in \thref{schrumpfung} gibt es einen endlich-
+dimensionalen Untervektorraum $S\subset Z^1(\mathfrak{U},\mathcal{O})$, sodass gilt:
 Für alle $\xi\in Z^1(\mathfrak{U},\mathcal{O})$ gibt es $\sigma\in S$ und $\eta\in C^0(\mathfrak{W},\mathcal{O})$ mit
 \[
 \sigma = \xi +\delta\eta\text{ auf } \mathfrak{W}.
@@ -900,25 +908,32 @@ und
 \[
 \mathrm{max}(\norm{\xi_n}_{\mathcal{L}^2(\mathfrak{U})},\norm{\sigma_n}_{\mathcal{L}^2(\mathfrak{U})},\norm{\eta_n}_{\mathcal{L}^2(\mathfrak{W})})\leq 2^{-n}CM.
 \]
-Daher gilt $\lim_{k\rightarrow\infty}\xi_k=0$ und folglich konvergieren die Reihen 
+Die auftretenden Elemente sind also quadratisch integrierbar. Daher gilt $\lim_{k\rightarrow\infty}\xi_k=0$, woraus nach Umformung und Grenzwertbildung folgt
+\[
+\sum_{n=0}^{\infty} \sigma_n-\delta (\eta_n)=\xi.
+\]
+Folglich konvergieren die beiden Reihen
 \[
 \sigma \coloneqq \sum_{n=0}^{\infty}\sigma_n\in S,~
 \eta \coloneqq \sum_{n=0}^{\infty}\eta_n\in C^0_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O}).
 \]
 Wir haben auch ausgenutzt, dass die integrierbaren Kozykel einen Hilbertraum bilden. Auf $\mathfrak{W}$ gilt nun $\sigma = \xi +\delta\eta.$
 \end{proof}
+
 Im nächsten Schritt, dem wichtigsten für den Beweis des Endlichkeitssatzes, wird die Aussage des endlich-dimensionalen Bildes von Überdeckungen auf offene Teilmengen einer riemannschen Fläche erweitert.
+
 \begin{bem}
 Sei $X$ eine Riemannsche Fläche und $Y\subset X$ offen. Für eine Überdeckung $\mathfrak{U}=(U_i)_{i\in I}$ ist $\mathfrak{U}\cap Y\coloneqq (U_i\cap Y)_{i\in I}$ eine Überdeckung von $Y$. Dann lässt sich der Einschränkungshomomorphismus 
 \[
 H^1(\mathfrak{U},\mathcal{O})\rightarrow H^1(\mathfrak{U}\cap Y,\mathcal{O})
 \]
-durch den induktiven Limes \thref(kohomologiegruppe) auf einen Einschränkungshomomorphismus 
+durch den induktiven Limes \thref{defi:kohomologiegruppe} auf einen Einschränkungshomomorphismus 
 \[
 H^1(X,\mathcal{O})\rightarrow H^1(Y,\mathcal{O})
 \]
 fortsetzen.
 \end{bem}
+
 \begin{satz}\thlabel{endlichkeit}
 Sei $X$ eine riemannsche Fläche und seien $Y_1\Subset Y_2\subset X$ offen. Dann hat der Einschränkungshomomorphismus
 \[
@@ -933,18 +948,20 @@ W_i\Subset V_i\Subset U_i\Subset U_i^*,
 \] 
 sodass 
 \begin{enumerate}
-\item $Y_1\subset \bigcup_{i=q}^n W_i \eqqcolon Y'\Subset Y''\coloneqq \bigcup_{i=1}^n U_i\subset Y_2$,
+\item $Y_1\subset \bigcup_{i=1}^n W_i \eqqcolon Y'\Subset Y''\coloneqq \bigcup_{i=1}^n U_i\subset Y_2$,
 \item $z_i(U_i^*),z_i(U_i),z_i(V_i),z_i(W_i)$ sind alles offene Kreisscheiben in $\mathbb{C}$.
 \end{enumerate}
-Seien $\mathfrak{U}\coloneqq (U_i)_{1\leq i\leq n}$ und $\mathfrak{W}\coloneqq = (W_i)_{1\leq i\leq n}$. Dann hat nach \thref{endlichdimensional} der Einschränkungshomomorphismus
+Seien $\mathfrak{U}\coloneqq (U_i)_{1\leq i\leq n}$ und $\mathfrak{W}\coloneqq (W_i)_{1\leq i\leq n}$. Dann hat nach \thref{endlichdimensional} der Einschränkungshomomorphismus
 \[
 H^1(\mathfrak{U},\mathcal{O})\rightarrow H^1(\mathfrak{W},\mathcal{O})
 \]
-ein endlich-dimensionales Bild. Außerdem gilt wegen \thref{bsp:kohomologie} und Eigenschaft (ii), dass $H^1(U_i,\mathcal{O})=H^1(W_i,\mathcal{O})=0.$ Dann folgt aus dem Satz von Leray\thref{satz:leray} $H^1(\mathfrak{U},\mathcal{O})=H^1(Y'',\mathcal{O})$ und $H^1(\mathfrak{W},\mathcal{O})=H^1(Y',\mathcal{O})$. Da der Einschränkungshomomorphismus sich aufteilen lässt in 
+
+ein endlich-dimensionales Bild. Außerdem gilt wegen \thref{bsp:kohomologie} (ii), dass \[H^1(U_i,\mathcal{O})=H^1(W_i,\mathcal{O})=0.\] 
+Dann folgt aus dem Satz von Leray (\ref{satz:leray}), dass $H^1(\mathfrak{U},\mathcal{O})=H^1(Y'',\mathcal{O})$ und $H^1(\mathfrak{W},\mathcal{O})=H^1(Y',\mathcal{O})$. Da der Einschränkungshomomorphismus sich aufteilen lässt in 
 \[
 H^1(Y_2,\mathcal{O})\rightarrow H^1(Y'',\mathcal{O})\rightarrow H^1(Y',\mathcal{O})\rightarrow H^1(Y_1,\mathcal{O}),
 \]
-ist die Aussage beweisen.
+ und der mittlere Pfeil ein endlich-dimensionales Bild hat, ist die Aussage beweisen.
 \end{proof}
 \begin{koro}[Endlichkeitssatz]\thlabel{koro:endlichkeitssatz}
 Für eine kompakte riemannsche Fläche $X$ gilt 
