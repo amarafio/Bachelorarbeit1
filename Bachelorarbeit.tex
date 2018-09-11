@@ -480,8 +480,7 @@ Die Definitionen lassen sich auch auf höhere Definition, falls man Mannigfaltig
 		&H^0(\mathfrak{U},\mathcal{F})\coloneqq Z^0(\mathfrak{U},\mathcal{F})/B^0(\mathfrak{U},\mathcal{F})=Z^0(\mathfrak{U},\mathcal{F}).\end{align*}
 	
 \end{defi}
-Dann gehört eine 0-Kokette $(f_i)_{i\in I}$ genau dann zu $Z^0(\mathfrak{U},\mathcal{F})$, wenn $f_i\mid U_i\cap U_j=f_j\mid U_i\cap U_j$ für alle $i,j\in I$. Mit dem 2.Garbenaxiom kann man diese Elemente zu einem globalen Element $f\in \mathcal{F}(X)$ fortsetzen, somit ergibt sich eine Isomorphie
-\[ H^0(\mathfrak{U},\mathcal{F})=Z^0(\mathfrak{U},\mathcal{F}\cong \mathcal{F}(X).
+Dann gehört eine 0-Kokette $(f_i)_{i\in I}$ genau dann zu $Z^0(\mathfrak{U},\mathcal{F})$, wenn $f_i\mid U_i\cap U_j=f_j\mid U_i\cap U_j$ für alle $i,j\in I$. Mit dem 2.Garbenaxiom kann man diese Elemente zu einem globalen Element $f\in \mathcal{F}(X)$ fortsetzen, somit ergibt sich eine Isomorphie\[ H^0(\mathfrak{U},\mathcal{F})=Z^0(\mathfrak{U},\mathcal{F}\cong \mathcal{F}(X).
 \] 
 Dies motiviert die folgende Definition:
 \begin{defi}[0.Kohomologiegruppe]\thlabel{defi:0.kohomologiegruppe}
@@ -964,7 +963,7 @@ H^1(Y_2,\mathcal{O})\rightarrow H^1(Y'',\mathcal{O})\rightarrow H^1(Y',\mathcal{
  und der mittlere Pfeil ein endlich-dimensionales Bild hat, ist die Aussage beweisen.
 \end{proof}
 \begin{koro}[Endlichkeitssatz]\thlabel{koro:endlichkeitssatz}
-Für eine kompakte riemannsche Fläche $X$ gilt 
+Für eine kompakte Riemannsche Fläche $X$ gilt 
 \[
 \dim H^1(X,\mathcal{O})<\infty.
 \]
@@ -976,24 +975,24 @@ Nach diesem Satz können wir nun den Begriff Geschlecht auf sinnvolle Weise defi
 \begin{defi}[Geschlecht]\thlabel{defi:geschlecht}
 	Für eine kompakte Riemannsche Fläche $X$ nennen wir die  natürliche Zahl
 	 \[
-	 g\coloneqq = \dim H^1(X,\mathcal{O})
+	 g\coloneqq  \dim H^1(X,\mathcal{O})
 	\]
 	ihr \emph{Geschlecht}.
 \end{defi}
-Aus der Definition der Kohomologie ergibt sich direkt, dass das Geschlecht eine Invariante unter Biholomorphie für Riemannsche Flächen darstellt.  Aus \thref{bsp:kohomologie} folgt nun , dass das Geschlecht einer Kreisscheibe 0 ist, also auch genau die Anzahl der Löcher, welche das topologisch definierte Geschlecht zählen würde. 
+Aus der Definition der Kohomologie ergibt sich direkt, dass das Geschlecht eine Invariante unter Isomorphie für Riemannsche Flächen darstellt.  Aus \thref{bsp:kohomologie} folgt nun , dass das Geschlecht einer Kreisscheibe 0 ist, also auch genau die Anzahl der Löcher, welche das topologisch definierte Geschlecht zählen würde. 
 In Kapitel 4 werden wir mit ein bisschen Arbeit zeigen, dass die toplogische Definition des Geschlechts tatsächlich mit der kohomologischen Übereinstimmt. 
 %-----------------------Folgerungen------------------------------------------------------------------------%
 %----------------------------------------------------------------------------------------------------------%
-\section{Folgerungen}
-In diesem Kapitel werden einige Folgerungen des Endlichkeitssatzes ausgeführt, die sich auf die Existenz von holomorphen und meromorphen Funktionen auf riemannschen Flächen und bestimmter Teilmengen davon beziehen.
-Zur Verallgemeinerung zeigen wir hier Aussagen nicht nur für kompakte riemannsche Flächen, sondern auch für relativ kompakte Teilmengen dieser.
-Wir wissen bereits, dass auf kompakten Riemannschen Flächen alle holomorphen Funktionen konstant sind.\cite[S.10,2.8]{forster}, doch wie sieht es für die meromorphen aus? Der folgende Satz liefert eine auf relative Kompaktheit verallgemeinerte Antwort.
+\subsection{Folgerungen}
+In diesem Abschnitt werden einige Folgerungen des Endlichkeitssatzes ausgeführt, die sich auf die Existenz von holomorphen und meromorphen Funktionen auf Riemannschen Flächen und bestimmter Teilmengen davon beziehen.
+Zur Verallgemeinerung zeigen wir hier Aussagen nicht nur für kompakte Riemannsche Flächen, sondern auch für relativ kompakte Teilmengen dieser.
+Wir wissen bereits, dass auf kompakten Riemannschen Flächen alle holomorphen Funktionen konstant sind, siehe dazu (2.8) in \cite[~S.10]{forster}, doch wie sieht es für die meromorphen aus? Der folgende Satz liefert eine auf relative Kompaktheit verallgemeinerte Antwort.
 \begin{satz}\thlabel{meromorph}
-Sei $Y\Subset X$ eine relativ kompakte offene Teilmenge einer riemannschen Fläche $X$. Dann gibt es für alle $a\in Y$ eine meromorphe Funktion $f\in \mathcal{M}(Y)$, welche einen Pol in $a$ hat und auf $Y\setminus\{ a \}$ holomorph ist.
+Sei $Y\Subset X$ eine relativ kompakte offene Teilmenge einer Riemannschen Fläche $X$. Dann gibt es für alle $a\in Y$ eine meromorphe Funktion $f\in \mathcal{M}(Y)$, welche einen Pol in $a$ hat und auf $Y\setminus\{ a \}$ holomorph ist.
 \end{satz}
 \begin{proof}
-Nach \thref{endlichkeit} kann man $k\coloneqq \dim\Ima (H^1(X,\mathcal{O}\rightarrow H^1(Y,\mathcal{O})<\infty $ wählen.
-Sei $(U_1,z_1)$ eine beliebige Koordinatenumgebung von $a$ mit $z(a)=0$ und $U_2 \coloneqq U_1 \{ a \}$. Dann bildet $\mathfrak{U}\coloneqq (U_1,U_2)$ eine Überdeckung von $X$. Die Funktionen $z^{-j}$ sind holomorph auf $U_1\cap U_2= U_1\setminus\{ a \}$, also repräsentieren diese Kozykel
+Nach \thref{endlichkeit} kann man $k\coloneqq \dim\Ima \left(H^1(X,\mathcal{O})\rightarrow H^1(Y,\mathcal{O})\right)<\infty $ wählen.
+Sei $(U_1,z_1)$ eine beliebige Koordinatenumgebung von $a$ mit $z(a)=0$ und $U_2 \coloneqq X\setminus \{ a \}$. Dann bildet $\mathfrak{U}\coloneqq (U_1,U_2)$ eine Überdeckung von $X$. Die Funktionen $z^{-j}$ sind holomorph auf $U_1\cap U_2= U_1\setminus\{ a \}$, also repräsentieren diese Kozykel
 \[
 \zeta_j \in Z^1(\mathfrak{U},\mathcal{O})\text{ für } j=1,\ldots,k+1
 \]
@@ -1001,38 +1000,38 @@ mit
 \[
 \zeta_j =(\zeta_{j_{1,1}},\zeta_{j_{1,2}},\zeta_{j_{2,1}},\zeta_{j_{2,2}})=(0,z^{-j},z^j,0).
 \]
-Außerdem muss 
+Außerdem muss wegen der Wahl von $k$
 \[
-\dim\Ima (H^1(\mathfrak{U},\mathcal{O})\rightarrow H^1(\mathfrak{W},\mathcal{O})\leq k<k+1
+\dim\Ima \left(H^1(\mathfrak{U},\mathcal{O})\rightarrow H^1(\mathfrak{W},\mathcal{O})\right)\leq k<k+1
 \]
 gelten. Dies bedeutet, dass $\zeta_j|Y \in Z^1(\mathfrak{U}\cap Y,\mathcal{O})$ linear abhängig modulo der Koränder sind, genauer:\\
 Es gibt $c_1,\dots,c_{k+1}\in\mathbb{C}$, nicht alle gleich $0$, und $\eta =(f_1,f_2)\in C^0(\mathfrak{U}\cap Y,\mathcal{O}),$ sodass
 \[
 \sum_{j=1}^{k+1} c_j\zeta_j = \delta\eta \text{ auf } \mathfrak{U}\cap Y,
 \]
-also diese Summe kohomolog zum Nullelement ist. Folglich ist 
+also diese Summe zerfällt ist. Folglich ist 
 \[
 \sum_{j=1}^{k+1}c_j z^{-j} = f_2 - f_1 \text{ auf } U_1 \cap U_2 \cap Y.
 \]
-Nach den Garbenaxiomen gibt es also ein $f\in \mathcal{M}(Y)$ mit \[f|U_1\cap Y=f_1 + \sum_{j=1}^{k+1}c_j z^{-j}\]
+Nach den 2. Garbenaxiom gibt es also ein $f\in \mathcal{M}(Y)$ mit \[f\mid (U_1\cap Y) =f_1 + \sum_{j=1}^{k+1}c_j z^{-j}\]
 und 
 \[
 f|U_2\cap Y = f_2.
 \]
 Dieses $f$ hat eine Polstelle in $a$ und ist holomorph auf $Y\setminus \{ a \}$.
 \end{proof}
-Es existieren also nicht triviale meromorphe Funktionen, wir können sogar eine Menge von Stützpunkten vorgeben:
+Es existieren also nicht triviale meromorphe Funktionen, wir können für kompakte Riemannsche Flächen sogar eine Menge von Stützpunkten vorgeben:
 \begin{koro}
-Gegeben einer Menge von Stützpunkten $(a_i,c_i)\in X\times \mathbb{C}$ für $i=1,\ldots,n$, sodass die $a_i$ paarweise verschieden sind und $X$ eine kompakte Riemannsche Fläche, existiert eine meromorphe Funktion $f:X\rightarrow \mathbb{C}$, sodass
+Gegeben einer Menge von Stützpunkten $(a_i,c_i)\in X\times \mathbb{C}$ für $i=1,\ldots,n$, sodass die $a_i$ paarweise verschieden sind und $X$ eine kompakte Riemannsche Fläche, existiert eine meromorphe Funktion $f:X\rightarrow \mathbb{C}$ mit
 \[
 f(a_i)=c_i
 \]
-für alle $i=1,\ldots,n$ gilt.
+für alle $i=1,\ldots,n$.
 
 \end{koro}
 
 \begin{proof}
-Für $i\neq j$ kann man den vorherigen Satz mit $Y=X$ anwenden. Also gibt es ein $f_{i,j}\in\mathcal{M}(X)$, welches holomorph in $a_j$ und einen Pol in $a_i$ hat. Wähle $\lambda_{i,j}\in \mathbb{C}^*$, sodass 
+Für $i\neq j$ kann man den vorherigen Satz mit $Y=X$ anwenden. Also gibt es ein $f_{i,j}\in\mathcal{M}(X)$, welches holomorph in $a_j$ ist und einen Pol in $a_i$ hat. Wähle $\lambda_{i,j}\in \mathbb{C}^*$, sodass 
 \[
 f_{i,j}(a_k) \neq f_{i,j}(a_j)-\lambda_{i,j} \text{ für } k=1,\ldots,n.
 \]
@@ -1040,12 +1039,14 @@ Dann ist die Funktion
 \[
 g_{i,j}\coloneqq \frac{f_{i,j}-f_{i,j}(a_j)}{f_{i,j}-f_{i,j}(a_j)+\lambda_{i,j}}
 \]
-meromorph. Außerdem ist sie wegen der Wahl von $\lambda_{i,j}$ holomorph in $a_k,1\leq k\leq n$ und es gilt mit Grenzwertbildung $g_{i,j}(a_i)=1$, sowie $g_{i,j}(a_j)=0.$
+meromorph. Außerdem ist sie wegen der Wahl von $\lambda_{i,j}$ holomorph in $a_k,~1\leq k\leq n$ und es gilt mit Grenzwertbildung $g_{i,j}(a_i)=1$, sowie $g_{i,j}(a_j)=0.$
 Demnach erfüllen die Funktionen
 \[
 h_i\coloneqq \prod_{j\neq i} g_{i,j} \text{ für } i=1,\ldots,n
 \]
-die Gleichung $h_i(a_j)=\delta_{ij}$, folglich können wir 
+die Gleichung $h_i(a_j)=\delta_{i,j}$\footnote{
+Hiermit ist das Kronecker-Delta, $\delta_{i,j}=1$ für $i=j$ und $\delta_{i,j}=0$ sonst, gemeint.
+}, folglich können wir 
 \[
 f \coloneqq \sum_{i=1}^{n}c_i h_i
 \]
@@ -1054,24 +1055,25 @@ wählen und die gewünschten Bedingungen sind erfüllt.
 Die nächste Aussage beantwortet uns die Frage, ob auf nicht kompakten Riemannschen Flächen nicht konstante holomorphe Funktionen existieren.
 \begin{koro}\thlabel{koro:nicht konstant}
 Sei $Y\Subset X$ eine relativ kompakte offene Teilmenge einer nicht kompakten riemannschen Fläche $X$. Dann existiert eine holomorphe Funktion $f:Y\rightarrow \mathbb{C}$, die nicht konstant auf allen Zusammenhangskomponenten von $X$ ist.
+\end{koro}
 \begin{proof}
-Da $X$ nicht kompakt ist lässt sich ein Gebiet $Y\Subset Y'\Subset X$ wählen, sodass $Y'\neq Y$. Wähle nun $a\in Y'\setminus Y$, dann kann man \thref{meromorph} auf $a$ anwenden und erhält eine solche Funktion. Nach Konstruktion im Beweis von \thref{meromorph}, ist diese nicht konstant.
+Da $X$ nicht kompakt ist lässt sich ein Gebiet $Y\Subset Y'\Subset X$ wählen, sodass $Y'\neq Y$. Wähle nun $a\in Y'\setminus Y$, dann kann man \thref{meromorph} auf $a$ anwenden und erhält eine auf $Y$ holomorphe Funktion. Nach Konstruktion im Beweis von \thref{meromorph} ist diese auf keiner Zusammenhangskomponente konstant.
 \end{proof}
 
-\end{koro}
-Eine weitere zentrale Aussage über nicht kompakte riemannsche Flächen ist der folgende Satz.
+
+Eine weitere zentrale Aussage über nicht kompakte Riemannsche Flächen ist der folgende Satz.
 \begin{satz}\thlabel{satz:bild 0}
-Sei $X$ eine nicht kompakte riemannsche Fläche und seien $Y\Subset Y'\subset X$ offen. Dann gilt
+Sei $X$ eine nicht kompakte Riemannsche Fläche und seien $Y\Subset Y'\subset X$ offen. Dann gilt
 \[
-\Ima (H^1(Y',\mathcal{O})\rightarrow H^1(Y,\mathcal{O})) = 0.
+\Ima \left(H^1(Y',\mathcal{O})\rightarrow H^1(Y,\mathcal{O})\right) = 0.
 \]
 \end{satz}
 \begin{proof}
 	Wir zeigen, dass eine beliebige Kohomologieklasse in $H^1(Y',\mathcal{O})$ eingeschränkt auf $Y$ gleich $0$ ist.
 	
 	Wir wissen nach \thref{endlichkeit}, dass 
-	\[L\coloneqq \Im\left(H^1(Y',\mathcal{O})\rightarrow H^1(Y,\mathcal{O})\right)\]
-	ein endlich-dimensionaler Vektorraum ist. Sei $n\in\mathbb{N}$ seine Dimension. Wähle $\xi_1,\ldots,\xi_n\in H^1(Y',\mathcal{O})$ als die Kohomologieklassen, welche eingeschränkt auf $Y$ den Vektorraum $L$ aufspannen und $f\in\mathcal{O}(Y_)$ nach \thref{koro:nicht konstant} als eine holomorphe Funktion, welche auf keienr Zusammenhangskomponente konstant ist. Durch komponentenweise Multiplikation lassen sich Produkte $f\xi_\nu\in H^1(Y',\mathcal{O})$ definieren. Da wir die $\xi_\nu$ als Basisvektoren gewählt hatten, existieren Konstanten $c_{\nu\mu}\in\mathbb{C}$, sodass
+	\[L\coloneqq \Ima\left(H^1(Y',\mathcal{O})\rightarrow H^1(Y,\mathcal{O})\right)\]
+	ein endlich-dimensionaler Vektorraum ist. Sei $n\in\mathbb{N}$ seine Dimension. Wähle $\xi_1,\ldots,\xi_n\in H^1(Y',\mathcal{O})$ als die Kohomologieklassen, welche eingeschränkt auf $Y$ den Vektorraum $L$ aufspannen und $f\in\mathcal{O}(Y)$ nach \thref{koro:nicht konstant} als eine holomorphe Funktion, welche auf keiner Zusammenhangskomponente konstant ist. Durch komponentenweise Multiplikation lassen sich Produkte $f\xi_\nu\in H^1(Y',\mathcal{O})$ definieren. Da wir die $\xi_\nu$ als Basisvektoren gewählt hatten, existieren Konstanten $c_{\nu\mu}\in\mathbb{C}$, sodass
 	\[f\xi_\nu =\sum_{\mu=1}^n c_{\nu\mu}\xi_\mu \text{ auf } Y\text{ für } \nu=1,\ldots,n\]
 	gilt. Sei
 	\[
@@ -1081,23 +1083,28 @@ Sei $X$ eine nicht kompakte riemannsche Fläche und seien $Y\Subset Y'\subset X$
 	\[
 	F\xi_\nu\mid Y = 0\text{ für } \nu=1,\ldots,n.
 	\]
-	Sei nun $\zeta\in H^1(Y',\mathcal{O})$ eine beliebige Kohomologieklasse und $\mathfrak{U}=(U_i)_{i\in I}$ eine offene Überdeckung von $Y'$, sodass jedes $U_i$ maximal eine Nullstelle von $F$ enthält. Die Überdeckung kann so gewählt werden, da $F$ in keiner Zusammenhangskomponente identisch verschwindet. Dann lässt sich $\zeta$ durch einen Kozykel $(f_{i,j})\in Z^1(\mathfrak{U},\mathcal{O})$ repräsentieren.
-	Dann folgt, dass für $i\neq j$ die Einschränkung $F\mid U_i\cap U_j\in \mathcal{O}(U_i\cap U_j)$ nirgends verschwindet. Dann kann man also durch komponentenweise Division einen Kozykel $(g_{i,j}\in Z^1(\mathfrak{U},\mathcal{O}))$, sodass $f_{i,j}=Fg_{i,j}$ gilt. 
+	Sei nun $\zeta\in H^1(Y',\mathcal{O})$ eine beliebige Kohomologieklasse und $\mathfrak{U}=(U_i)_{i\in I}$ eine offene Überdeckung von $Y'$, sodass jedes $U_i$ maximal eine Nullstelle von $F$ enthält. Dann lässt sich $\zeta$ durch einen Kozykel $(f_{i,j})\in Z^1(\mathfrak{U},\mathcal{O})$ repräsentieren.
+	Daher verschwindet auch für $i\neq j$ die Einschränkung $F\mid U_i\cap U_j\in \mathcal{O}(U_i\cap U_j)$ nirgends und wir können somit durch komponentenweise Division einen Kozykel 
+	\[(g_{i,j}\in Z^1(\mathfrak{U},\mathcal{O}))\]
+	finden,
+	sodass $f_{i,j}=Fg_{i,j}$ gilt. 
 	Wählen wir nun $\xi\in H^1(Y,\mathcal{O})$ als die zu $(g_{i,j})$ gehörige Kohomologieklasse, so ergibt sich also $\zeta =F\xi$. Dann gilt
-	$\zeta\mid Y = F\xi\mid Y =0$.
+	\[\zeta\mid Y = F\xi\mid Y =0\].
 	\end{proof}
 \begin{bem}
-Analog zum Endlichkeitssatz lässt sich also auch folgern, dass jede relativ kompakte offene Teilmenge einer nicht kompakten riemannschen Fläche Geschlecht 0 hat.
+Analog zum Endlichkeitssatz gilt also auch, dass jede relativ kompakte offene Teilmenge einer nicht kompakten Riemannschen Fläche Geschlecht 0 hat.
 \end{bem}
-Daraus kann man eine Verallgemeinerung des Lemmas von Dolbeault auf Riemannschen Flächen\cite[S.97,13.2]{forster} folgern.
+Aus diesem Satz kann man eine Verallgemeinerung des Lemmas von Dolbeault (\ref{satz:dolbeault}) folgern.
 \begin{koro}
-Sei $X$ eine nicht kompakte riemannsche Fläche und seien $Y\Subset Y'\subset X$ offen- Dann gibt es für jede Differentialform $\omega \in \mathcal{E}^{0,1}$ ein $f\in \mathcal{E}(Y)$ mit 
+Sei $X$ eine nicht kompakte riemannsche Fläche und seien $Y\Subset Y'\subset X$ offen. Dann gibt es für jede Differentialform $\omega \in \mathcal{E}^{0,1}$ ein $f\in \mathcal{E}(Y)$ mit 
 \[
-\dif ''f = \omega|Y.
+\dif ''f = \omega\mid Y.
 \]
 \end{koro}
 \begin{proof}
-	Nach dem Lemma von Dolbeault\cite[S.97,13.2]{forster} ist dieses Problem lokal auf Kreisscheiben lösbar. Folglich gibt es eine offene Überdeckung $\mathfrak{U}=(U_i)_{i\in I}$ von $Y'$ und für jedes $i\in I$ differenzierbare Funktionen $f_i\in \mathcal{E}(U_i)$ mit $\dif ''f_i = \omega \mid U_i$. Dann gilt für die Differenzen $f_i-f_j\in\mathcal{O}(U_i\cap U_j)$, sie repräsentieren also nach der Kozykelrelation einen Kozyel $(f_i-f_j)\in Z^1(\mathfrak{U},\mathcal{O})$. Nach dem vorherigen \thref{satz:bild 0} zerfällt der Kozykel eingeschränkt auf $Y$, also existieren holomorphe Funktionen $g_i\in\mathcal{O}(U_i\cap Y)$, sodass
+	Nach dem Lemma von Dolbeault (\ref{satz:dolbeault}) ist dieses Problem lokal auf Kreisscheiben lösbar. Folglich gibt es eine offene Überdeckung $\mathfrak{U}=(U_i)_{i\in I}$ von $Y'$ und für jedes $i\in I$ differenzierbare Funktionen $f_i\in \mathcal{E}(U_i)$ mit \[
+	\dif ''f_i = \omega \mid U_i.\] 
+	Dann gilt für die Differenzen $f_i-f_j\in\mathcal{O}(U_i\cap U_j)$, sie repräsentieren also nach der Kozykelrelation einen Kozykel $(f_i-f_j)\in Z^1(\mathfrak{U},\mathcal{O})$. Nach dem vorherigen \thref{satz:bild 0} zerfällt der Kozykel eingeschränkt auf $Y$, also existieren holomorphe Funktionen $g_i\in\mathcal{O}(U_i\cap Y)$, sodass
 	\[
 	f_i-f_j=g_i-g_j\text{ auf } U_i\cap U_j\cap Y
 	\]
@@ -1105,16 +1112,18 @@ Sei $X$ eine nicht kompakte riemannsche Fläche und seien $Y\Subset Y'\subset X$
 	\[
 	f_i-g_i=f_j-g_j.
 	\]
-	 Nach Garbenaxiom finden wir also eine Funktion $f\in \mathcal{E}(Y)$ mit
+	 Nach zweitem Garbenaxiom finden wir also eine Funktion $f\in \mathcal{E}(Y)$ mit
 	 \[
 	 f=f_i-g_i\text{ auf }U_i\cap Y\text{ für alle }i\in I.
 	 \]
-	 Genau diese Funktion löst die Gleichung $\dif'' f=\omega\mid Y$.
+	 Genau diese Funktion löst die Gleichung
+	 \[
+	 \dif'' f=\omega\mid Y\].
 	 \end{proof}
 \begin{bem}
 	Die letzten zwei Aussagen lassen sich tatsächlich, mit anderen Mitteln weiter verallgemeinern:
 	
-	Es lässt sich zeigen, dass für jede nicht kompakte Riemannsche Fläche $H^1(X,\mathcal{O})=0$ gilt\cite[S.179,26.1]{forster} und dass die Differentialgleichung sogar global lösbar ist.\cite[S.179,25.6]{forster}.
+	Es lässt sich zeigen, dass für jede nicht kompakte Riemannsche Fläche $H^1(X,\mathcal{O})=0$ gilt\cite[S.179,26.1]{forster} und dass die Differentialgleichung sogar global lösbar ist\cite[S.179,25.6]{forster}.
 \end{bem}
 %------------------------------------------------------------------------------------------------%
 %4: DER SATZ VON RIEMANN-ROCH%
@@ -1135,7 +1144,7 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 	0,& f\text{ ist in }a\text{ holomorph und ungleich }0,\\
 	k,&f\text{ hat in }a\text{ eine Nullstelle }k\text{-ter Ordnung},\\
 	-k,&f\text{ hat in }a\text{ einen Pol }k\text{-ter Ordnung},\\
-	\infty,&f\text{ ist in einer Umgebung von}a\text{ identisch}0.\\
+	\infty,&f\text{ ist in einer Umgebung von }a\text{ identisch }0.\\
 	\end{cases}
 	\]
 	Dann ist auch für jede meromorphe Funktion $f\in \mathcal{M}(X)\setminus \{0\}$ die Abbildung 
@@ -1143,11 +1152,11 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 	(f):X\rightarrow \mathbb{Z},
 	x\mapsto \ord_x f
 	\]
-	ein Divisor, genannt \emph{kanonischer Divisor}. Fallls $(f)\geq D$ für einen Divisor $D$, so heißt $f$ \emph{Vielfaches} des Divisors $D$.
-	Sei $\omega\in\mathcal{M}^{(1)}(Y)$ und $(U,z)$ eine Koordinatenumgebung von $a\in X$, also kann man auf $U\cap Y$ schreiben $\omega =f\dif z$, wobei $f\in\mathcal{M\cap Y}$.Dann definieren wir analog
+	ein Divisor, genannt \emph{Hauptdivisor}. Falls $(f)\geq D$ für einen Divisor $D$, so heißt $f$ \emph{Vielfaches} des Divisors $D$.
+	Sei $\omega\in\mathcal{M}^{(1)}(Y)$ und $(U,z)$ eine Koordinatenumgebung von $a\in X$, also kann man auf $U\cap Y$ schreiben $\omega =f\dif z$, wobei $f\in\mathcal{M\cap Y}$. Wir definieren analog
 	\[\textstyle{\ord_a}\omega\coloneqq \textstyle{\ord_a}f.
 	\]
-	Dann ist auch $x\mapsto \ord_x\omega$ ein Divisor, notiert mit $(\omega)$, genannt \emph{kanonischer Divisor}. Zwei Divisoren $D,D'$ nennen wir \emph{äquivalent}, falls ihre Differenz $D'-D$ ein Hauptdivisor ist.
+	Dann ist auch $x\mapsto \ord_x\omega$ ein Divisor, notiert mit $(\omega)$ und genannt \emph{kanonischer Divisor}. Zwei Divisoren $D,D'$ nennen wir \emph{äquivalent}, falls ihre Differenz $D'-D$ ein Hauptdivisor ist.
 \end{defi}
 \begin{bem}
 	Eine Funktion $f$ ist genau dann holomorph, wenn $(f)\geq 0$. Außerdem gelten folgende Beziehungen zwischen den oben genannten Divisoren:
@@ -1159,34 +1168,34 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 \end{bem}
 \begin{defi}[Grad eines Divisors]\thlabel{defi:grad}
 	Für eine kompakte Riemannsche Fläche $X$ ist jeder Divisor $D\in Div(X)$ nur an endlich vielen Punkten ungleich $0$. Dann lässt sich der Grad definieren als:
-	\begin{align}
+	\begin{align*}
 		\deg:&Div(X)\rightarrow \mathbb{Z},\\
 			&\deg D\coloneqq \sum_{x\in X}D(x).
-	\end{align}
+	\end{align*}
 	\end{defi}
 \begin{bem}
-	Für Hauptdivisoren $(f)$ auf kompakten Riemannschen Flächen gilt $\deg(f)=0$, da dort meromorphe Funktionen die selbe Anzahlvon Polstellen wie Nullstellen haben[Forsterrr]. Daher haben äquivalente Divisoren den selben Grad.
+	Für Hauptdivisoren $(f)$ auf kompakten Riemannschen Flächen gilt $\deg(f)=0$, da dort meromorphe Funktionen die selbe Anzahl von Polstellen wie Nullstellen haben, vergleiche \cite[~S.28]{forster}. Daher haben äquivalente Divisoren den selben Grad.
 \end{bem}
 \begin{defi}[Die Garben $\mathcal{O}_D$ und $\Omega_D$]\thlabel{defi:divisorgarbe}
 	Sei $D\in Div(X)$ ein Divisor einer Riemannschen Fläche $X$. Wir definieren
-	\[\mathcal{O}_D(U)\coloneqq \left\{ f\in\mathcal{M}(U);\textstyle{ord_x (f)}\geq -D\text{ für alle }x\in U \right\}
+	\[\mathcal{O}_D(U)\coloneqq \left\{ f\in\mathcal{M}(U);~\textstyle{ord_x (f)}\geq -D\text{ für alle }x\in U \right\}
 	\]
 	als Menge aller meromorphen Funktionen auf $U$, die ein Vielfaches des Divisors $D$ sind. Dann gilt für den Nulldivisor $\mathcal{O}_0=\mathcal{O}$ und $\mathcal{O}_D$ bildet mit den natürlichen Einschränkungshomomorphismen eine Garbe. Analog dazu sei die Garbe $\Omega_D$ definiert durch
 	\[
-	\Omega_D\coloneqq \left\{\omega \in \mathcal{M}^{(1)}(U); \textstyle{\ord_x (\omega)}\geq -D\text{ für alle } x\in U)\right\}.
+	\Omega_D\coloneqq \left\{\omega \in \mathcal{M}^{(1)}(U); ~\textstyle{\ord_x (\omega)}\geq -D\text{ für alle } x\in U)\right\}.
 	\]
-	Genauso gilt $\Omega_0=\Omega.$
+	Auch hier gilt $\Omega_0=\Omega.$
 \end{defi}
 \begin{lemma}\thlabel{lemma:garbenisomorphie}
 	\begin{enumerate}
 		\item Für zwei äquivalente Divisoren $D,D'\in Div(X)$ sind die Garben $\mathcal{O}_D$ und $\mathcal{O}_{D'}$ isomorph.
 		\item 
-		Für einen kanonischen Divisor $K=(\omega)$ einer nicht verschwindenden Differentialform $\omega in \mathcal{M}^{(1)}(X)$ sind die Garben $\Omega_{D+k}$ und $\Omega_D$ isomorph.
+		Für einen kanonischen Divisor $K=(\omega)$ einer nicht verschwindenden Differentialform $\omega\in \mathcal{M}^{(1)}(X)$ sind die Garben $\Omega_{D+k}$ und $\Omega_D$ isomorph.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
 	\begin{enumerate}
-		\item Wähle $\psi in \mathcal{M}(X)\setminus \{0\}$, sodass $D-D'=(\psi)$. Dann haben wir den Garbenisomorphismus
+		\item Wähle $\psi \in \mathcal{M}(X)\setminus \{0\}$, sodass $D-D'=(\psi)$. Dann haben wir den Garbenisomorphismus
 		\begin{align*}
 			&\mathcal{O}_D\rightarrow \mathcal{O}_{D'},\\
 			&f\mapsto \psi f.
@@ -1209,14 +1218,14 @@ Wir können nun mit einfachen Mitteln eine wichtige Aussage über die Garbe $\ma
 	\[
 	\deg (f)\geq -\deg D>0.
 	\]
-	Das ist ein Widerspruch zu $\deg (f)=0$, da $f$ holomorph ist.
+	Das ist ein Widerspruch zu $\deg (f)=0$, da $f$ meromorph ist.
 \end{proof}
 \begin{defi}[Die Garben $\mathcal{H}^D_{D'}$]\thlabel{defi:produktgarbe}
 	Für zwei Divisoren $D,D'\in Div(X)$ einer Riemannschen Fläche $X$ mit $D\leq D'$ gilt für jede offene Menge $U\subset X$, dass $\mathcal{O}_D(U)\subset \mathcal{O}_{D'}(U)$. Damit hat man auf natürliche Weise einen Garbenepimorphismus $\mathcal{O}_D\rightarrow \mathcal{O}_{D'}$, bestehend aus Inklusionsabbildungen. Dann kann man auch den Quotient der Halme $\mathcal{O}_{D',x}/\mathcal{O}_{D,x}$ betrachten. Wir definieren die Garbe $\mathcal{H}^D_{D'}$ durch
 	\[
 	\mathcal{H}^D_{D'}(U)\coloneqq \prod_{x\in U} \mathcal{O}_{D',x}/\mathcal{O}_{D,x}.
 	\]
-	Dann gilt für den Halm $\mathcal{H}^D_{D',x}=\mathcal{O}_{D',x}/\mathcal{O}_{D,x}$. Damit gibt es also einen Garbenepimorhpismus $\mathcal{O}_{D'}\rightarrow \mathcal{H}^D_{D'}$,d dessen Kern $\mathcal{O}_D$ ist. Insgesamt gibt es eine exakte Sequenz
+	Dann gilt für den Halm $\mathcal{H}^D_{D',x}=\mathcal{O}_{D',x}/\mathcal{O}_{D,x}$. Damit gibt es also einen Garbenepimorhpismus $\mathcal{O}_{D'}\rightarrow \mathcal{H}^D_{D'}$, dessen Kern $\mathcal{O}_D$ ist. Insgesamt gibt es eine exakte Sequenz
 	\begin{center}
 		\begin{tikzcd}
 			0\rar &\mathcal{O}_D\rar &\mathcal{O}_{D'}\rar &\mathcal{H}^D_{D'}\rar &0.
