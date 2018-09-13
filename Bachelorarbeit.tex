@@ -1220,48 +1220,93 @@ Wir können nun mit einfachen Mitteln eine wichtige Aussage über die Garbe $\ma
 	\]
 	Das ist ein Widerspruch zu $\deg (f)=0$, da $f$ meromorph ist.
 \end{proof}
-\begin{defi}[Die Garben $\mathcal{H}^D_{D'}$]\thlabel{defi:produktgarbe}
-	Für zwei Divisoren $D,D'\in Div(X)$ einer Riemannschen Fläche $X$ mit $D\leq D'$ gilt für jede offene Menge $U\subset X$, dass $\mathcal{O}_D(U)\subset \mathcal{O}_{D'}(U)$. Damit hat man auf natürliche Weise einen Garbenepimorphismus $\mathcal{O}_D\rightarrow \mathcal{O}_{D'}$, bestehend aus Inklusionsabbildungen. Dann kann man auch den Quotient der Halme $\mathcal{O}_{D',x}/\mathcal{O}_{D,x}$ betrachten. Wir definieren die Garbe $\mathcal{H}^D_{D'}$ durch
-	\[
-	\mathcal{H}^D_{D'}(U)\coloneqq \prod_{x\in U} \mathcal{O}_{D',x}/\mathcal{O}_{D,x}.
-	\]
-	Dann gilt für den Halm $\mathcal{H}^D_{D',x}=\mathcal{O}_{D',x}/\mathcal{O}_{D,x}$. Damit gibt es also einen Garbenepimorhpismus $\mathcal{O}_{D'}\rightarrow \mathcal{H}^D_{D'}$, dessen Kern $\mathcal{O}_D$ ist. Insgesamt gibt es eine exakte Sequenz
-	\begin{center}
-		\begin{tikzcd}
-			0\rar &\mathcal{O}_D\rar &\mathcal{O}_{D'}\rar &\mathcal{H}^D_{D'}\rar &0.
-		\end{tikzcd}
-	\end{center}
+\begin{defi}[Wolkenkratzergarbe]\thlabel{defi:wolkenkratzergarbe}                       
+    Sei $P\in X$ ein Punkt einer Riemannschen Fläche $X$. Sei die Wolkenkratzergarbe $\mathbb{C}_P$ definiert durch
+    \[
+    \mathbb{C}_P(U)\coloneqq \begin{cases}
+                           \mathbb{C},&\text{ falls } P\in U,\\
+                           0,& \text{ sonst}.\\
+                        \end{cases}
+    \]
+	Die Einschränkungsabbildungen sind hier jeweils entweder der Nullhomomorphismus oder die Identität.
 \end{defi}
-Wir können wieder eine Aussage über die Kohomologiegruppe der Garbe $\mathcal{H}^D_{D'}$ treffen.
+Wir können wieder eine Aussage über die Kohomologiegruppen der Wolkenkratzergarbe $\mathbb{C}_P$ treffen.
 \begin{lemma}\thlabel{lemma:divisor kohomologie}
-	Mit der selben Notation wie oben gilt
-	\[H^1(X,\mathcal{H}^D_{D'})=0.
-	\]
-	Falls $X$ eine kompakte Riemannsche Fläche ist, so gilt außerdem 
-	\[
-	\dim H^0(X,\mathcal{H}^D_{D'})=\deg D'-\deg D.
-	\]
-	\end{lemma}
+Für eine Riemannsche Fläche $X$ gilt
+\begin{enumerate}
+    \item $H^0(X,\mathbb{C}_P)\cong \mathbb{C},$
+    \item $H^1(X,\mathbb{C}_P) = 0.$ 
+\end{enumerate}
+    \end{lemma}
 \begin{proof}
-Sei $S\coloneqq\left\{x\in X;D(x)\neq D'(x)\right\}$ die Menge aller Punkte, an denen die Divisoren nicht gleich sind. Da $D-D'$ auch ein Divisor ist, muss diese Menge diskret und abgeschlossen sein. Wir wählen nun eine beliebige Kohomologieklasse $\xi\in H^1(X,\mathcal{H}^D_{D'})$, welche durch einen Kozykel in $Z^1(\mathfrak{U},\mathcal{H}^D_{D'})$ repräsentiert wird für eine offene Überdecking $\mathfrak{U}=(U_i)_{i\in I}$. Wir können eine feinere Überdeckung $(V_k)_{k\in K}=\mathfrak{V}<\mathfrak{U}$ wählen, sodass jedes $V_k$ maximal einen Punkt aus $S$ enthält. Dann gilt für $k\neq l$, dass 
-\[\mathcal{H}^D_{D'}(V_k\cap V_l)=0
-\] 
-und somit auch \[Z^1(\mathfrak{V},\mathcal{H}^D_{D'})=0\]. Folglich ist $\xi = 0$.
-
-Falls $X$ nun kompakt ist, ist der Divisor $D-D'$ nur an endlich vielen Punkten verschieden von $0$, und somit ist $S$ endlich. Dann folgt
-\[ \dim H^0(X,\mathcal{H}^D_{D'})=\dim \prod_{x\in S} \mathcal{O}_{D',x}/\mathcal{O}_{D,x}=\sum_{x\in S} (D'(x)-D(x))=\deg D-\deg D'.
-\]
-
+    Die erste Aussage folgt direkt aus der Definition $H^0(X,\mathbb{C}_P)=\mathbb{C}_P(X)=\mathbb{C}$.
+    
+    Für die zweite Aussage wählen wir eine Kohomologieklasse $\xi\in H^1(X,\mathbb{C}_P)$, repräsentiert durch einen Kozykel in $Z^1(\mathfrak{U},\mathbb{C}_P)$ für eine Überdeckung $\mathfrak{U}=(U_i)_{i\in I}$. Dazu können wir eine feinere Überdeckung $\mathfrak{V}=(V_{\alpha})_{\alpha\in A}$ wählen, sodass $P$ in nur einem der $V_{\alpha}$ enthalten ist. Dann gilt deswegen
+    \[
+    C^1(\mathfrak{V},\mathbb{C}_P)=\prod_{\alpha,\beta\in A^2} \mathbb{C}_P(V_{\alpha}\cap V_{\beta})=0
+    \]
+    und daher auch $Z^1(\mathfrak{V},\mathbb{C}_P)=0$. Per Definition der Kohomologiegruppe durch den induktiven Limes haben wir also $\xi = 0$.
 \end{proof}
-Das folgende Korollar ergibt sich aus der exakten Garbensequenz in \thref{defi:produktgarbe}, da aus jeder exakten Garbensequenz eine exakte Kohomologiesequenz folgt, siehe für den Beweis letzterer Aussage [FORSTER KAPITEL 15]
+Wir definieren noch einen weiteren Divisor und damit eine exakte Garbensequenz, bevor wir zu dem Satz von Riemann-Roch kommen können.
+\begin{defi}\thlabel{defi:punktdivisor}
+    \begin{enumerate}
+        \item 
+        Sei $D$ ein Divisor auf der Riemannschen Fläche $X$ und $P\in X$ ein Punkt. Wir bezeichnen ebenso mit $P$ den dementsprechenden Divisor, definiert durch
+        \[
+        P(x)\coloneqq \begin{cases}
+                    1,&\text{ falls } x=P,\\
+                    0,& sonst.
+                \end{cases}
+        \]
+        Es gilt dann $D\leq D+P$, also gibt es eine natürliche Inklusionsabbildung $\mathcal{O}_D\rightarrow \mathcal{O}_{D+P}$ und somit auch einen Garbenmonomorphismus.
+        
+        \item
+        Sei $(V,z)$ eine Koordinatenumgebung von $P\in X$ mit $z(P)=0$. Wir definieren einen Garbenhomomorphismus 
+        \[\beta :\mathcal{O}_{D+P}\rightarrow \mathbb{C}_P \]
+        wie folgt:
+        
+        Sei $U\subset X$ offen.
+        \begin{enumerate}
+            \item 
+            Falls $P\notin U$ sei $\beta_U$ der Nullhomomorphismus.
+            \item
+            Falls $P\in U$, wähle ein $f\in\mathcal{O}_{D+P}$, dann kann $f$ durch seine Laurentreihe bezüglich der Koordinate $z$ geschrieben werden als
+            \[
+            f=\sum_{n=-k-1}^{\infty}c_n z^{-1},
+            \]
+            wobei $k=D(P)$. Setze nun
+            \[
+            \beta_U(f)\coloneqq c_{-k-1}\in\mathbb{C}=\mathbb{C}_P(U).
+            \]
+            Da man für jede komplexe Zahl eine solche meromorphe Funktion in $\mathcal{O}_{D+P}$ finden kann, handelt es sich um einen Garbenepimorphismus. 
+        \end{enumerate}
+        Damit ist also die Sequenz
+        \begin{center}
+            \begin{tikzcd}[row sep = small, column sep = small]
+            0\rar &\mathcal{O}_{D}\rar &\mathcal{O}_{D+P}\rar{\beta}&\mathbb{C}_P\rar &0
+            \end{tikzcd}
+        \end{center}
+        exakt.
+    \end{enumerate}
+\end{defi}
+Das folgende Korollar ergibt sich aus dieser exakten Garbensequenz , da aus jeder exakten Garbensequenz eine exakte Kohomologiesequenz folgt, siehe dazu (15.12) in \cite[~S.113]{forster}.
 \begin{koro}\thlabel{koro:exakte kohomologiesequenz}
 	Es gibt eine exakte Garbensequenz
 	\begin{center}
-		\begin{tikzcd}
-			0\rar &H^0(X,\mathcal{O}_D)\rar &H^0(X,\mathcal{O}_{D'})\rar&H^1(X,\mathcal{O}_D)\rar& H^1(X,\mathcal{O}_{D'})\rar &0 
+		\begin{tikzcd}[row sep = small, column sep = small]
+			0\rar &H^0(X,\mathcal{O}_D)\rar &H^0(X,\mathcal{O}_{D+P} \rar &\mathbb{C}\rar &H^1(X,\mathcal{O}_D)\rar& H^1(X,\mathcal{O}_{D+P})\rar &0 
 		\end{tikzcd}
 	\end{center}
 \end{koro}
+
+\begin{koro}
+Seien $D\leq D'$ Divisoren auf einer Riemannschen Fläche $X$. Dann gibt es einen Garbenepimorphismus
+\[ H^1(X,\mathcal{O}_D)\rightarrow H^1(X,\mathcal{O}_{D'})\].
+\end{koro}
+\begin{proof}
+    Falls wir $D'=D+P$ schreiben können, ergibt sich diese Aussage direkt aus \thref{defi:punktdivisor}. Sonst können wir $D'=D+P_1+\ldots+P_M$ schreiben für $P_i\in X$, somit folgt die Aussage per Induktion.
+\end{proof}
+
 Schließlich kann der Satz von Riemann-Roch formuliert werden. Er gibt uns Auskunft über die Dimension der nullten und ersten Kohomologiegruppen bezüglich $\mathcal{O}_D$ und wie diese im Verhältnis miteinander stehen. Aus ihm lassen sich wichtige Folgerungen ziehen.
 \begin{satz}[Riemann-Roch]\thlabel{satz:riemann-roch}
 Für jeden Divisor $D$ einer kompakten Riemannschen Fläche $X$ vom Geschlecht $g$ sind die Kohomologiegruppen $H^0(X,\mathcal{O}_D)$ und $H^1(X,\mathcal{O}_D)$ endlich-dimensional und es gilt
@@ -1272,12 +1317,12 @@ Für jeden Divisor $D$ einer kompakten Riemannschen Fläche $X$ vom Geschlecht $
 \begin{proof}
 	Es soll ein induktives Argument auf den Divisor angewandt werden. Dazu betrachten wir zunächst den Nulldivisor $D=0$.
 	
-	Für $D=0$ gilt $\mathcal{O}_0=\mathcal{O}$ und somit $H^0(X,\mathcal{O})=\mathcal{O}(X)$. Also haben wir $\dim H^0(X,\mathcal{O})=1$, da $\mathcal{O}(X)$ nur aus den konstanten Funktionen besteht\cite[S. 10]{forster}, und $\dim H^1(X,\mathcal{O})=g<\infty$ nach \ref{koro:endlichkeitssatz}.Da $\deg D=0$, wird die Aussage des Satzes erfüllt.
+	Für $D=0$ gilt $\mathcal{O}_0=\mathcal{O}$ und somit $H^0(X,\mathcal{O})=\mathcal{O}(X)$. Also haben wir $\dim H^0(X,\mathcal{O})=1$, da $\mathcal{O}(X)$ nur aus den konstanten Funktionen besteht nach \cite[~S. 10]{forster}, und $\dim H^1(X,\mathcal{O})=g<\infty$ nach \ref{koro:endlichkeitssatz}. Da $\deg D=0$, wird die Aussage des Satzes erfüllt.
 	
-	Seien $D,D'\in Div(X)$ mit $D\leq D'$. Für einen der Divisoren sei die Aussage des Satzes bereits erfüllt. Wir betrachten die exakte Kohomologiesequenz aus \thref{koro:exakte kohomolohiesequenz} und zerlegen sie in zwei exakte Sequenzen. Dazu seien 
+	Seien mit der Notation aus \thref{defi:punktdivisor} $D,D'\in Div(X)$ mit $D'=D+P$. Für einen der Divisoren sei die Aussage des Satzes bereits erfüllt. Wir betrachten die exakte Kohomologiesequenz aus \thref{koro:exakte kohomologiesequenz} und zerlegen sie in zwei exakte Sequenzen. Dazu seien 
 	\begin{align*}
-	V&\coloneqq \Ima\left(H^0(X,\mathcal{O}_D)\rightarrow H^0(X,\mathcal{H}^D_{D'})\right)\\
-	W&\coloneqq H^0(X,\mathcal{H}^D_{D'})/V.
+	V&\coloneqq \Ima\left(H^0(X,\mathcal{O}_D)\rightarrow \mathbb{C}\right)\\
+	W&\coloneqq \mathbb{C}/V.
 		\end{align*}
 	Dann ist die Sequenz
 	\begin{center}
@@ -1285,18 +1330,21 @@ Für jeden Divisor $D$ einer kompakten Riemannschen Fläche $X$ vom Geschlecht $
 			0\rar &H^0(X,\mathcal{O}_D)\rar&H^0(X,\mathcal{O}_{D'})\rar&V\rar&0
 		\end{tikzcd}
 	\end{center}
-exakt, da \[\ker(V\rightarrow 0)=V=\Ima\left(H^0(X,\mathcal{O}_{D'})\rightarrow H^0(X,\mathcal{H}^D_{D'})\right)= \Ima\left(H^0(X,\mathcal{O}_{D'})\rightarrow V\right)\]
-gilt und der Rest nach \ref{koro:exakte kohomologiesequenz} Exaktheit erfüllt. Die Sequenz
+exakt, da 
+\[\ker(V\rightarrow 0)=V=\Ima\left(H^0(X,\mathcal{O}_{D'})\rightarrow \mathbb{C}\right)= \Ima\left(H^0(X,\mathcal{O}_{D'})\rightarrow V\right)\]
+gilt und der Rest nach (\ref{koro:exakte kohomologiesequenz}) Exaktheit erfüllt. Die Sequenz
 \begin{center}
 	\begin{tikzcd}[row sep=small, column sep = small]
 		0\rar&W\rar&H^1(X,\mathcal{O}_D)\rar&H^1(X,\mathcal{O}_{D'})\rar&0
 	\end{tikzcd}
 \end{center}
-ist auch exakt, da nach der Definition von $W$ und der Exaktheit von \ref{koro:exakte kohomologiesequenz} genau $\ker\left(H^0(X,\mathcal{H}^D_{D'})\rightarrow H^1(X,\mathcal{O}_D)\right)=V$ herausgeteilt wird, und somit die Abbildung $W\rightarrow H^1(X,\mathcal{O}_D)$ injektiv ist. Also gilt 
+ist auch exakt, da nach der Definition von $W$ und der Exaktheit der Sequenz in (\ref{koro:exakte kohomologiesequenz}) genau \[
+\ker\left(\mathbb{C}\rightarrow H^1(X,\mathcal{O}_D)\right)=V\]
+herausgeteilt wird, und somit die Abbildung $W\rightarrow H^1(X,\mathcal{O}_D)$ injektiv ist. Also gilt 
 \[
 \ker \left(W\rightarrow H^1(X,\mathcal{O}_D)\right)=0=\Ima(0\rightarrow W).
 \]
-Nach der Dimensionsformel[ref?] und \thref{lemma:divisor kohomologie} ist $\dim V+\dim W=\dim H^0(X,\mathcal{H}^D_{D'})=\deg D'-\deg D$, also sind beide Räume endlich-dimensional. Wenden wir das Splitting Lemma(siehe dazu das Buch \cite[S. 147]{algebraic}) auf die zwei Sequenzen an, erhalten wir
+Dann ist $\dim V+\dim W=\dim \mathbb{C}=1=\deg D'-\deg D$, also sind beide Räume endlich-dimensional. Wenden wir das Splitting Lemma( siehe dazu das Buch \cite[S. 147]{algebraic}) auf die zwei Sequenzen an, erhalten wir
 \begin{align*}
 	&H^0(X,\mathcal{O}_{D'})=H^0(X,\mathcal{O}_D)\oplus V,\\
 	&H^1(X,\mathcal{O}_D)=H^1(X,\mathcal{O}_{D'})\oplus W.
@@ -1316,7 +1364,7 @@ Durch Umformen erhält man
 \dim H^0(X,\mathcal{O}_{D'})&-\dim H^1(X,\mathcal{O}_{D'})-\deg D'=\\
 							&=\dim H^0(X,\mathcal{O}_D)+\dim H^1(X,\mathcal{O}_D)-\deg D.	
 \end{align*}
-Falls die Aussage für einen der beiden Divisoren gilt, so muss sie folglich auch für den anderen gelten. Damit gilt sie für jeden Divisor $D'\geq 0$. Sei $D$ ein beliebiger Divisor. Dann ist $D'=\max \{0,D\}\geq 0$ ein Divisor mit $D\leq D'$. Damit gilt die Aussage für jeden Divisor.
+Falls die Aussage für einen der beiden Divisoren gilt, so muss sie folglich auch für den anderen gelten. Damit gilt bereits sie für jeden Divisor $D'\geq 0$. Sei $D$ ein beliebiger Divisor. Dann kann man $D=P_1+\ldots+P_m-P_{m+1}-\ldots-P_n$ schreiben, wobei $P\in X.$ Startet man mit dem Nulldivisor, folgt durch die Aussage davor per Induktion, dass der Satz von Riemann-Roch auch für $D$ gilt.
 \end{proof}
 Eine ähnliche Aussage wie im Existenzsatz für Abbildungen[VERWEIS EINFÜGEN] kann man mithilfe des Satzes von Riemann-Roch, nun treffen. Sie liefert auch eine Einschränkung der Polstellenordnung durch das Geschlecht der Fläche.
 \begin{satz}\thlabel{satz:polstellenordnung}
@@ -1331,7 +1379,7 @@ Eine ähnliche Aussage wie im Existenzsatz für Abbildungen[VERWEIS EINFÜGEN] k
 		0, &sonst.
 	\end{cases}
 	\]
-	Dann ist $\deg D = g+1$ und es gilt nach Riemann-Roch(\ref{satz:riemann-roch})
+	Dann ist $\deg D = g+1$ und es gilt nach Riemann-Roch (\ref{satz:riemann-roch})
 	\[
 	\dim H^0(X,\mathcal{O}_D)\geq 1-g+\deg D=2 
 	\]
@@ -1341,19 +1389,19 @@ Eine ähnliche Aussage wie im Existenzsatz für Abbildungen[VERWEIS EINFÜGEN] k
 	Für jede kompakte Riemannsche Fläche $X$ gibt es eine Überlagerung $f:X\rightarrow \mathbb{P}_1$ mit Blätterzahl $\leq g+1$.
 	\end{koro}
 \begin{proof}
-	Die Abbildung aus \thref{satz:polstellenordnung} lässt sich als (nicht konstante) holomorphe Funktion $f:X\rightarrow \mathbb{P}_1$ auffassen\cite[S.8, Satz 1.15]{forster}, ist also eine Überlagerung der Zahlenkugel\cite[S.18, Satz 4.2]{forster}. Nach Satz 4.24 in \cite{forster} hat dann jeder Punkt die Vielfachheit $\leq g+1$, folglich ist die Blätterzahl $\leq g+1$.
+	Die Abbildung aus \thref{satz:polstellenordnung} lässt sich als (nicht konstante) holomorphe Funktion $f:X\rightarrow \mathbb{P}_1$ auffassen (vgl. \cite[~S.8]{forster}), ist also eine Überlagerung der Zahlenkugel (vgl.\cite[S.18, Satz 4.2]{forster}). Nach Satz 4.24 in \cite{forster} hat dann jeder Punkt die Vielfachheit $\leq g+1$, folglich ist die Blätterzahl $\leq g+1$.
 	
 \end{proof}
 \begin{koro}
 	Jede Riemannsche Fläche vom Geschlecht null ist isomorph zur Riemannschen Zahlenkugel $\mathbb{P}_1$.
 \end{koro}
 \begin{proof}
-	Die Abbildung aus dem vorherigen Korollar hat in diesem Fall in jedem Punkt die Vielfachheit $1$, damit ist sie injektiv. Nach \cite[Satz 2.7]{forster} ist sie surjektiv und damit ist die Umkehrabbildung nach \cite[Korollar 2.5]{forster} holomorph. 
+Das folgt sofort daraus, dass eine $1$-blättrige Überlagerung biholomorph ist.
 \end{proof}
 Eine weitere wichtige Folgerung betrifft den Grad von kanonischen Divisoren:
 \begin{satz}\thlabel{satz:degw}
 	Sei $\omega$ eine nichtverschwindende, meromorphe Differentialform auf einer kompakten Riemannschen Fläche $X$ vom Geschlecht $g$. Dann gilt 
-	\[\deg (\omega = 2g-2).
+	\[\deg (\omega) = 2g-2.
 	\]
 \end{satz}
 \begin{proof}
@@ -1375,16 +1423,18 @@ Eine weitere wichtige Folgerung betrifft den Grad von kanonischen Divisoren:
 \end{satz}
 \begin{proof}
 Für eine nicht verschwindende, meromorphe Differentialform $\omega\in \mathcal{M}^{(1)}(Y)$ gilt nach \thref{satz:degw}, dass
- $\deg(\omega)=2g'-2$(*). Da $f^*\omega$ eine nicht verschwindende Differentialform auf $X$ ist gilt ebenso $\deg (f^*\omega))=2g-2$(**). Sei $x\in X$ mit $f(x)=y\in Y$. Nach dem Satz über die lokale Gestalt holomorpher Funktionen\cite[S.9, Satz 2.1]{forster} können wir zwei Koordinatenumgebungen $(U,z)$ von $x$ und $(U',w)$ von $y$ wählen mit $z(x)=0$ und $w(y)=0$, sodass sich lokal schreiben lässt $w\circ f=z^k$, wobei $k=v(f,x)$. In $U'$ wählen wir $\omega = \psi (w) \dif w$ für eine meromorphe Funktion $\psi\in \mathcal{M}(Y)$. Dann ergibt sich auf $U$ für den die zurückgeholte Form 
+ $\deg(\omega)=2g'-2$( *). Da $f^*\omega$ eine nicht verschwindende Differentialform auf $X$ ist gilt ebenso $\deg (f^*\omega)=2g-2$ (**). Sei $x\in X$ mit $f(x)=y\in Y$. 
+ 
+ Nach dem Satz über die lokale Gestalt holomorpher Funktionen in \cite[~S.9]{forster} können wir zwei Koordinatenumgebungen $(U,z)$ von $x$ und $(U',w)$ von $y$ wählen mit $z(x)=0$ und $w(y)=0$, sodass sich lokal schreiben lässt $w\circ f=z^k$, wobei $k=v(f,x)$. In $U'$ wählen wir $\omega = \psi (w) \dif w$ für eine meromorphe Funktion $\psi\in \mathcal{M}(Y)$. Dann ergibt sich auf $U$ für den die zurückgeholte Form 
 \[
 f^*\omega = \psi(z^k)\dif (z^k) = kz^{k-1}\psi(z^k)dz.
 \]    	
 Also gilt 
 \begin{align*}
-	\textstyle{\ord_x} (f*\omega) 	&= \textstyle{\ord_x}(kz^{k-1}\psi(z)))\\
-					  	&= \textstyle{\ord_x}(kz^{k-1})+\textstyle{\ord_x}(psi(z^k))\\
-					  	&= k-1 +k\textstyle{\ord_y}(\psi(w))\\
-					  	&= v(f,x)-1+v(f,x) \textstyle{\ord_y}(\omega).
+	{\ord_x} (f*\omega) 	&= \ord_x(kz^{k-1}\psi(z)))\\
+					  	&= \ord_x(kz^{k-1})+\ord_x(psi(z^k))\\
+					  	&= k-1 +k\ord_y(\psi(w))\\
+					  	&= v(f,x)-1+v(f,x) \ord_y(\omega).
 \end{align*}
 Wegen der Definition von Vielfachheit gilt 
 \[
@@ -1392,15 +1442,15 @@ Wegen der Definition von Vielfachheit gilt
 \]
 Mit beiden Gleichungen zusammen ergibt sich für $y\in Y$ 
 \[
-\sum_{x\in f^{-1}(y)} \textstyle{\ord_x}(f^*\omega)= \sum_{x\in f^{-1}(y)}\left( v(f,x)-1 \right) +n \textstyle{\ord_y}(\omega),
+\sum_{x\in f^{-1}(y)} \ord_x(f^*\omega)= \sum_{x\in f^{-1}(y)}\left( v(f,x)-1 \right) +n \ord_y(\omega),
 \]
 
 insgesamt also
 
 \begin{align*}
-	\deg(f^*\omega)=\sum_{x\in X} \textstyle{\ord_x}(f^*\omega) &= \sum_{y\in Y}{x\in f^{-1}(x)} \textstyle{\ord_x}(f^*\omega)\\
-	&=\sum_{y\in Y}(\sum_{x\in f^{-1}(y)}\left(v(f,x)-1\right)+ n\sum_{y\in Y}\textstyle{\ord_y}(\omega) \\
-	&=\sum_{x\in X} (v(f,x)-1) + n\sum_{y\in Y} \textstyle{ord_y}(\omega)\\
+	\deg(f^*\omega)=\sum_{x\in X} \textstyle{\ord_x}(f^*\omega) &= \sum_{y\in Y}\sum_{x\in f^{-1}(x)} \textstyle{\ord_x}(f^*\omega)\\
+	&=\sum_{y\in Y}\sum_{x\in f^{-1}(y)}(v(f,x)-1)+ n\sum_{y\in Y}\textstyle{\ord_y}(\omega) \\
+	&=\sum_{x\in X} (v(f,x)-1) + n\sum_{y\in Y} {ord_y}(\omega)\\
 	&=\sum_{x\in X} (v(f,x)-1) + n\deg (\omega).
 	\end{align*}
 	Setzen wir nun (*) und (**) für die linke und rechte Seite ein, so folgt die Behauptung. 
