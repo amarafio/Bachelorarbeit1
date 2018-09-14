@@ -566,7 +566,7 @@ Eine Teilmenge $A\subset X$ eines topologischen Raumes $X$ heißt diskret falls 
 \begin{defi}[Überlagerung]\thlabel{defi:überlagerung}
 Eine Abbildung $p:Y\rightarrow X$ heißt \emph{Überlagerung}, falls sie offen, diskret und stetig ist.\\
 Für $y\in Y$ und $x\coloneqq p(y)$, sagt man \emph{$y$ liegt über $x$} und nennt $x$ den \emph{Spurpunkt} von $y$.\\
-Ein Punkt $y\in Y$ heißt \emph{Verzweigungspunkt} von $p$, falls es keine Umgebung $V$ von $y$ gibt, sodass $p\mid Y$ injektiv ist.Falls es keinen solchen Punkt gibt, heißt $p$ \emph{unverzweigt}.\\
+Ein Punkt $y\in Y$ heißt \emph{Verzweigungspunkt} von $p$, falls es keine Umgebung $V$ von $y$ gibt, sodass $p\mid Y$ injektiv ist. Falls es keinen solchen Punkt gibt, heißt $p$ \emph{unverzweigt}.\\
 Die Mächtigkeit der Mengen $p^{-1}(x)$ heißt \emph{Blätterzahl in $x$}. Falls diese global konstant ist, heißt sie \emph{Blätterzahl} der Überlagerung.
 \end{defi}
 Es folgt direkt, dass jede nicht konstante, holomorphe Abbildung zwischen Riemannschen Flächen eine Überlagerung ist. \cite[S.18]{forster}.
@@ -1385,7 +1385,7 @@ Eine ähnliche Aussage wie im Existenzsatz für Abbildungen[VERWEIS EINFÜGEN] k
 	\]
 	Also existiert eine nicht konstante Funktion $f\in H^0(X,\mathcal{O}_D)=\mathcal{O}_D(X)$. Diese erfüllt wegen der Definition von $\mathcal{O}_D$ genau die Bedingungen.
 \end{proof}
-\begin{koro}
+\begin{koro}\thlabel{koro:ueberlagerung}
 	Für jede kompakte Riemannsche Fläche $X$ gibt es eine Überlagerung $f:X\rightarrow \mathbb{P}_1$ mit Blätterzahl $\leq g+1$.
 	\end{koro}
 \begin{proof}
@@ -1415,7 +1415,7 @@ Eine weitere wichtige Folgerung betrifft den Grad von kanonischen Divisoren:
 		\]
 		Daraus folgt durch Umformung direkt die Aussage.
 \end{proof}
-\begin{satz}[Riemann-Hurwitz-Formel]
+\begin{satz}[Riemann-Hurwitz-Formel]\thlabel{satz:riemann-hurwitz}
 	Sei $f:X\rightarrow Y$ eine eine $n$-blättrige holomorphe Überlagerung zwischen zwei kompakten Riemannschen Flächen. Sei $g$ das Geschlecht von $X$, $g'$ das von $Y$ und $v(f,x)$ die Vielfachheit, mit der $f$ im Punkt $x\in X$ den Wert $f(x)$ annimmt. Dann gilt die Riemann-Hurwitz-Formel
 	\[
 	2g-2=n(2g'-2)+\sum_{x\in X}\left(v(f,x)-1\right)
@@ -1456,46 +1456,94 @@ insgesamt also
 	Setzen wir nun (*) und (**) für die linke und rechte Seite ein, so folgt die Behauptung. 
 \end{proof}
 
+%Das toplogische Geschlecht%
 \section{Das topologische Geschlecht}
-In diesem Abschnitt wollen wir zeigen, dass das bekannte topologische Geschlecht mit dem von uns definierten kohomologischen Geschlecht übereinstimmt. Eine Fläche im topologischen Sinn ist eine $2-$ Dimensionale topologische Mannigfaltigkeit. Sie wird orientierbar genannt, wenn die Kartenwechselhomöomorphismen die Orientierung des $\mathbb{R}^2$ einhalten. Folglich ist jede Riemannsche Fläche nach Definition orientierbar. 
+In diesem Kapitel wollen wir zeigen, dass das hier über Kohomologie definierte Geschlecht tatsächlich mit dem topologischen Geschlecht, also der Anzahl der Löcher, übereinstimmt.
+Dazu müssen wir kurz den Begriff der Triangulierung definieren.
 
-Eine Triangulierung ist eine spezielle Zerlegung einer Fläche in aneinanderliegende Dreiecke, für eine Definition siehe (Einfügen). Es lässt sich zeigen, dass jede Fläche ohne Rand diese besitzt.(EInfügen). 
-
-Nun können wir den Begriff des topologischen Geschlechts definieren. 
-\begin{defi}[topologisches Geschlecht, Euler-Charakteristik]
-	Seien $X$ eine Fläche ohne Rand und seien $E_x,K_x,F_x$ die Anzahl der Ecken,Kanten und Flächen in der Triangulierung. Sei 
-	\[
-	\chi (X) = E_x-K_x-F_x\eqqcolon = 2-2g_{top}.
-	\]
-	$\chi(X)$ nennen wir \emph{Euler-Charakteristik} von $X$ und $g_{top}$ das \emph{topologische Geschlecht}. 
+\begin{defi}[Simplex]
+Seien $x_0,\ldots,x_q\in \mathbb{R}^n$. Der von diesen $q+1$ Punkten aufgespannte affine Untervektorraum des $\mathbb{R}^n$ ist 
+\[
+T\coloneqq \left\{x\in\mathbb{R}^n;~x=x_0+\sum_{i=1}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\lambda_q\in\mathbb{R}\right\}.
+\]
+Setzt man $\lambda_0=1-\sum_{i=1}^q \lambda_i$, so erhält man
+\[
+T= \left\{x\in\mathbb{R}^n;~x=\sum_{i=0}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\lambda_q\in\mathbb{R}\text{ mit } \sum_{i=0}^q \lambda_i =1\right\}.
+\]
+Falls $\dim T =q$, so heißt die Menge
+\[
+\sigma=\sigma_q=\left\{x\in\mathbb{R}^n;~x=\sum_{i=0}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\lambda_q>0\text{ mit } \sum_{i=0}^q \lambda_i =1\right\}
+\]
+\emph{(offenes) q-Simplex} mit \emph{Ecken} $x_0,\ldots,x_q$. Wir schreiben $\sigma=(x_0,\ldots,x_q)$ und nennen $\dim \sigma \coloneqq q$ die \emph{Dimension} von $\sigma$.
 \end{defi}
-\begin{bem}
-	\begin{enumerate}
-		\item Die Eulercharakteristik ist unabhängig von der gewählten Triangulierung (einfügen), von daher sind die beiden Größen wohldefiniert. Außerdem lässt sich zeigen, dass homöomorphe Flächen die selbe Euler-Charakteristik haben, also auch das selbe Geschlecht(Einfügen). Damit haben wir zwei topologische Invarianten. 
-		\item Wir hätten das topologische Geschlecht auch auf andere Weise definieren können, zum Beispiel über Schnitte entlang von Kurven oder über die Henkelzerlegung(Einfügen), und dann zeigen, dass die Formel aus der Definition gilt (einfügen). Somit kann man sich leicht vergewissern, dass das topologische Geschlecht tatsächlich die Anzahl der Löcher einer Fläche ohne Rand zählt.
-		\end{enumerate}
-\end{bem}
+Da wir hier nur Flächen, also $2$-dimensionale Mannigfaltigkeiten betrachten, werden nur Simplizes von Dimension maximal $2$ verwendet.
+\begin{bsp}
+\begin{enumerate}
+    \item Ein $0$-Simplex ist ein Punkt in $\mathbb{R}^n$,
+    \item Ein $1$-Simplex ist ein Streckenzug ohne die beiden Endpunkte,
+    \item Ein $2$-Simplex ist ein Dreieck ohne die Seiten.
+\end{enumerate}
+\end{bsp}
+\begin{defi}[Seite]
+Für zwei Simplexe $\sigma,\ŧau\in\mathbb{R}^n$ schreiben wir $\tau\leq\sigma$, falls die Ecken von $\tau$ auch Ecken von $\sigma$. Dann heißt $\tau$ \emph{Seite} von $\sigma$. Falls zusätzlich noch $\tau \neq \sigma$ gilt, schreiben wir $\tau<\sigma$ und nenen $\tau$ \emph{eigentliche Seite} von $\sigma.$
+\end{defi}
+\begin{defi}[Simplizialkomplex]
+Ein \emph{Simplizialkomplex} $K$ im $\mathbb{R}^n$ ist eine endliche Menge von Simplizes mit folgenden Eigenschaften:
+\begin{enumerate}
+    \item Falls $\sigma\in K$ und $\tau<\sigma$, so ist $\tau\in K$.
+    \item Falls $\sigma,\tau\in K$ mit $\sigma\neq\tau$, so ist $\sigma\cap\tau=\emptyset$.
+\end{enumerate}
+Wir schreiben
+\[
+|K|\coloneqq \bigcup_{\sigma \in K} \sigma \subset \mathbb{R}^n
+\]
+und versehen diesen Raum mit der Teilraumtopologie.
+\end{defi}
+\begin{defi}[Triangulierung]
+Ein topologischer Raum $X$ heißt \emph{triangulierbar}, falls es einen Simplizialkompklex $K$ gibt, sodass $|K|$ homöomorph zu $X$ ist. Der Simplizialkomplex heißt \emph{Triangulierung} von $X$.
+\end{defi}
+Nach den Satz von Radó (siehe [GeomTopo, S- 60]) ist jede $2$-Mannigfaltigkeit triangulierbar, also auch jede Riemannsche Fläche. Wir können nun zum toplogischen Geschlecht kommen.
+\begin{defi}[topologisches Geschlecht, Euler-Charakteristik]
+Sei $X$ eine kompakte Riemannsche Fläche und bezeichne mit $E_x,K_x,F_x$ die Anzahl der Ecken, Kanten und Flächen einer Triangulierung von $X$, also der $0-,1-$ und $2-$ Simplizes. Dann definieren wir
+\[
+\chi (X)\coloneqq 2-2g_{top}=E_x-K_x+F_x.
+\]
+Die Zahl $\chi(X)$ heißt \emph{Euler-Charakteristik} der Riemannschen Fläche $X$ und $g_{top}$ das \emph{topologische Geschlecht}\footnote{Wir hätten das Geschlecht auch über die Henkel-Zerlegung definieren können, und dann die Gleichheit beweisen (siehe (Kap 22 in geometriTopo); so wird klar, dass es sich anschaulich um die Löcher der Fläche handelt}.
+\end{defi}
+Diese Definition können wir machen, da die Euler-Charakteristik einer kompakten $2$-Mannigfaltigkeit tatsächlich unabhängig von der Wahl der Triangulierung ist, siehe dazu S.149 in [GeomeTopo]. 
+
 \begin{satz}
-	Für die beiden eingeführten Geschlechterbegriffe einer kompakten Riemannschen Fläche gilt \[
-	g = g_{top}.
-	\]
+Die beiden eingeführten Geschlechtsbegriffe einer kompakten Riemannschen Fläche $X$ sind gleich, es gilt als
+\[
+g=g_{top}.
+\]
 \end{satz}
 \begin{proof}
-	Nach (Korollar einfügen)  existiert eine holomorphe Überlagerung $f:X\rightarrow \mathbb{P}_1$ mit $n\leq g+1$ Blättern. Außerdem wissen wir, dass das kohomologische Geschlecht der Riemannschen Zahlenkugel gleich $0$ ist, somit folgt nach Riemann-Hurwitz\ref{satz:riemann-hurwitz}, dass 
-	\[
-	2g-2 =\sum_{x\in X}(v(f,x)-1) -2n. 
-	\]
-	Wenn wir die Urbilder einer Triangulierung von $\mathbb{P}_1$ betrachten und jeden Verzweigungspunkt als Eckpunkt wählen, so erhalten wir auch eine Triangulierung von $X$.
-	Dann ist 
-	\[
-	\chi(X) = n\chi(\mathbb{P}_1)-\sum_{x\in X}(v(f,x))),
-	\]
-	da die Urbilder jeweils $n$ Punkte enthalten und wir noch die Vielfachheiten abziehen müssen, denn an den Verzweigungspunkten erbibt sich jeweils nur ein Dreieck.
-	Da auch das toplogische Geschlecht von $\mathbb{P}_1$ gleich $0$ ist, folgt mit Riemann-Hurwitz
-	\[
-	\chi(X) = 2n-\sum_{x\in X} = 2-2g.
-	\]
-	Damit ist die Aussage bewiesen.
+Nach \thref{koro:ueberlagerung} gibt es eine holomorphe Überlagerung $f:\rightarrow \mathbb{P}_1$ mit $n\leq g+1$ Blättern. Da das kohomologische Geschlecht der Zahlenkugel $0$ ist, gilt nach der Riemann-Hurwitz-Formel (\ref{satz:riemann-hurwitz}), dass
+\[
+2g-2=\sum_{x\in X}(v(f,x)-1)-2n.
+\]
+Wir wählen eine Triangulierung $T$ von $\mathbb{P}_1$ mit $E$ Ecken,$K$ Kanten und $F$ Flächen, sodass jeder Eckpunkt das Bild eines Verzweigungspunktes ist. Da die Überlagerung $f$ surjektiv ist nach (2.11) in \cite[~S.11]{forster} und per Definition offen, so bilden Urbilder dieser Triangulierung auch eine Triangulierung $T'$ von $X$, bei der jeder Eckpunkt ein Verzweigungspunkt ist. Es gibt also keine Verzweigungspunkte in einer Fläche (bzw. 2-Simplex) oder in einer Kante (bzw. 1-Simplex), daher wird jede Fläche auf $n$ Flächen und jede Kante auf $n$ Kanten abgebildet. Für einen Eckpunkt $q$ von $T$ gilt mit einer simplen Umformung
+\[
+|f^{-1}(q)|=\sum_{x\in f^{-1}(q)} 1 = n + \sum_{x\in f^{-1}(q)}(1-v(f,x))
+\]
+und damit für die Anzahl der Ecken in $X$
+\begin{align*}
+    E_x &= \sum_{e \text{ Ecke von } T} \left(  n + \sum_{x\in f^{-1}(q)}(1-v(f,x))\right)\\
+        &=n E -\sum_{e \text{ Ecke von } T} \left(\sum_{x\in f^{-1}(q)}(v(f,x)-1)\right)\\
+        &=n E-\sum_{x \text{ Ecke von } T'}(v(f,x)-1)\\
+        &=n E-\sum_{x\in X}(v(f,x)-1)
+\end{align*}
+Der letzte Schritt folgt daraus, dass alle Verzweigungspunkte Eckpunkte sind, also bei allen anderen Punkten die Vielfachheit $1$ herauskommt.
+Als haben wir insgesamt $K_X=nK,~F_X=nF,~ E_X=n E-\sum_{x\in X}(v(f,x)-1)$ und damit
+\[
+\chi(X) = n\chi(\mathbb{P}_1)-\sum_{x\in X}(v(f,x)-1).
+\]
+Man kann zeigen, dass $\xi(\mathbb{P}_1=2$, siehe zum Beispiel [GeomTop S.162] und damit gilt zusammen mit der Riemann-Hurwitz-Formel auch
+\[
+\chi(X) = 2n-\sum_{x\in X}(v(f,x)-1)= 2-2g.
+\]
+Damit sind die Geschlechterbegriffe gleich.
 \end{proof}
 \newpage
 %--------------------------------------------------------------------------------------------------%
