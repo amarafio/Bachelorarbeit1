@@ -17,6 +17,7 @@
 \usepackage{tikz-cd}
 \usepackage{standalone}
 \usepackage[automark]{scrpage2}
+
 \ihead{\headmark}
 \chead{}
 \pagestyle{scrheadings}
@@ -99,11 +100,12 @@
 %SECTION:EINFÜHRUNG%
 
 \section{Einführung}
-
+\phantom{\cite{algCur}\cite{algTop}}
 %subsection:Einführung in die Garbentheorie%
 
 \subsection{Einführung in die Garbentheorie}
 Hier wird zunächst eine Einführung in die Theorie der Garben gegeben, welche sich mithilfe der Garbenkohomologie als sehr nützliches Werkzeug für die Untersuchung der Riemannschen Flächen erweisen wird. 	Unter den ersten Definitionen lassen sich motivierende Beispiele finden.
+
 
 \begin{defi}[Prägarbe]\thlabel{defi:praegarbe}
 Sei $X$ ein topologischer Raum und $\mathcal{T}$ die Topologie auf X. Eine \emph{Prägarbe} abelscher Gruppen ist ein Paar $(\mathcal{F},\rho)$, bestehend aus:
@@ -1502,15 +1504,15 @@ und versehen diesen Raum mit der Teilraumtopologie.
 \begin{defi}[Triangulierung]
 Ein topologischer Raum $X$ heißt \emph{triangulierbar}, falls es einen Simplizialkompklex $K$ gibt, sodass $|K|$ homöomorph zu $X$ ist. Der Simplizialkomplex heißt \emph{Triangulierung} von $X$.
 \end{defi}
-Nach den Satz von Radó (siehe [GeomTopo, S- 60]) ist jede $2$-Mannigfaltigkeit triangulierbar, also auch jede Riemannsche Fläche. Wir können nun zum toplogischen Geschlecht kommen.
+Nach den Satz von Radó (siehe \cite[~S.60]{geomTop}) ist jede $2$-Mannigfaltigkeit triangulierbar, also auch jede Riemannsche Fläche. Wir können nun zum toplogischen Geschlecht kommen.
 \begin{defi}[topologisches Geschlecht, Euler-Charakteristik]
 Sei $X$ eine kompakte Riemannsche Fläche und bezeichne mit $E_x,K_x,F_x$ die Anzahl der Ecken, Kanten und Flächen einer Triangulierung von $X$, also der $0-,1-$ und $2-$ Simplizes. Dann definieren wir
 \[
 \chi (X)\coloneqq 2-2g_{top}=E_x-K_x+F_x.
 \]
-Die Zahl $\chi(X)$ heißt \emph{Euler-Charakteristik} der Riemannschen Fläche $X$ und $g_{top}$ das \emph{topologische Geschlecht}\footnote{Wir hätten das Geschlecht auch über die Henkel-Zerlegung definieren können, und dann die Gleichheit beweisen (siehe (Kap 22 in geometriTopo); so wird klar, dass es sich anschaulich um die Löcher der Fläche handelt}.
+Die Zahl $\chi(X)$ heißt \emph{Euler-Charakteristik} der Riemannschen Fläche $X$ und $g_{top}$ das \emph{topologische Geschlecht}\footnote{Wir hätten das Geschlecht auch über die Henkel-Zerlegung definieren können, und dann die Gleichheit beweisen (siehe \cite[~Kap. 22]{geomTop}; so wird klar, dass es sich anschaulich um die Löcher der Fläche handelt}.
 \end{defi}
-Diese Definition können wir machen, da die Euler-Charakteristik einer kompakten $2$-Mannigfaltigkeit tatsächlich unabhängig von der Wahl der Triangulierung ist, siehe dazu S.149 in [GeomeTopo]. 
+Diese Definition können wir machen, da die Euler-Charakteristik einer kompakten $2$-Mannigfaltigkeit tatsächlich unabhängig von der Wahl der Triangulierung ist, siehe dazu \cite[~S.149]{geomTop}. 
 
 \begin{satz}
 Die beiden eingeführten Geschlechtsbegriffe einer kompakten Riemannschen Fläche $X$ sind gleich, es gilt als
@@ -1527,7 +1529,7 @@ Wir wählen eine Triangulierung $T$ von $\mathbb{P}_1$ mit $E$ Ecken,$K$ Kanten 
 \[
 |f^{-1}(q)|=\sum_{x\in f^{-1}(q)} 1 = n + \sum_{x\in f^{-1}(q)}(1-v(f,x))
 \]
-und damit für die Anzahl der Ecken in $X$
+und damit für die Anzahl der Ecken in $X$ 
 \begin{align*}
     E_x &= \sum_{e \text{ Ecke von } T} \left(  n + \sum_{x\in f^{-1}(q)}(1-v(f,x))\right)\\
         &=n E -\sum_{e \text{ Ecke von } T} \left(\sum_{x\in f^{-1}(q)}(v(f,x)-1)\right)\\
@@ -1546,6 +1548,7 @@ Man kann zeigen, dass $\xi(\mathbb{P}_1=2$, siehe zum Beispiel [GeomTop S.162] u
 Damit sind die Geschlechterbegriffe gleich.
 \end{proof}
 \newpage
+
 %--------------------------------------------------------------------------------------------------%
 %------------------------NOTATIONSVERZEICHNIS---------------------------------------------------%%-------------------------------------------------------------------------------------------------%
 
@@ -1579,6 +1582,7 @@ $A\Subset B$ & $A$ liegt relativ kompakt in $B$\\
 $\mathfrak{V}\ll\mathfrak{U}$ & $\mathfrak{V}$ ist Schrumpfung von $\mathfrak{U}$  7\\
 \end{longtable}
 \newpage
-\bibliographystyle{alpha}
+
+\bibliographystyle{alphadin}
 \bibliography{bibliographie}
 \end{document}
