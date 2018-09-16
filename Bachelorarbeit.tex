@@ -17,7 +17,7 @@
 \usepackage{tikz-cd}
 \usepackage{standalone}
 \usepackage[automark]{scrpage2}
-\usepackage[german,intoc]{nomencl}
+\usepackage[german]{nomencl}
 \RequirePackage{
 ifthen}
 \ihead{\headmark}
@@ -67,10 +67,10 @@ ifthen}
 \renewcommand{\theequation}{\thesubsection.\arabic{equation}} %Equations und figures mit arabaischen Zahlen nummerieren%
 \renewcommand{\thefigure}{\thesubsection.\arabic{equation}}
 \renewcommand{\nomgroup}[1]{%
-\ifthenelse{\equal{#1}{G}}{\item[\textbf{Garben und Funktionenräume}]}{%
-\ifthenelse{\equal{#1}{A}}{\item[\textbf{Generelle Notation}]}{%
-\ifthenelse{\equal{#1}{K}}{\item[\textbf{Kohologietheorie}]}{
-\ifthenelse{\equal{#1}{O}}{\item[\textbf{Operatoren}]}}}}
+\ifthenelse{\equal{#1}{G}}{\item[\large\textbf{Garben und Funktionenräume}]}{%
+\ifthenelse{\equal{#1}{A}}{\item[\large\textbf{Generelle Notation}]}{%
+\ifthenelse{\equal{#1}{K}}{\item[\large\textbf{Kohomologietheorie}]}{
+\ifthenelse{\equal{#1}{O}}{\item[\large\textbf{Sonstiges}]}}}}
 }
 \renewcommand{\pagedeclaration}[1]{S.#1}
 
@@ -1623,36 +1623,10 @@ Damit sind die Geschlechterbegriffe gleich.
 
 
 
-\addsec{Notationsverzeichnis}
-
-\textbf{Garben und Funktionenräume}
-
-\begin{longtable}{p{3.5cm} p{12cm}}
-$\mathcal{O}$ & Garbe der holomorphen Funktionen  2\\
-$\mathcal{M}$ & Garbe der meromorphen Funktionen  2\\
-$\mathcal{E}$ & Garbe der differenzierbaren Funktionen  2\\
-$\mathcal{E}^{(1)},\mathcal{E}^{1,0},\mathcal{E}^{0,1}$ & Räume der 1-Differentialformen\\
-$\mathcal{L}^2(D,\mathcal{O})$ & Raum der quadratisch integrierbaren holomorphen Funktionen  5\\
-
-\end{longtable}
-
-\textbf{Kohomologie}
-
-\begin{longtable}{p{3.5cm} p{12cm}}
-$C^q(\mathfrak{U},\mathcal{F})$ & $q$-te Kokettengruppe bezüglich der Garbe $\mathcal{F}$ und Überdeckung $\mathfrak{U}$  2\\
-$Z^1(\mathfrak{U},\mathcal{F})$ & Kozykelgruppe bezüglich der Garbe $\mathcal{F}$ und Überdeckung $\mathfrak{U}$  3\\
-$B^1(\mathfrak{U},\mathcal{F})$ & Korandgruppe bezüglich der Garbe $\mathcal{F}$ und Überdeckung $\mathfrak{U}$  3\\
-$H^1(\mathfrak{U},\mathcal{F})$ & 1. Kohomologiegruppe bezüglich der Garbe $\mathcal{F}$ und Überdeckung $\mathfrak{U}$  3\\
-$H^1(X,\mathcal{F})$ & 1. Kohomologiegruppe der Riemannschen Fläche $X$ bezüglich der Garbe $\mathcal{F}$  4\\
-\end{longtable}
-\textbf{Sonstiges}
-\begin{longtable}{p{3.5cm} p{12cm}}
-$A\Subset B$ & $A$ liegt relativ kompakt in $B$\\
-$\mathfrak{V}\ll\mathfrak{U}$ & $\mathfrak{V}$ ist Schrumpfung von $\mathfrak{U}$  7\\
-\end{longtable}
-\newpage
+\addsec{Symbolverzeichnis}
 \setlength{\parskip}{1pt}
-\printnomenclature[1cm]
+\renewcommand{\nomname}{}
+\printnomenclature[4cm]
 \newpage
 \bibliographystyle{alphadin}
 \bibliography{bibliographie}
