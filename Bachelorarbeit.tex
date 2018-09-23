@@ -76,9 +76,7 @@ ifthen}
 
 
 %Einstellungen für Paragraphen%
-\setlength{\topsep}{0pt}
-\setlength{\partopsep}{15pt plus 1pt minus 1pt}
-\setlength{\parskip}{10pt}
+
 \setlength{\parindent}{0pt}
 
 \date{\today}
@@ -103,6 +101,7 @@ ifthen}
 \newpage
 \pagenumbering{arabic}
 \section{Einleitung}
+Die Riemannschen Flächen, bennant nach Bernhard Riemann, welcher sie zuerst untersuchte, spielen heute in der Mathematik und insbesondere in der Funktionentheorie eine sehr wichtige Rolle bei der Untersuchung holomorpher und meromorpher Funktionen.
 \newpage
 
 
@@ -1068,9 +1067,9 @@ Es gibt $c_1,\dots,c_{k+1}\in\mathbb{C}$, nicht alle gleich $0$, und $\eta =(f_1
 \[
 \sum_{j=1}^{k+1} c_j\zeta_j = \delta\eta \text{ auf } \mathfrak{U}\cap Y,
 \]
-also diese Summe zerfällt ist. Folglich ist 
+also diese Summe kohomolog zum Nullelement ist. Folglich ergibt sich auf $U_1\cap U_2\cap Y$
 \[
-\sum_{j=1}^{k+1}c_j z^{-j} = f_2 - f_1 \text{ auf } U_1 \cap U_2 \cap Y.
+\sum_{j=1}^{k+1}c_j z^{-j} = f_2 - f_1.
 \]
 Nach den 2. Garbenaxiom gibt es also ein $f\in \mathcal{M}(Y)$ mit \[f\mid (U_1\cap Y) =f_1 + \sum_{j=1}^{k+1}c_j z^{-j}\]
 und 
@@ -1081,7 +1080,7 @@ Dieses $f$ hat eine Polstelle in $a$ und ist holomorph auf $Y\setminus \{ a \}$.
 \end{proof}
 Es existieren also nicht triviale meromorphe Funktionen, wir können für kompakte Riemannsche Flächen sogar eine Menge von Stützpunkten vorgeben:
 \begin{koro}
-Gegeben einer Menge von Stützpunkten $(a_i,c_i)\in X\times \mathbb{C}$ für $i=1,\ldots,n$, sodass die $a_i$ paarweise verschieden sind und $X$ eine kompakte Riemannsche Fläche, existiert eine meromorphe Funktion $f:X\rightarrow \mathbb{C}$ mit
+Gegeben eine Menge von Stützpunkten $(a_i,c_i)\in X\times \mathbb{C}$ für $i=1,\ldots,n$, sodass die $a_i$ paarweise verschieden sind und $X$ eine kompakte Riemannsche Fläche, existiert eine meromorphe Funktion $f:X\rightarrow \mathbb{C}$ mit
 \[
 f(a_i)=c_i
 \]
@@ -1148,11 +1147,11 @@ Sei $X$ eine nicht kompakte Riemannsche Fläche und seien $Y\Subset Y'\subset X$
 	\]
 	Sei nun $\zeta\in H^1(Y',\mathcal{O})$ eine beliebige Kohomologieklasse und $\mathfrak{U}=(U_i)_{i\in I}$ eine offene Überdeckung von $Y'$, sodass jedes $U_i$ maximal eine Nullstelle von $F$ enthält. Dann lässt sich $\zeta$ durch einen Kozykel $(f_{i,j})\in Z^1(\mathfrak{U},\mathcal{O})$ repräsentieren.
 	Daher verschwindet auch für $i\neq j$ die Einschränkung $F\mid U_i\cap U_j\in \mathcal{O}(U_i\cap U_j)$ nirgends und wir können somit durch komponentenweise Division einen Kozykel 
-	\[(g_{i,j}\in Z^1(\mathfrak{U},\mathcal{O}))\]
+	\[(g_{i,j})\in Z^1(\mathfrak{U},\mathcal{O}))\]
 	finden,
 	sodass $f_{i,j}=Fg_{i,j}$ gilt. 
 	Wählen wir nun $\xi\in H^1(Y,\mathcal{O})$ als die zu $(g_{i,j})$ gehörige Kohomologieklasse, so ergibt sich also $\zeta =F\xi$. Dann gilt
-	\[\zeta\mid Y = F\xi\mid Y =0\].
+	\[\zeta\mid Y = F\xi\mid Y =0.\]
 	\end{proof}
 \begin{bem}
 Analog zum Endlichkeitssatz gilt also auch, dass jede relativ kompakte offene Teilmenge einer nicht kompakten Riemannschen Fläche Geschlecht 0 hat.
@@ -1179,20 +1178,19 @@ Sei $X$ eine nicht kompakte riemannsche Fläche und seien $Y\Subset Y'\subset X$
 	 \[
 	 f=f_i-g_i\text{ auf }U_i\cap Y\text{ für alle }i\in I.
 	 \]
-	 Genau diese Funktion löst die Gleichung
+	 Genau diese Funktion löst die Differentialgleichung
 	 \[
-	 \dif'' f=\omega\mid Y\].
+	 \dif'' f=\omega\mid Y.\]
 	 \end{proof}
 \begin{bem}
 	Die letzten zwei Aussagen lassen sich tatsächlich, mit anderen Mitteln weiter verallgemeinern:
-	
-	Es lässt sich zeigen, dass für jede nicht kompakte Riemannsche Fläche $H^1(X,\mathcal{O})=0$ gilt (vgl. \cite[~26.1]{forster}) und dass die Differentialgleichung sogar global lösbar ist(vgl. (\cite[~25.6]{forster}).
+    Es lässt sich zeigen, dass für jede nicht kompakte Riemannsche Fläche $H^1(X,\mathcal{O})=0$ gilt (vgl. \cite[~26.1]{forster}) und dass die Differentialgleichung sogar global lösbar ist(vgl. (\cite[~25.6]{forster}).
 \end{bem}
 %------------------------------------------------------------------------------------------------%
 %4: DER SATZ VON RIEMANN-ROCH%
 %------------------------------------------------------------------------------------------------%
 \section{Der Satz von Riemann-Roch}
-In diesem Kapitel wollen wir eine weitere Anwendung des Endlichkeitssatzes für kompakte Riemannsche Flächen zeigen, nämlich den Satz von Riemann-Roch. Dieser trifft mithilfe des Geschlechts Aussage über das Verhalten bzw. die Anzahl verschiedener meromorpher Funktionen auf Riemannschen Flächen, deren Pol-und Nullstellen in bestimmter Weise eingeschränkt werden.
+In diesem Abschnitt wollen wir eine weitere Anwendung des Endlichkeitssatzes für kompakte Riemannsche Flächen zeigen, nämlich den Satz von Riemann-Roch. Dieser trifft Aussage über die Anzahl von meromorphen Funktionen mit bestimmten Pol- und Nullstellenverhalten, bildet somit also eine Erweiterung der Existenzaussage aus dem vorigen Abschnitt.
 \begin{defi}[Divisor]\thlabel{defi:divisor}
 	Sei $X$ eine Riemannsche Fläche. Eine Abbildung
 	\[D:X\rightarrow\mathbb{Z}
@@ -1205,7 +1203,7 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 \nomenclature[Og]{$\deg D$}{\nomrefpage}
 \nomenclature[Gh]{$\Omega_D$}{\nomrefpage}
 \nomenclature[Gi]{$\mathcal{O}_D$}{\nomrefpage}
-\begin{defi}[Ordnung,Hauptdivisor und kanonischer Divisor]\thlabel{defi:hauptdivisor}
+\begin{defi}[Ordnung, Hauptdivisor und kanonischer Divisor]\thlabel{defi:hauptdivisor}
 	Sei $Y\subset X$ eine offene Teilmenge einer Riemannschen Fläche und $f\in \mathcal{M}(Y)$ eine meromorphe Funktion. Für einen Punkt $a\in Y$ nennen wir 
 	\[
 	\textstyle{\ord_a}f\coloneqq \begin{cases}
@@ -1221,10 +1219,10 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 	x\mapsto \ord_x f
 	\]
 	ein Divisor, genannt \emph{Hauptdivisor}. Falls $(f)\geq D$ für einen Divisor $D$, so heißt $f$ \emph{Vielfaches} des Divisors $D$.
-	Sei $\omega\in\mathcal{M}^{(1)}(Y)$ und $(U,z)$ eine Koordinatenumgebung von $a\in X$, also kann man auf $U\cap Y$ schreiben $\omega =f\dif z$, wobei $f\in\mathcal{M\cap Y}$. Wir definieren analog
+	Sei $\omega\in\mathcal{M}^{(1)}(Y)$ und $(U,z)$ eine Koordinatenumgebung von $a\in X$, dann kann man auf $U\cap Y$ schreiben $\omega =f\dif z$, wobei $f\in\mathcal{M\cap Y}$. Wir definieren analog
 	\[\textstyle{\ord_a}\omega\coloneqq \textstyle{\ord_a}f.
 	\]
-	Dann ist auch $x\mapsto \ord_x\omega$ ein Divisor, notiert mit $(\omega)$ und genannt \emph{kanonischer Divisor}. Zwei Divisoren $D,D'$ nennen wir \emph{äquivalent}, falls ihre Differenz $D'-D$ ein Hauptdivisor ist.
+	Dann ist auch $x\mapsto \ord_x\omega$ ein Divisor, notiert mit $(\omega)$ und genannt \emph{kanonischer Divisor}. Es lässt sich leicht zeigen, dass die Definition unabhängig von der gewählten Koordinatenumgebung ist. Zwei Divisoren $D,D'$ nennen wir \emph{äquivalent}, falls ihre Differenz $D'-D$ ein Hauptdivisor ist.
 \end{defi}
 \begin{bem}
 	Eine Funktion $f$ ist genau dann holomorph, wenn $(f)\geq 0$. Außerdem gelten folgende Beziehungen zwischen den oben genannten Divisoren:
@@ -1237,7 +1235,7 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 \begin{defi}[Grad eines Divisors]\thlabel{defi:grad}
 	Für eine kompakte Riemannsche Fläche $X$ ist jeder Divisor $D\in Div(X)$ nur an endlich vielen Punkten ungleich $0$. Dann lässt sich der Grad definieren als:
 	\begin{align*}
-		\deg:&Div(X)\rightarrow \mathbb{Z},\\
+		\deg:~&Div(X)\rightarrow \mathbb{Z},\\
 			&\deg D\coloneqq \sum_{x\in X}D(x).
 	\end{align*}
 	\end{defi}
@@ -1337,7 +1335,7 @@ Wir definieren noch einen weiteren Divisor und damit eine exakte Garbensequenz, 
         Sei $U\subset X$ offen.
         \begin{enumerate}
             \item 
-            Falls $P\notin U$ sei $\beta_U$ der Nullhomomorphismus.
+            Falls $P\notin U$ ist $\beta_U$ der Nullhomomorphismus.
             \item
             Falls $P\in U$, wähle ein $f\in\mathcal{O}_{D+P}$, dann kann $f$ durch seine Laurentreihe bezüglich der Koordinate $z$ geschrieben werden als
             \[
@@ -1358,7 +1356,7 @@ Wir definieren noch einen weiteren Divisor und damit eine exakte Garbensequenz, 
         exakt.
     \end{enumerate}
 \end{defi}
-Das folgende Korollar ergibt sich aus dieser exakten Garbensequenz , da aus jeder exakten Garbensequenz eine exakte Kohomologiesequenz folgt, siehe dazu (15.12) in \cite[~S.113]{forster}.
+Das folgende Korollar ergibt sich aus dieser exakten Garbensequenz, da aus jeder exakten Garbensequenz eine exakte Kohomologiesequenz folgt, siehe dazu (15.12) in \cite[~S.113]{forster}.
 \begin{koro}\thlabel{koro:exakte kohomologiesequenz}
 	Es gibt eine exakte Garbensequenz
 	\begin{center}
@@ -1370,7 +1368,7 @@ Das folgende Korollar ergibt sich aus dieser exakten Garbensequenz , da aus jede
 
 \begin{koro}
 Seien $D\leq D'$ Divisoren auf einer Riemannschen Fläche $X$. Dann gibt es einen Garbenepimorphismus
-\[ H^1(X,\mathcal{O}_D)\rightarrow H^1(X,\mathcal{O}_{D'})\].
+\[ H^1(X,\mathcal{O}_D)\rightarrow H^1(X,\mathcal{O}_{D'}).\]
 \end{koro}
 \begin{proof}
     Falls wir $D'=D+P$ schreiben können, ergibt sich diese Aussage direkt aus \thref{defi:punktdivisor}. Sonst können wir $D'=D+P_1+\ldots+P_M$ schreiben für $P_i\in X$, somit folgt die Aussage per Induktion.
@@ -1413,12 +1411,12 @@ herausgeteilt wird, und somit die Abbildung $W\rightarrow H^1(X,\mathcal{O}_D)$ 
 \[
 \ker \left(W\rightarrow H^1(X,\mathcal{O}_D)\right)=0=\Ima(0\rightarrow W).
 \]
-Dann ist $\dim V+\dim W=\dim \mathbb{C}=1=\deg D'-\deg D$, also sind beide Räume endlich-dimensional. Wenden wir das Splitting Lemma( siehe dazu das Buch \cite[S. 147]{algebraic}) auf die zwei Sequenzen an, erhalten wir
+Dann ist $\dim V+\dim W=\dim \mathbb{C}=1=\deg D'-\deg D$, also sind beide Räume endlich-dimensional. Wenden wir das Splitting-Lemma für ( siehe dazu zum Beispiel \cite[~S.147]{algebraic}) auf die zwei Sequenzen an, erhalten wir
 \begin{align*}
 	&H^0(X,\mathcal{O}_{D'})=H^0(X,\mathcal{O}_D)\oplus V,\\
 	&H^1(X,\mathcal{O}_D)=H^1(X,\mathcal{O}_{D'})\oplus W.
 \end{align*}
-Da die Aussage für einen der beiden Divisoren gilt, sind die dem entsprechenden Kohomologiegruppen endlich-dimensional und somit direkt alle auftretenden Räume. Dann folgen die Dimensionsgleichungen
+Da die Aussage für einen der beiden Divisoren gilt, sind die entsprechenden Kohomologiegruppen endlich-dimensional und somit direkt alle auftretenden Räume. Dann folgen mit \cite[~S.204]{algebraic} die Dimensionsgleichungen
 \begin{align*}
 &\dim H^0(X,\mathcal{O}_{D'})=\dim H^0(X,\mathcal{O}_D)+\dim V,\\
 &\dim H^1(X,\mathcal{O}_D)=\dim H^1(X,\mathcal{O}_{D'})+\dim W.
@@ -1430,10 +1428,10 @@ Diese Gleichungen ergeben durch Addition
 \end{align*}
 Durch Umformen erhält man
 \begin{align*}
-\dim H^0(X,\mathcal{O}_{D'})&-\dim H^1(X,\mathcal{O}_{D'})-\deg D'=\\
+\dim H^0(X,\mathcal{O}_{D'})&-\dim H^1(X,\mathcal{O}_{D'})-\deg D'\\
 							&=\dim H^0(X,\mathcal{O}_D)+\dim H^1(X,\mathcal{O}_D)-\deg D.	
 \end{align*}
-Falls die Aussage für einen der beiden Divisoren gilt, so muss sie folglich auch für den anderen gelten. Damit gilt bereits sie für jeden Divisor $D'\geq 0$. Sei $D$ ein beliebiger Divisor. Dann kann man $D=P_1+\ldots+P_m-P_{m+1}-\ldots-P_n$ schreiben, wobei $P_i\in X.$ Startet man mit dem Nulldivisor, folgt durch die Aussage davor per Induktion, dass der Satz von Riemann-Roch auch für $D$ gilt.
+Falls die Aussage für einen der beiden Divisoren gilt, so muss sie folglich auch für den anderen gelten. Damit gilt sie bereits für jeden Divisor $D'\geq 0$. Sei $D$ ein beliebiger Divisor. Dann kann man $D=P_1+\ldots+P_m-P_{m+1}-\ldots-P_n$ schreiben, wobei $P_i\in X.$ Startet man mit dem Nulldivisor, folgt durch die Aussage davor per Induktion, dass der Satz von Riemann-Roch auch für $D$ gilt.
 \end{proof}
 Eine ähnliche Aussage wie in (\ref{meromorph}) kann man mithilfe des Satzes von Riemann-Roch treffen. Sie liefert auch eine Einschränkung der Polstellenordnung durch das Geschlecht der Fläche.
 \begin{satz}\thlabel{satz:polstellenordnung}
@@ -1455,10 +1453,10 @@ Eine ähnliche Aussage wie in (\ref{meromorph}) kann man mithilfe des Satzes von
 	Also existiert eine nicht konstante Funktion $f\in H^0(X,\mathcal{O}_D)=\mathcal{O}_D(X)$. Diese erfüllt wegen der Definition von $\mathcal{O}_D$ genau die Bedingungen.
 \end{proof}
 \begin{koro}\thlabel{koro:ueberlagerung}
-	Für jede kompakte Riemannsche Fläche $X$ gibt es eine Überlagerung $f:X\rightarrow \mathbb{P}_1$ mit Blätterzahl $\leq g+1$.
+	Für jede kompakte Riemannsche Fläche $X$ gibt es eine Überlagerung \\ $f:X\rightarrow \mathbb{P}_1$ mit Blätterzahl $\leq g+1$.
 	\end{koro}
 \begin{proof}
-	Die Abbildung aus \thref{satz:polstellenordnung} lässt sich als (nicht konstante) holomorphe Funktion $f:X\rightarrow \mathbb{P}_1$ auffassen (vgl. \cite[~S.8]{forster}), ist also eine Überlagerung der Zahlenkugel (vgl. \cite[S.18, Satz 4.2]{forster}). Nach Satz 4.24 in \cite{forster} hat dann jeder Punkt die Vielfachheit $\leq g+1$, folglich ist die Blätterzahl $\leq g+1$.
+	Die Abbildung aus \thref{satz:polstellenordnung} lässt sich als (nicht konstante) holomorphe Funktion $f:X\rightarrow \mathbb{P}_1$ auffassen (vgl. \cite[~S.8]{forster}), ist also eine Überlagerung der Zahlenkugel (vgl. \cite[~S.18]{forster}). Nach Satz 4.24 in \cite{forster} hat dann jeder Punkt die Vielfachheit $\leq g+1$, folglich ist die Blätterzahl $\leq g+1$.
 	
 \end{proof}
 \begin{koro}
@@ -1474,7 +1472,7 @@ Eine weitere wichtige Folgerung betrifft den Grad von kanonischen Divisoren:
 	\]
 \end{satz}
 \begin{proof}
-		Sei $K\coloneqq \omega.$ Nach dem Satz von Riemann-Roch\ref{satz:riemann-roch} gilt die Gleichung
+		Sei $K\coloneqq \omega.$ Nach dem Satz von Riemann-Roch \ref{satz:riemann-roch} gilt die Gleichung
 		\[
 		\dim H^0(X,\mathcal{O}_K)-\dim H^1(X,\mathcal{O}_K)=1-g+\deg K.
 		\]
@@ -1485,22 +1483,21 @@ Eine weitere wichtige Folgerung betrifft den Grad von kanonischen Divisoren:
 		Daraus folgt durch Umformung direkt die Aussage.
 \end{proof}
 \begin{satz}[Riemann-Hurwitz-Formel]\thlabel{satz:riemann-hurwitz}
-	Sei $f:X\rightarrow Y$ eine eine $n$-blättrige holomorphe Überlagerung zwischen zwei kompakten Riemannschen Flächen. Sei $g$ das Geschlecht von $X$, $g'$ das von $Y$ und $v(f,x)$ die Vielfachheit, mit der $f$ im Punkt $x\in X$ den Wert $f(x)$ annimmt. Dann gilt die Riemann-Hurwitz-Formel
+	Sei $f:X\rightarrow Y$ eine $n$-blättrige holomorphe Überlagerung zwischen zwei kompakten Riemannschen Flächen. Sei $g$ das Geschlecht von $X$, $g'$ das von $Y$ und $v(f,x)$ die Vielfachheit, mit der $f$ im Punkt $x\in X$ den Wert $f(x)$ annimmt. Dann gilt die Riemann-Hurwitz-Formel
 	\[
-	2g-2=n(2g'-2)+\sum_{x\in X}\left(v(f,x)-1\right)
+	2g-2=n(2g'-2)+\sum_{x\in X}\left(v(f,x)-1\right).
 	\]
 \end{satz}
 \begin{proof}
 Für eine nicht verschwindende, meromorphe Differentialform $\omega\in \mathcal{M}^{(1)}(Y)$ gilt nach \thref{satz:degw}, dass
  $\deg(\omega)=2g'-2$( *). Da $f^*\omega$ eine nicht verschwindende Differentialform auf $X$ ist gilt ebenso $\deg (f^*\omega)=2g-2$ (**). Sei $x\in X$ mit $f(x)=y\in Y$. 
- 
- Nach dem Satz über die lokale Gestalt holomorpher Funktionen in \cite[~S.9]{forster} können wir zwei Koordinatenumgebungen $(U,z)$ von $x$ und $(U',w)$ von $y$ wählen mit $z(x)=0$ und $w(y)=0$, sodass sich lokal schreiben lässt $w\circ f=z^k$, wobei $k=v(f,x)$. In $U'$ wählen wir $\omega = \psi (w) \dif w$ für eine meromorphe Funktion $\psi\in \mathcal{M}(Y)$. Dann ergibt sich auf $U$ für den die zurückgeholte Form 
+ Nach dem Satz über die lokale Gestalt holomorpher Funktionen in \cite[~S.9]{forster} können wir zwei Koordinatenumgebungen $(U,z)$ von $x$ und $(U',w)$ von $y$ wählen mit $z(x)=0$ und $w(y)=0$, sodass sich lokal schreiben lässt $w\circ f=z^k$, wobei $k=v(f,x)$. In $U'$ wählen wir $\omega = \psi (w) \dif w$ für eine meromorphe Funktion $\psi\in \mathcal{M}(Y)$. Dann ergibt sich auf $U$ für die zurückgeholte Form 
 \[
 f^*\omega = \psi(z^k)\dif (z^k) = kz^{k-1}\psi(z^k)dz.
 \]    	
 Also gilt 
 \begin{align*}
-	{\ord_x} (f*\omega) 	&= \ord_x(kz^{k-1}\psi(z)))\\
+	{\ord_x} (f*\omega) 	&= \ord_x(kz^{k-1}\psi(z))\\
 					  	&= \ord_x(kz^{k-1})+\ord_x(psi(z^k))\\
 					  	&= k-1 +k\ord_y(\psi(w))\\
 					  	&= v(f,x)-1+v(f,x) \ord_y(\omega).
@@ -1519,7 +1516,7 @@ insgesamt also
 \begin{align*}
 	\deg(f^*\omega)=\sum_{x\in X} \textstyle{\ord_x}(f^*\omega) &= \sum_{y\in Y}\sum_{x\in f^{-1}(x)} \textstyle{\ord_x}(f^*\omega)\\
 	&=\sum_{y\in Y}\sum_{x\in f^{-1}(y)}(v(f,x)-1)+ n\sum_{y\in Y}\textstyle{\ord_y}(\omega) \\
-	&=\sum_{x\in X} (v(f,x)-1) + n\sum_{y\in Y} {ord_y}(\omega)\\
+	&=\sum_{x\in X} (v(f,x)-1) + n\sum_{y\in Y} \ord_y(\omega)\\
 	&=\sum_{x\in X} (v(f,x)-1) + n\deg (\omega).
 	\end{align*}
 	Setzen wir nun (*) und (**) für die linke und rechte Seite ein, so folgt die Behauptung. 
@@ -1556,7 +1553,7 @@ Da wir hier nur Flächen, also $2$-dimensionale Mannigfaltigkeiten betrachten, w
 \nomenclature[O]{$\sigma<\tau$}{\nomrefpage}
 \nomenclature[O]{$\mid T\mid$}{\nomrefpage}
 \begin{defi}[Seite]
-Für zwei Simplizes $\sigma,\tau\in\mathbb{R}^n$ schreiben wir $\tau\leq\sigma$, falls die Ecken von $\tau$ auch Ecken von $\sigma$. Dann heißt $\tau$ \emph{Seite} von $\sigma$. Falls zusätzlich noch $\tau \neq \sigma$ gilt, schreiben wir $\tau <\sigma$ und nenen $\tau$ \emph{eigentliche Seite} von $\sigma.$
+Für zwei Simplizes $\sigma,\tau\in\mathbb{R}^n$ schreiben wir $\tau\leq\sigma$, falls die Ecken von $\tau$ auch Ecken von $\sigma$ sind. Dann heißt $\tau$ \emph{Seite} von $\sigma$. Falls zusätzlich noch $\tau \neq \sigma$ gilt, schreiben wir $\tau <\sigma$ und nenen $\tau$ \emph{eigentliche Seite} von $\sigma.$
 \end{defi}
 \begin{defi}[Simplizialkomplex]
 Ein \emph{Simplizialkomplex} $T$ im $\mathbb{R}^n$ ist eine endliche Menge von Simplizes mit folgenden Eigenschaften:
@@ -1570,10 +1567,11 @@ Wir schreiben
 \]
 und versehen diesen Raum mit der Teilraumtopologie. Die $0$-Simplizes in $K$ nennen wir \emph{Ecken}, die $1$-Simplizes \emph{Kanten} und die $2$-Simplizes \emph{Dreiecke}.
 \end{defi}
+
 \begin{defi}[Triangulierung]
-Ein topologischer Raum $X$ heißt \emph{triangulierbar}, falls es einen Simplizialkompklex $T$ gibt, sodass $|T|$ homöomorph zu $X$ ist. Der Simplizialkomplex heißt \emph{Triangulierung} von $X$.
+Ein topologischer Raum $X$ heißt \emph{triangulierbar}, falls es einen Simplizialkomplex $T$ gibt, sodass $|T|$ homöomorph zu $X$ ist. Der Simplizialkomplex heißt \emph{Triangulierung} von $X$.
 \end{defi}
-Nach den Satz von Radó (siehe \cite[~S.60]{geomTop}) ist jede $2$-Mannigfaltigkeit triangulierbar, also auch jede Riemannsche Fläche. Wir können nun zum toplogischen Geschlecht kommen.
+Nach dem Satz von Radó (siehe \cite[~S.60]{geomTop}) ist jede $2$-Mannigfaltigkeit triangulierbar, also auch jede Riemannsche Fläche. Wir können nun zum toplogischen Geschlecht kommen.
 \nomenclature[O]{$g_{top}$}{topologisches Geschlecht, \nomrefpage}
 \nomenclature[Oc]{$\chi(X)$}{Euler-Charakteristik, \nomrefpage}
 \begin{defi}[topologisches Geschlecht, Euler-Charakteristik]
@@ -1581,12 +1579,11 @@ Sei $X$ eine kompakte Riemannsche Fläche und bezeichne mit $E,K,F$ die Anzahl d
 \[
 \chi (X)\coloneqq 2-2g_{top}=E-K+F.
 \]
-Die Zahl $\chi(X)$ heißt \emph{Euler-Charakteristik} der Riemannschen Fläche $X$ und $g_{top}$ das \emph{topologische Geschlecht}\footnote{Wir hätten das Geschlecht auch über die Henkel-Zerlegung definieren können, und dann die Gleichheit beweisen (siehe \cite[~Kap. 22]{geomTop}); so wird klar, dass es sich anschaulich um die Löcher der Fläche handelt}.
+Die Zahl $\chi(X)$ heißt \emph{Euler-Charakteristik} der Riemannschen Fläche $X$ und $g_{top}$ das \emph{topologische Geschlecht}\footnote{Wir hätten das Geschlecht auch über die Henkel-Zerlegung definieren können, und dann die Gleichheit beweisen (siehe \cite[~Kap. 22]{geomTop}); so wird klar, dass es sich anschaulich um die Löcher der Fläche handelt.}.
 \end{defi}
 Diese Definition können wir machen, da die Euler-Charakteristik einer kompakten $2$-Mannig"-faltigkeit tatsächlich unabhängig von der Wahl der Triangulierung ist, siehe dazu \cite[~S.149]{geomTop}. 
-
 \begin{satz}
-Die beiden eingeführten Geschlechtsbegriffe einer kompakten Riemannschen Fläche $X$ sind gleich, es gilt als
+Die beiden eingeführten Geschlechtsbegriffe einer kompakten Riemannschen Fläche $X$ sind gleich, es gilt also
 \[
 g=g_{top}.
 \]
