@@ -77,7 +77,7 @@ ifthen}
 
 %Einstellungen für Paragraphen%
 
-\setlength{\parindent}{0pt}
+%\setlength{\parindent}{0pt}
 
 \date{\today}
 
@@ -85,7 +85,7 @@ ifthen}
 
 \begin{document}
 \input{./Dateien/Titelseite}
-\pagenumbering{Alph}
+
 % Erzeugung des Deckblatt
 
 
@@ -99,9 +99,18 @@ ifthen}
 
 
 \newpage
-\pagenumbering{arabic}
-\section{Einleitung}
-Die Riemannschen Flächen, bennant nach Bernhard Riemann, welcher sie zuerst untersuchte, spielen heute in der Mathematik und insbesondere in der Funktionentheorie eine sehr wichtige Rolle bei der Untersuchung holomorpher und meromorpher Funktionen.
+
+\pagenumbering{roman}
+\setcounter{page}{3}
+\addsec{Einleitung}
+Die Riemannschen Flächen, benannt nach dem Entdecker Bernhard Riemann spielen heute in der Mathematik und insbesondere in der Funktionentheorie eine sehr wichtige Rolle bei der Untersuchung holomorpher und meromorpher Funktionen. Die Garben und Garbenkohmologie, welche von dem französischen Mathematiker Jean Leray in seiner Zeit in einem deutschen Kriegsgefangenenlager im 2. Weltkrieg begründet wurden, bilden ein mächtiges Werkzeug zur Untersuchung dieser.\par
+
+In dieser Arbeit soll der sogenannte Endlichkeitssatz für die erste Kohomologiegruppe $H^1(X,\mathcal{O})$  einer kompakten Riemannschen Fläche bezüglich der Garbe der holomorphen Funktionen bewiesen werden. Dieser sagt eben aus, dass die Dimension als Vektorraum über den komplexen Zahlen endlich ist; die Dimension heißt \emph{Geschlecht} der Riemannschen Fläche. Daraus lassen sich direkt Aussagen über die Existenz meromorpher Funktionen auf kompakten Riemannschen Flächen, sowie die Existenz holomorpher Funktionen auf nicht kompakten treffen.
+
+Die Grundbegriffe der Riemannschen Flächen und holomorpher und meromorpher Abbildungen zwischen diesen werden als bekannt vorausgesetzt, eine kurze Einführung wird zu den zentralen Werkzeugen Garben und Garbenkohomologie gegeben, sowie zu Differentialformen, Überlagerung und Vielfachheit. Danach werden wir schrittweise den Endlichkeitssatz mit dem funktionalanalytischen Werkzeug der $\mathcal{L}^2$-Norm beweisen. Im dritten Abschnitt werden die direkten Folgerungen daraus erläutert und beweisen. Im vierten Abschnitt wird die kohomologische Version des Satzes von Riemann-Roch, benannt nach Bernhard Riemann und seinem Schüler Gustav Roch, formuliert und mit Mitteln der algebraischen Topologie bewiesen. Dieser nutzt das Geschlecht und damit den Endlichkeitssatz, um Aussage um die Anzahl meromorpher Funktionen mit bestimmte Einschränkungen auf Riemannschen Flächen zu geben. Damit kann man auch sehen, dass jede kompakte Riemannsche Fläche eine Überlagerungsfläche der Riemannschen Zahlenkugel bildet. Im letzten Abschnitt führen wir schließlich kurz die topologische Version des Geschlechts über Triangulierungen und die Euler-Charakteristik ein, um zu zeigen, dass diese Definition mit der aus dem Endlichkeitssatz übereinstimmt. Also zählt das abstrakt über Garbenkohomologie definierte Geschlecht tatsächlich anschaulich die Anzahl der Löcher.
+
+Diese Bachelorarbeit orientiert sich größtenteils an den Kapiteln 14 und 15 des Buches "`Riemannsche Flächen"' von Otto Forster \cite{forster}, erschienen erstmalig 1977 beim Springer-Verlag. Auch die Definitionen der Einführung wurden diesem entnommen beziehungsweise daran angelehnt. Im letzten Kapitel werden Simplizialkomplexe und Triangulierung analog zu "`Algebraische Topologie- Eine Einführung"' von Heiner Zieschang und Ralph Stöcker \cite{algTop} eingeführt. Die Grundidee des letzten Beweises zur Gleichheit der Geschlechterbegriffe stammt aus dem Vorlesungsskript zu "`Kompakte Riemannsche Flächen"' an der Universität Heidelberg von Rainer Weissauer \cite{weissauer} und wurde mithilfe von S.52 in "`Algebraic Curves and Riemann Surfaces"' von Rick Miranda \cite{algCur} ausgeführt.
+
 \newpage
 
 
@@ -114,13 +123,14 @@ Die Riemannschen Flächen, bennant nach Bernhard Riemann, welcher sie zuerst unt
 \nomenclature[Ae]{$\mathbb{C}^*$}{$=\{z\in\mathbb{C};~z\neq 0\}$}
 \nomenclature[Af]{$\mathbb{P}_1$}{$=\mathbb{C}\cup \{\infty\},$ die Riemannsche Zahlenkugel}
 
+\pagenumbering{arabic}
 %SECTION:EINFÜHRUNG%
 
 \section{Einführung}
 \phantom{\cite{algCur}\cite{algTop}}
 %subsection:Einführung in die Garbentheorie%
 
-\subsection{Einführung in die Garbentheorie}
+\subsection{Garbentheorie}
 Hier wird zunächst eine Einführung in die Theorie der Garben gegeben, welche sich mithilfe der Garbenkohomologie als sehr nützliches Werkzeug für die Untersuchung der Riemannschen Flächen erweisen wird. 	Unter den ersten Definitionen lassen sich motivierende Beispiele finden.
 
 
