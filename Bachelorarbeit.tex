@@ -662,7 +662,7 @@ $$
 $$
 Dieses Skalarprodukt ist wohldefiniert, da für alle $z\in D$ gilt, dass $\langle f,g\rangle \leq \norm{f}_{\mathcal{L}^2(D)}\norm{g}_{\mathcal{L}^2(D)}$ nach der Cauchy-Schwarz-Ungleichung.
 \end{defi}
-Es lässt sich damit zeigen, dass $\mathcal{L}^2(U)$ damit einen Hilbertraum bildet. 
+
 \begin{bsp}\thlabel{bsp:norm}
 \begin{enumerate}
 \item
@@ -684,49 +684,36 @@ $$
 \end{enumerate}
 \end{bsp}
 
-\nomenclature[Kg]{$Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{F})$}{\nomrefpage}
-\nomenclature[Kh]{$C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{F})$}{\nomrefpage}
 
-Mithilfe zu der obigen Definition können wir die $\mathcal{L}^2$-Norm auch für Koketten mit Koeffizienten in der Garbe der holomorphen Funktionen definieren.
-\begin{defi}\thlabel{kozykelnorm}
-Sei $X$ eine riemannsche Fläche und $\left( U_i^{*},z_i\right)_{1\leq i\leq n}$ eine endliche Familie von Karten, sodass $z_i(U_i^{*})\subset \mathbb{C}$ Kreisscheiben sind und seien die Mengen $U_i\subset U_i^{*}$ offen. Wir schreiben $\mathfrak{U}\coloneqq\left( U_i \right)_{1\leq i\leq n}$ und $\mathfrak{U}^{*}\coloneqq\left( U_i^{*}\right)_{1\leq i\leq n}$ .
-\begin{enumerate}
-\item
-Für eine $0$-Kokette $\eta = (f_i)\in C^0(\mathfrak{U},\mathcal{O})$ sei
-$$
-\norm{\eta}_{\mathcal{L}^2(\mathfrak{U})}^2 \coloneqq \sum_i \norm{f_i}_{\mathcal{L}^2(U_i)}^2.
-$$
-\item
-Für eine $1$-Kokette $\xi= (f_{i,j})\in C^1(\mathfrak{U,\mathcal{O}}) $ sei 
-$$
-\norm{\xi}_{\mathcal{L}^2 (\mathfrak{U})}^2\coloneqq \sum_{i,j} \norm{f_{i,j}}_{\mathcal{L}^2(U_i\cap U_j)}^2.
-$$
-\end{enumerate} 
-Hier wird die Norm der Komponentenfunktionen bezüglich der Karte $z$ ausgerechnet, das heißt
-$$
-\norm{f_i}_{\mathcal{L}^2(U_i)} \coloneqq \norm{f_i\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i))}
-$$ 
-und 
-$$
-\norm{f_{i,j}}_{\mathcal{L}^2(U_i\cap U_j)}\coloneqq \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i\cap U_j))}.
-$$
-Analog heißt eine Kokette \emph{quadratisch integrierbar}, falls die Norm endlich ist. \\Den Raum der quadratisch integrierbaren Koketten bezeichnen wir mit $C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ für $q=0,1$ und den Raum der Kozykel in $C^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ mit $Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$. Dieser bildet einen abgeschlossenen Untervektorraum.
-\end{defi}
-\begin{bem}
-Die Mengen $(U^*_i)_{1\leq i\leq n }$ müssen für diese Definition nicht $X$ überdecken und auch die Räume $C^q_{\mathcal{L}^2}(\mathfrak{U})$ bilden Hilberträume (vgl. \cite[~S.112]{forster}.
-\end{bem}
-\nomenclature[Al]{$U/V$}{Quotientenraum der Vektorräume}
-\nomenclature[Am]{$U/\sim$}{Menge der Äquivalenzklassen}
-\nomenclature[An]{$\dim(V)$}{Dimension der Vektorraums $V$ über $\mathbb{C}$, in Kapitel 5 über $\mathbb{R}$}
-\nomenclature[Ao]{$\mathrm{kodim}(U,V)$}{$=\dim V/U,$ die Kodimensin der Vektorräume}
 
+\begin{lemma}\thlabel{lemma:hilbert}
+Für eine offene Teilmenge $U\subset X$ einer Riemannschen Fläche $X$ ist $\mathcal{L}^2(U)$ ein Hilbertraum.
+\end{lemma}
+\begin{proof}
+Sei $ D_r \coloneqq \{z\in D;~B(z,r)\subset D\}$ für ein $r>0$ Menge aller Punkte, deren Abstand zum Rand kleiner oder gleich $r$ ist. Sei für ein $f\in\mathcal{L}^2(D)$ die Taylorentwicklung um ein $a\in D_r$ durch
+\[
+f(z)=\sum_{n=0}^{\infty} c_n(z-a)^n
+\]
+gegeben. Dann gilt nach (\ref{bsp:norm}), dass
+\[
+|f(a)|^2=|c_0|^2\leq \sum_{n=0}\frac{|c_n|^2 r^{2n}}{n+1} = \frac{1}{\pi r^2}\norm{f}_{\mathcal{L}^2(B(a,r))}^2\leq \frac{1}{\pi r^2} \norm{f}_D,
+\]
+wobei $\norm{f}_D\coloneqq \sup\{|f(z)|;~z\in D\}$. Dann gilt also
+\[
+\norm{f}_{D_r}\leq \frac{1}{\sqrt{\pi}r}\norm{f}_D.
+\]
+Sei nun $(f_n)_{n\in \mathbb{N}}\in\mathcal{L}^2(D)$ eine Cauchy-Folge. Nach den Ungleichungen ist sie lokal gleichmäßig konvergent, damit ist die Grenzfunktion auch holomorph und natürlich integrierbar. Also ist sie in $\mathcal{L}^2(D)$ und der Raum ist vollständig.
+\end{proof}
+\nomenclature[As]{$B(a,r)$}{$=\{z\in\mathbb{C};~|z-a|<r\}$, die offene Kreisscheibe um $a\in\mathbb{C}$ mit Radius $r>0$}
+\nomenclature[Os]{$\norm{f}_D$}{$=\sup\{|f(z)|;~z\in D\}$, die Supremumsnorm auf $D\subset\mathbb{C}$ offen}
+Das folgende Lemma wird benötigt, um später eine wichtige Aussage für die Norm zu zeigen.
 \begin{lemma}\thlabel{kodim}
 Seien $D\subset\mathbb{C}$ offen, $a_1,\ldots,a_k\in\mathbb{C}$ und $n\in\mathbb{N}$. Dann gilt für die Menge \[A\coloneqq \left\{ f\in \mathcal{L}^2(D); f(a_j)=f'(a_j)=\ldots=f^{(n-1)}(a_j)= 0,  j=1,\ldots,n\right\}\]
 aller quadratisch integrierbaren, holomorphen Funktionen, die in allen $a_j$ mindestens eine $n$- fache Nullstelle haben:
 \[ \mathrm{kodim}(A,\mathcal{L}^2(D))\leq kn.
 \]
 \end{lemma}
-\newpage
+
 \begin{proof}
 Wir definieren uns die lineare Hilfsabbildung
 
@@ -783,6 +770,45 @@ Setzt man alles zusammen, erhält man
 
 
 \end{proof}
+Man kann nun die $\mathcal{L}^2$-Norm auch für Koketten mit Koeffizienten in der Garbe der holomorphen Funktionen definieren.
+\begin{defi}\thlabel{kozykelnorm}
+Sei $X$ eine Riemannsche Fläche und $\left( U_i^{*},z_i\right)_{1\leq i\leq n}$ eine endliche Familie von Karten, sodass $z_i(U_i^{*})\subset \mathbb{C}$ Kreisscheiben sind und seien die Mengen $U_i\subset U_i^{*}$ offen. Wir schreiben $\mathfrak{U}\coloneqq\left( U_i \right)_{1\leq i\leq n}$ und $\mathfrak{U}^{*}\coloneqq\left( U_i^{*}\right)_{1\leq i\leq n}$ .
+\begin{enumerate}
+\item
+Für eine $0$-Kokette $\eta = (f_i)\in C^0(\mathfrak{U},\mathcal{O})$ sei
+$$
+\norm{\eta}_{\mathcal{L}^2(\mathfrak{U})}^2 \coloneqq \sum_i \norm{f_i}_{\mathcal{L}^2(U_i)}^2.
+$$
+\item
+Für eine $1$-Kokette $\xi= (f_{i,j})\in C^1(\mathfrak{U,\mathcal{O}}) $ sei 
+$$
+\norm{\xi}_{\mathcal{L}^2 (\mathfrak{U})}^2\coloneqq \sum_{i,j} \norm{f_{i,j}}_{\mathcal{L}^2(U_i\cap U_j)}^2.
+$$
+\end{enumerate} 
+Hier wird die Norm der Komponentenfunktionen bezüglich der Karte $z$ ausgerechnet, das heißt
+$$
+\norm{f_i}_{\mathcal{L}^2(U_i)} \coloneqq \norm{f_i\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i))}
+$$ 
+und 
+$$
+\norm{f_{i,j}}_{\mathcal{L}^2(U_i\cap U_j)}\coloneqq \norm{f_{i,j}\circ z_i^{-1}}_{\mathcal{L}^2(z_i(U_i\cap U_j))}.
+$$
+Analog heißt eine Kokette \emph{quadratisch integrierbar}, falls die Norm endlich ist. \\Den Raum der quadratisch integrierbaren Koketten bezeichnen wir mit $C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ für $q=0,1$ und den Raum der Kozykel in $C^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ mit $Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$. Dieser bildet einen abgeschlossenen Untervektorraum.
+\end{defi}
+\nomenclature[Kg]{$Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{F})$}{\nomrefpage}
+\nomenclature[Kh]{$C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{F})$}{\nomrefpage}
+\begin{bem}
+Die Mengen $(U^*_i)_{1\leq i\leq n }$ müssen für diese Definition nicht $X$ überdecken.
+\end{bem}
+\nomenclature[Al]{$U/V$}{Quotientenraum der Vektorräume}
+\nomenclature[Am]{$U/\sim$}{Menge der Äquivalenzklassen}
+\nomenclature[An]{$\dim(V)$}{Dimension der Vektorraums $V$ über $\mathbb{C}$, in Kapitel 5 über $\mathbb{R}$}
+\nomenclature[Ao]{$\mathrm{kodim}(U,V)$}{$=\dim V/U,$ die Kodimensin der Vektorräume}
+
+Direkt aus der Wahl der Norm folgt mit \thref{lemma:hilbert}:
+\begin{koro}
+    Die Räume $C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ sind Hilberträume.
+\end{koro}
 \nomenclature[Al]{$\mathfrak{V}\ll\mathfrak{U}$}{$\mathfrak{V}$ ist Schrumpfung von $\mathfrak{U}$, \nomrefpage}
 \nomenclature[Am]{$\mid \mathfrak{U}\mid$}{\nomrefpage}
 \begin{defi}[Schrumpfung]\thlabel{defi:schrumpfung}
@@ -793,6 +819,7 @@ Seien $\mathfrak{U}=(U_I)_{i\in I},\mathfrak{W}=(W_i)_{i\in I}$ zwei Familien vo
 \end{bem}
 
 Damit können wir die analoge Aussage zu \thref{lemma:normendlich} für integrierbare Kozykel treffen.
+\newpage
 
 \begin{koro}\thlabel{norm}
 Seien $\mathfrak{U}$ und $(z_i)_{1\leq i\leq n}$ wie in \thref{kozykelnorm} und sei eine Schrumpfung $\mathfrak{V}\ll \mathfrak{U}$ gegeben, dann gilt für alle $\xi\in C^q(\mathfrak{U},\mathcal{O})$, dass $\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}<\infty$. \\
@@ -886,7 +913,7 @@ mit der Norm
 \[
 \norm{(\zeta,\xi,\eta)}_{H}\coloneqq \left( \norm{\zeta}_{\mathcal{L}^2(\mathfrak{U})}^2+\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}^2+\norm{\eta}_{\mathcal{L}^2(\mathfrak{W})}^2\right)^{1/2}.
 \]
-Dieser ist auch ein Hilbertraum. Sei 
+Dieser ist wegen der vorigen Aussage auch ein Hilbertraum. Sei 
 \[
 L\coloneqq\left\{ (\zeta,\xi,\eta)\in H; \zeta=\xi+\delta\eta\text{ auf } \mathfrak{W}\right\}.
 \]
