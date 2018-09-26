@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,toc=bibliography]{scrartcl}
+ \documentclass[11pt,a4paper,toc=bibliography]{scrartcl}
 %Packages%
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
@@ -17,6 +17,9 @@
 \usepackage{tikz-cd}
 \usepackage{standalone}
 \usepackage[automark]{scrpage2}
+
+
+
 \usepackage[german]{nomencl}
 \RequirePackage{
 ifthen}
@@ -103,11 +106,11 @@ ifthen}
 \pagenumbering{roman}
 \setcounter{page}{3}
 \addsec{Einleitung}
-Die Riemannschen Flächen, benannt nach dem Entdecker Bernhard Riemann spielen heute in der Mathematik und insbesondere in der Funktionentheorie eine sehr wichtige Rolle bei der Untersuchung holomorpher und meromorpher Funktionen. Die Garben und Garbenkohmologie, welche von dem französischen Mathematiker Jean Leray in seiner Zeit in einem deutschen Kriegsgefangenenlager im 2. Weltkrieg begründet wurden, bilden ein mächtiges Werkzeug zur Untersuchung dieser.\par
+Die Riemannschen Flächen, benannt nach dem Entdecker Bernhard Riemann spielen heute in der Mathematik und insbesondere in der Funktionentheorie eine sehr wichtige Rolle bei der Untersuchung holomorpher und meromorpher Funktionen. Durch Garben und Garbenkohmologie, welche von dem französischen Mathematiker Jean Leray in seiner Zeit in einem deutschen Kriegsgefangenenlager im 2. Weltkrieg begründet wurden, lassen sich wichtige Eigenschaften Riemannscher Flächen untersuchen.
 
-In dieser Arbeit soll der sogenannte Endlichkeitssatz für die erste Kohomologiegruppe $H^1(X,\mathcal{O})$  einer kompakten Riemannschen Fläche bezüglich der Garbe der holomorphen Funktionen bewiesen werden. Dieser sagt eben aus, dass die Dimension als Vektorraum über den komplexen Zahlen endlich ist; die Dimension heißt \emph{Geschlecht} der Riemannschen Fläche. Daraus lassen sich direkt Aussagen über die Existenz meromorpher Funktionen auf kompakten Riemannschen Flächen, sowie die Existenz holomorpher Funktionen auf nicht kompakten treffen.
+Der Gegenstand dieser Arbeit ist der Endlichkeitssatz für die 1. Kohomologiegruppe einer kompakten Riemannsche Fläche mit Koeffizienten in der Garbe der holomorphen Funktionen $H^1(X,\mathcal{O})$. Dieser sagt eben aus, dass deren die Dimension als Vektorraum über den komplexen Zahlen endlich ist; die Dimension heißt \emph{Geschlecht} der Riemannschen Fläche. Daraus lassen sich direkt Aussagen über die Existenz meromorpher Funktionen auf kompakten Riemannschen Flächen, sowie die Existenz holomorpher Funktionen auf nicht kompakten treffen.
 
-Die Grundbegriffe der Riemannschen Flächen und holomorpher und meromorpher Abbildungen zwischen diesen werden als bekannt vorausgesetzt, eine kurze Einführung wird zu den zentralen Werkzeugen Garben und Garbenkohomologie gegeben, sowie zu Differentialformen, Überlagerung und Vielfachheit. Danach werden wir schrittweise den Endlichkeitssatz mit dem funktionalanalytischen Werkzeug der $\mathcal{L}^2$-Norm beweisen. Im dritten Abschnitt werden die direkten Folgerungen daraus erläutert und beweisen. Im vierten Abschnitt wird die kohomologische Version des Satzes von Riemann-Roch, benannt nach Bernhard Riemann und seinem Schüler Gustav Roch, formuliert und mit Mitteln der algebraischen Topologie bewiesen. Dieser nutzt das Geschlecht und damit den Endlichkeitssatz, um Aussage um die Anzahl meromorpher Funktionen mit bestimmte Einschränkungen auf Riemannschen Flächen zu geben. Damit kann man auch sehen, dass jede kompakte Riemannsche Fläche eine Überlagerungsfläche der Riemannschen Zahlenkugel bildet. Im letzten Abschnitt führen wir schließlich kurz die topologische Version des Geschlechts über Triangulierungen und die Euler-Charakteristik ein, um zu zeigen, dass diese Definition mit der aus dem Endlichkeitssatz übereinstimmt. Also zählt das abstrakt über Garbenkohomologie definierte Geschlecht tatsächlich anschaulich die Anzahl der Löcher.
+Die Grundbegriffe der Riemannschen Flächen und holomorpher und meromorpher Abbildungen zwischen diesen werden als bekannt vorausgesetzt, eine kurze Einführung wird zu den zentralen Werkzeugen Garben und Garbenkohomologie gegeben, sowie zu Differentialformen, Überlagerung und Vielfachheit. Danach werden wir schrittweise den Endlichkeitssatz mit dem funktionalanalytischen Werkzeug der $\mathcal{L}^2$-Norm beweisen. Im dritten Abschnitt werden die direkten Folgerungen daraus erläutert und beweisen. Im vierten Abschnitt wird die kohomologische Version des Satzes von Riemann-Roch, benannt nach Bernhard Riemann und seinem Schüler Gustav Roch, formuliert und mit Mitteln der algebraischen Topologie bewiesen. Dieser nutzt das Geschlecht und damit den Endlichkeitssatz, um Aussage über die Anzahl meromorpher Funktionen mit bestimmte Einschränkungen auf Riemannschen Flächen zu geben. Damit kann man auch sehen, dass jede kompakte Riemannsche Fläche eine Überlagerungsfläche der Riemannschen Zahlenkugel bildet, wodurch man mit der Riemann-Hurwitz Formel das Geschlecht der Fläche berechnen kann. Im letzten Abschnitt führen wir schließlich kurz die topologische Version des Geschlechts über Triangulierungen und die Euler-Charakteristik ein, um zu zeigen, dass diese Definition mit der aus dem Endlichkeitssatz übereinstimmt. Also zählt das abstrakt über Garbenkohomologie definierte Geschlecht tatsächlich anschaulich die Anzahl der Löcher.
 
 Diese Bachelorarbeit orientiert sich größtenteils an den Kapiteln 14 und 15 des Buches "`Riemannsche Flächen"' von Otto Forster \cite{forster}, erschienen erstmalig 1977 beim Springer-Verlag. Auch die Definitionen der Einführung wurden diesem entnommen beziehungsweise daran angelehnt. Im letzten Kapitel werden Simplizialkomplexe und Triangulierung analog zu "`Algebraische Topologie- Eine Einführung"' von Heiner Zieschang und Ralph Stöcker \cite{algTop} eingeführt. Die Grundidee des letzten Beweises zur Gleichheit der Geschlechterbegriffe stammt aus dem Vorlesungsskript zu "`Kompakte Riemannsche Flächen"' an der Universität Heidelberg von Rainer Weissauer \cite{weissauer} und wurde mithilfe von S.52 in "`Algebraic Curves and Riemann Surfaces"' von Rick Miranda \cite{algCur} ausgeführt.
 
@@ -136,37 +139,36 @@ Hier wird zunächst eine Einführung in die Theorie der Garben gegeben, welche s
 
 \begin{defi}[Prägarbe]\thlabel{defi:praegarbe}
 Sei $X$ ein topologischer Raum und $\mathcal{T}$ die Topologie auf $X$. Eine \emph{Prägarbe} abelscher Gruppen ist ein Paar $(\mathcal{F},\rho)$, bestehend aus:
-
+\begin{itemize}
 \item
 Einer Familie $\mathcal{F}=(\mathcal{F}(U))_{U\in \mathcal{T}}$ abelscher Gruppen.
 \item
 Einer Familie $\rho=(\rho^U_V)_{U,V\in\mathcal{T}, V \subset
 U}$ von Gruppenhomomorphismen $\rho^U_V:\mathcal{F}(U)\rightarrow \mathcal{F}(V)$.
+\end{itemize}
 Diese sollen auf natürliche Weise zusammenpassen, das bedeutet:
 \begin{enumerate}
 \item $
 \rho^U_U =\textstyle{ \id_{\mathcal{F}(U)}}
 $
-\item $\rho_W^V\circ \rho_V^U=\rho_W^U$
+\item $\rho_W^V\circ \rho_V^U=\rho_W^U$ für alle $W\subset V\subset U$ offen in $X$.
 \end{enumerate}
-für alle $W\subset V\subset U$ offen in $X$.
+
 Die Elemente in $\mathcal{F}(U)$ für $U\subset X$ offen heißen \emph{(lokale) Schnitte} und die Elemente in $\mathcal{F}(X)$ heißen \emph{globale Schnitte}.
 Wir schreiben für einen Schnitt $f\in\mathcal{F}(U)$ auch $p^U_V(f)=f \mid V$ und nennen die $p^U_V$ \emph{Einschränkungshomomorphismen}. Außerdem schreibt man oft nur $\mathcal{F}$ statt $(\mathcal{F},p)$, wenn die Einschränkungshomomorphismen in natürlicher Weise gegeben sind (siehe dazu die Beispiele).
 \end{defi}
 \nomenclature[Gm]{$f\mid U$}{Einschränkung der Funktion $f$ auf $U$, Notation in der Garbentheorie, \nomrefpage}
 \begin{defi}[Garbe]\thlabel{defi:garbe}
-Sei X ein topologischer Raum und $(\mathcal{F},p)$ eine Prägarbe abelscher Gruppen auf $X$.
-Falls nun für jede offene Menge $U\subset X$ und jede Familie von offenen Mengen $U_i\subset U$ mit $U = \bigcup_{i\in I}$ gilt:
+Sei $X$ ein topologischer Raum. Eine \emph{Garbe} abelscher Gruppen ist eine Prägarbe $(\mathcal{F},p)$, welche zusätzlich noch die folgenden Eigenschaften, genannt \emph{Garbenaxiome}, erfüllt:
 \renewcommand{\labelenumi}{(\roman{enumi})}
 \begin{enumerate}
 \item
-Für $f,g\in \mathcal{F}(U)$ mit $f\mid U_i = g\mid U_i$ gilt $f=g$,
+Für $f,g\in \mathcal{F}(U)$ mit $f\mid U_i = g\mid U_i$ gilt $f=g$.
 \item
 Gegeben $f_i\in U_i$ mit 
 $f_i\mid U_i\cap U_j = f_j\mid U_i\cap U_j$ für alle $i,j\in I$,
-so gibt es ein $f\in \mathcal{F}(U)$, sodass $f\mid U_i= f_i$ für alle $i\in I$,
+so gibt es ein $f\in \mathcal{F}(U)$, sodass $f\mid U_i= f_i$ für alle $i\in I$.
 \end{enumerate}
-dann heißt $(\mathcal{F},p)$ \emph{Garbe}. Diese Eigenschaften nennt man \emph{Garbenaxiome}.
 \end{defi}
 \begin{bem}
 Analog dazu lassen sich Prägarben sowie Garben auch auf Vektorräumen, Ringen und weiteren algebraischen Objekten definieren. 
@@ -193,9 +195,9 @@ Analog bildet $\mathcal{M}$ die Garbe der meromorphen Funktionen auf $X$ und $\m
 
 Als nächstes interessiert uns, wie die Elemente der $\mathcal{F}(U)$ in der Nähe eines Punktes $a\in X$ aussehen. Wir betrachten dazu die disjunkte Vereinigung
 \[
-\dot{\bigcup_{U\in \mathcal{T},a\in U}} \mathcal{F}(U).
+\dot{\bigcup_{U\in \mathcal{T},a\in U}} \mathcal{F}(U)
 \]
-
+und wollen dort eine Äquivalenzrelation einführen.
 \begin{defi}[Halm,Keim]\thlabel{defi:halm}
 Sei $\mathcal{F}$ eine Garbe auf dem topologischen Raum ($X,\mathcal{T}$). Zwei Elemente $f\in\mathcal{F}(U)$ und $g\in \mathcal{F}(V)$ für $U,V\subset X$ offen und $a\in U\cap V$ heißen äquivalent,
 \[
@@ -230,7 +232,7 @@ Man kann für Garben nun auch Homomorphismen definieren und damit den Begriff de
 Seien $(\mathcal{F},\rho),(\mathcal{G},\rho')$ Garben abelscher Gruppen über dem topologischen Raum $X$. 
 Als \emph{Garbenhomomorpismus} bezeichnen wir eine Familie von Gruppenhomomorphismen 
 \[
-\alpha_U :\mathcal{F}(U)\rightarrow \mathcal{F}(V)
+\alpha_U :\mathcal{F}(U)\rightarrow \mathcal{G}(U)
 \]
 für $U\subset X$ offen, sodass diese kompatibel mit den jeweiligen Einschränkungsabbildungen sind. 
 Damit ist gemeint, dass das Diagramm
@@ -238,7 +240,7 @@ Damit ist gemeint, dass das Diagramm
 \begin{tikzcd}
 \mathcal{F}(U) \arrow{d}[swap]{\rho^U_V} \arrow{r}{\alpha_U}
 & \mathcal{G}(U)\arrow{d}{{\rho'}^U_V} \\
-\mathcal{F}(V) \arrow{r}{\alpha_V} &\mathcal{G(V)} \\ 
+\mathcal{F}(V) \arrow{r}{\alpha_V} &\mathcal{G}(V) \\ 
 \end{tikzcd}
 \end{center}
 für $U\subset V$ offen kommutiert. 
@@ -295,7 +297,7 @@ exakt ist.
 %subsection:Garbenkohomologie%
 %subsection:Garbenkohomologie%
 \subsection{Garbenkohomologie}
-In diesem Abschnitt werden wir nun die Kohomologie von Garben erläutern, um die erste Kohomologiegruppe $H^1(X,\mathcal{F})$ für eine Riemannschen Fläche $X$ und eine Garbe $\mathcal{F}$ zu definieren.
+In diesem Abschnitt werden wir nun die Kohomologie von Garben erläutern, um die erste Kohomologiegruppe $H^1(X,\mathcal{F})$ für eine Riemannsche Fläche $X$ und eine Garbe $\mathcal{F}$ zu definieren.
 \nomenclature[Kb]{$Z^1(\mathfrak{U},\mathcal{F})$}{erste Kozykelgruppe, \nomrefpage}
 \nomenclature[Kc]{$B^1(\mathfrak{U},\mathcal{F})$}{erste Korandgruppe, \nomrefpage}
 \nomenclature[Kd]{$\delta$}{Korandoperatoren, \nomrefpage}
@@ -351,7 +353,7 @@ die \emph{1. Kozykelgruppe} und die \emph{1. Korandgruppe}. Die Elemente aus $Z^
 Folglich ist eine 1-Kokette $(f_{i,j})\in C^1(\mathfrak{U},\mathcal{F})$ genau dann ein Kozykel,
 wenn
 \[
-f_{i_k} = f_{i,j}+f_{j,k} \text{ auf } U_i\cap U_j\cap U_k  
+f_{i,k} = f_{i,j}+f_{j,k} \text{ auf } U_i\cap U_j\cap U_k  
 \]
 für alle $i,j,k\in I$ gilt.
  Man nennt dies die \emph{Kozykelrelation}. Es folgt, dass $f_{i,i} = 0$ und $f_{i,j} = -f_{j,i}$ gilt, wenn man $i=j=k$ bzw. für letzteres $k=i$ setzt. 
@@ -409,7 +411,7 @@ Es muss noch folgendes gezeigt werden, damit diese Abbildung wohldefiniert ist u
 Die oben genannte induzierte Abbildung zwischen Kohomologiegruppen  hängt nicht von der Wahl der Verfeinerungsabbildung ab und ist injektiv.
 \end{lemma}
 \begin{proof}
-Zunächst wird der erste Teil gezeigt. Sei also eine weitere Verfeinerungsabbildung  $\tilde{\tau}:K\rightarrow I, (f_{i,j})\mapsto (\tilde{g}_{k,l})$ gegeben. Dann ist $V_K\subset U_{\tau k}\cap U_{\tilde{\tau}k}$ für alle $k\in K$, folglich ergibt die Definition 
+Zunächst wird der erste Teil gezeigt. Sei also eine weitere Verfeinerungsabbildung  $\tilde{\tau}:K\rightarrow I, (f_{i,j})\mapsto (\tilde{g}_{k,l})$ gegeben. Dann ist $V_k\subset U_{\tau k}\cap U_{\tilde{\tau}k}$ für alle $k\in K$, folglich ergibt die Definition 
 \[
 h_k\coloneqq f_{\tau k,\tilde{\tau} k}\mid V_k\in \mathcal{F}(V_k)
 \]
@@ -432,7 +434,7 @@ Daraus folgt
 \[
 f_{i,\tau k}+g_k = f_{i,\tau l}+g_l.
 \]
-Dann kann man auf $(U_i\cap V_k)_{k\in K}$ das zweite Garbenaxiom anwenden und erhält  ein $h_i\in \mathcal{F}(U_i)$ mit
+Dann überdecken $(U_i\cap V_k)_{k\in K}$  die Menge $U_i$ und nach dem zweiten Garbenaxiom gibt es ein $h_i\in \mathcal{F}(U_i)$ mit
 \[
 h_i\mid U_i\cap V_k = f_{i,\tau k}+g_k.
 \]
@@ -469,14 +471,14 @@ $\mathfrak{U}$ heißt dann \textbf{Leraysche Überdeckung}.
 \begin{proof}
 	Wir zeigen, dass
 	\[\tau_{\mathfrak{V}}^{\mathfrak{U}}:H^1(\mathfrak{U},\mathcal{F})\rightarrow H^1(\mathfrak{V},\mathcal{F})\]
-	ein Isomorphismus ist für alle $\mathfrak{V}=(V_k)_{k\in K}$. Dann ist $\mathfrak{U}$ die feinste Überdeckung und es bleibt in \thref{defi:kohomologiegruppe} nur die Kohomologiegruppe von $\mathfrak{U}$. Nach \thref{lemma:verfeinerungsabbildung} bleibt noch Injektivität zu zeigen.
+	ein Isomorphismus ist für alle $\mathfrak{V}=(V_k)_{k\in K}$. Dann ist $\mathfrak{U}$ die feinste Überdeckung und es bleibt in \thref{defi:kohomologiegruppe} nur die Kohomologiegruppe von $\mathfrak{U}$. Nach \thref{lemma:verfeinerungsabbildung} bleibt noch Surjektivität zu zeigen.
 	Sei also $\tau : K\rightarrow I$ eine Verfeinerungsabbildung und sei $(f_{k,l})\in Z^1(\mathfrak{V},\mathcal{F}).$ Wir konstruieren einen Kozykel $(F_{i,j}\in Z^1(\mathfrak{U},\mathcal{F}))$, sodass \[(F_{\tau k,\tau l})-(f_{k,l})\]
 	in $\mathfrak{V}$ zerfällt, also die beiden kohomolog sind.
 	Für die Überdeckung $(U_i\cap V_k)_{k\in K}$ schreiben wir $U_i\cap\mathfrak{V}$. Nach Voraussetzung ist also $H^1(U_i\cap \mathfrak{V})=0$, also zerfällt jeder Kozykel und es gibt $g_{i,k}\in\mathcal{F}(U_i\cap V_k)$ mit
 	\[f_{k,l}\mid (U_i\cap V_k\cap V_l)=g_{i,k}-g_{i,l}.
 	\]
 	Dann gilt auf $U_i\cap U_j\cap V_k\cap V_l$
-	\[g_{i,k}-g_{i,l}=g_{j,k}-g{j,l},
+	\[g_{i,k}-g_{i,l}=g_{j,k}-g_{j,l},
 	\]
 	woraus
 	\[g_{j,k}-g_{i,k}=g_{j,l}-g_{i,l}
@@ -500,6 +502,8 @@ $\mathfrak{U}$ heißt dann \textbf{Leraysche Überdeckung}.
     $H^1(X,\mathcal{E})=0$, siehe (12.6) in \cite[~S.92]{forster}
     \item
     Falls $X$ eine offene Kreisscheibe in $\mathbb{C}$ ist, gilt $H^1(X,\mathcal{O})=0$, siehe (13.4) in \cite[~S.98]{forster}
+    \item
+    Für die Riemannsche Zahlenkugel $\mathbb{P}_1$ gilt $H^1(\mathbb{P}_1,\mathcal{O})=0$, siehe (13.5) in \cite[~S.107]{forster}
 \end{enumerate}
 \end{bsp}
 
@@ -525,14 +529,14 @@ H^0(\mathfrak{U},\mathcal{F})=Z^0(\mathfrak{U},\mathcal{F})\cong \mathcal{F}(X).
 \] 
 Dies motiviert die folgende Definition:
 \begin{defi}[0. Kohomologiegruppe]\thlabel{defi:0.kohomologiegruppe}
-	Die nullte Kohomologiegruppe des topologischen Raums $X$ bezüglich der Garbe abelscher Gruppen $\mathcal{F}$ ist
+	Die nullte Kohomologiegruppe des topologischen Raums $X$ mit Koeffizienten in der Garbe $\mathcal{F}$ ist
 	\[H^0(X,\mathcal{F})\coloneqq \mathcal{F}(X).\]
 \end{defi}
 
 %subsection:Differentialformen%
 
 \subsection{Differentialformen}
-Wir wollen hier nur knapp die lokale Gestalt einer Differentialform 1. Ordnung auf einer Riemannschen Fläche angeben, sowie die Ableitung einer Funktion und die verschiedenen Garben von Differentialformen definieren. Für die globalen Definitionen siehe \cite[~Kap. 9,]{forster}. 
+Wir wollen hier nur knapp die lokale Gestalt einer Differentialform 1. Ordnung auf einer Riemannschen Fläche angeben, sowie die der Ableitung einer Funktion und die verschiedenen Garben von Differentialformen definieren. Für die globalen Definitionen siehe \cite[~Kap. 9,]{forster}. 
 \nomenclature[Oa]{$\dif,\dif',\dif''$}{\nomrefpage}
 \nomenclature[Ge]{$\mathcal{M}^{(1)},\mathcal{E}^{1,0},\mathcal{E}^{0,1}$}{\nomrefpage}
 \nomenclature[Gf]{$\mathcal{M}^{(1)}$}{\nomrefpage}
@@ -547,7 +551,7 @@ Wir wollen hier nur knapp die lokale Gestalt einer Differentialform 1. Ordnung a
 	\[
 	\dif z = \dif x +i\dif y,~ \dif \overline{z}=\dif x-i\dif y.
 	\]
-	Zusammen mit den Differentialoperatoren des "Wirtinger Kalküls"
+	Zusammen mit den Differentialoperatoren des "`Wirtinger Kalküls"' nach Wilhelm Wirtinger
 	\[
 	\frac{\partial}{\partial z}\coloneqq \frac{1}{2}\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right), \frac{\partial}{\partial \overline{z}}\coloneqq \frac{1}{2}\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)
 	\] 
@@ -562,7 +566,7 @@ Wir wollen hier nur knapp die lokale Gestalt einer Differentialform 1. Ordnung a
 \end{bem}
 
 \begin{defi}[lokale Gestalt von Differentialformen]\thlabel{defi:differentialformen}
-Sei $\omega $ eine Differentialform auf der offenen Teilmenge $Y\subset X$ der Riemannschen Fläche $X$. Dann kann man auf $U\cap Y$ für jede Karte $(U,z)$ mit $z=x+iy$ schreiben
+Sei $\omega $ eine Differentialform 1.Ordnung auf der offenen Teilmenge $Y\subset X$ der Riemannschen Fläche $X$. Dann kann man auf $U\cap Y$ für jede Karte $(U,z)$ mit $z=x+iy$ schreiben
 \[
 \omega = f\dif x+g\dif y,
 \]
@@ -628,7 +632,7 @@ Es folgt direkt, dass jede nicht konstante, holomorphe Abbildung zwischen Rieman
 \begin{defi}[Vielfachheit]
 \begin{enumerate}
     \item
-    Sei $f:X\rightarrow Y$ eine nicht konstante, holomorphe Abbildung zwischen zwei Riemannschen Flächen $X,Y$. Dann gibt es für jede Umgebung $U_0$ von $a\in X$ eine Umgebung $U\subset U_0$ von $a$ und eine Umgebung $W\subset Y$ von $b=f(a)$, sodass die Menge $f^{-1}(y)\cap U$ genau $k$ Elemente für jedes $y\in W$ mit $y\neq b$ enthält. Diese Zahl $k$ nennen wir die \emph{Vielfachheit} von $f$ im Punkt $a$, notiert mit $k=v(f,a)$.
+    Sei $f:X\rightarrow Y$ eine nicht konstante, holomorphe Abbildung zwischen zwei Riemannschen Flächen $X,Y$. Dann gibt es für jede Umgebung $U_0$ von $a\in X$ eine Umgebung $U\subset U_0$ von $a$ und eine Umgebung $W\subset Y$ von $b=f(a)$, sodass die Menge $f^{-1}(y)\cap U$ genau $k$ Elemente für jedes $y\in W$ mit $y\neq b$ enthält. Diese Zahl $k$ nennen wir die \emph{Vielfachheit} von $f$ im Punkt $a$, notiert mit $k=v(f,a)$ (siehe dazu auch S.10 in \cite{forster}).
     \item
     Wir sagen die Abbildung $f$ nimmt den Wert $c\in Y$ \emph{mit Vielfachheit gerechnet m-mal} an, falls
     \[
@@ -637,7 +641,7 @@ Es folgt direkt, dass jede nicht konstante, holomorphe Abbildung zwischen Rieman
     \end{enumerate}
 \end{defi}
 
-\newpage
+
 %-------------------------------------------------------------------------------------------------%
 %------------------------------------2 DER ENDLICHKEITSSATZ---------------------------------------%
 %-------------------------------------------------------------------------------------------------%
@@ -658,7 +662,7 @@ $$
 $$
 Dieses Skalarprodukt ist wohldefiniert, da für alle $z\in D$ gilt, dass $\langle f,g\rangle \leq \norm{f}_{\mathcal{L}^2(D)}\norm{g}_{\mathcal{L}^2(D)}$ nach der Cauchy-Schwarz-Ungleichung.
 \end{defi}
-Es lässt sich damit zeigen, dass $\mathcal{L}^2(U)$ damit einen Hilbertraum bildet \cite{forster}. 
+Es lässt sich damit zeigen, dass $\mathcal{L}^2(U)$ damit einen Hilbertraum bildet. 
 \begin{bsp}\thlabel{bsp:norm}
 \begin{enumerate}
 \item
@@ -683,7 +687,7 @@ $$
 \nomenclature[Kg]{$Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{F})$}{\nomrefpage}
 \nomenclature[Kh]{$C^q_{\mathcal{L}^2}(\mathfrak{U},\mathcal{F})$}{\nomrefpage}
 
-Mithilfe zu der obigen Definition können wir die $\mathcal{L}^2$-Norm auch für Koketten bezüglich der Garbe der holomorphen Funktionen definieren, da deren Komponenten genau holomorphe Funktionen darstellen.
+Mithilfe zu der obigen Definition können wir die $\mathcal{L}^2$-Norm auch für Koketten mit Koeffizienten in der Garbe der holomorphen Funktionen definieren.
 \begin{defi}\thlabel{kozykelnorm}
 Sei $X$ eine riemannsche Fläche und $\left( U_i^{*},z_i\right)_{1\leq i\leq n}$ eine endliche Familie von Karten, sodass $z_i(U_i^{*})\subset \mathbb{C}$ Kreisscheiben sind und seien die Mengen $U_i\subset U_i^{*}$ offen. Wir schreiben $\mathfrak{U}\coloneqq\left( U_i \right)_{1\leq i\leq n}$ und $\mathfrak{U}^{*}\coloneqq\left( U_i^{*}\right)_{1\leq i\leq n}$ .
 \begin{enumerate}
@@ -718,7 +722,7 @@ Die Mengen $(U^*_i)_{1\leq i\leq n }$ müssen für diese Definition nicht $X$ ü
 
 \begin{lemma}\thlabel{kodim}
 Seien $D\subset\mathbb{C}$ offen, $a_1,\ldots,a_k\in\mathbb{C}$ und $n\in\mathbb{N}$. Dann gilt für die Menge \[A\coloneqq \left\{ f\in \mathcal{L}^2(D); f(a_j)=f'(a_j)=\ldots=f^{(n-1)}(a_j)= 0,  j=1,\ldots,n\right\}\]
-aller quadratisch integrierbaren Funktionen, die in allen $a_j$ mindestens eine $n$- fache Nullstelle haben:
+aller quadratisch integrierbaren, holomorphen Funktionen, die in allen $a_j$ mindestens eine $n$- fache Nullstelle haben:
 \[ \mathrm{kodim}(A,\mathcal{L}^2(D))\leq kn.
 \]
 \end{lemma}
@@ -801,8 +805,8 @@ gilt.
 \end{koro}
 \begin{proof}
   Sei $\xi=(f_i)\in C^0(\mathfrak{U},\mathcal{O})$, dann folgt der erste Teil der Aussage aus
-    \[\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}^2=\sum_i \norm{f_i}_{\mathcal{L}^2(V_i)}^2\leq\sum_i \norm{f_i}_{\mathcal{L}^2(\overline{V_i})}^2.\]
-    Da $\overline{V_i}$ kompakt sind, so auch deren Bilder unter einer Karte und damit sind alle Normen auf der rechten Seite endlich. Analog lässt sich dies für $\xi\in C^q(\mathfrak{U},\mathcal{O})$ zeigen.
+    \[\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}^2=\sum_i \norm{f_i}_{\mathcal{L}^2(V_i)}^2\leq\sum_i \norm{f_i}_{\mathcal{L}^2(\overline{V_i})}^2=\sum_i \norm{f_i\circ z^{-1}_i}^2_{\mathcal{L}^2(z_i(\overline{V_i}))}.\]
+    Da $\overline{V_i}$ kompakt sind, so auch deren Bilder unter einer Karte und damit sind alle Normen auf der rechten Seite endlich. Analog lässt sich dies für $\xi\in C^1(\mathfrak{U},\mathcal{O})$ zeigen.
     
     Der zweite Teil der Aussage gilt nach \thref{lemma:normendlich} bereits für $z_i(V_i\cap V_j)\Subset z_i(U_i\cap U_j)$\footnote{
                         $\overline{V_i},\overline{V_j}$ sind kompakt, also ist im Haussdorfraum $X$ ihr Schnitt auch kompakt und $\overline{V_i}\cap\overline{V_j}=\overline{V_i\cap V_j}\subset U_i\cap U_j.$ Dies bleibt unter der holomorphen Abbildung $z_i$ erhalten.
@@ -830,9 +834,9 @@ Seien außerdem die Schrumpfungen $\mathfrak{W}\ll\mathfrak{V}\ll\mathfrak{U}\ll
 Dann gibt es ein $C>0$, sodass gilt:\\
 Für alle $\xi\in Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O})$ gibt es $\zeta\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ und $\eta\in C^0_{\mathcal{L}^2}(\mathfrak{W}),\mathcal{O}$ mit
 \[
-\zeta = \xi+\delta\eta
+\zeta = \xi+\delta\eta \text{ auf } \mathfrak{W}
 \]
-über $\mathfrak{W}$ und
+und
 \[
 \max\left( \norm{\zeta}_{\mathcal{L}^2(\mathfrak{U})},\norm{\eta}_{\mathcal{L}^2(\mathfrak{W})}\right)\leq C\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}.
 \]
@@ -854,7 +858,7 @@ Nach dem 2. Garbenaxiom gibt es folglich eine Differentialform $\omega\in\mathca
 \mathrm{supp}(\psi)\subset|\mathfrak{V}|\text{ und } \psi|(|\mathfrak{W}|)\equiv 1. 
 \]
 Mit $\mathrm{supp}$ ist hier der Träger $\mathrm{supp}(\psi)\coloneqq \overline{\{x\in X; \psi(x)\neq 0\}}$ gemeint.
-Also lässt sich $\psi\omega$ mit $\psi\omega|(|\mathfrak{U}^*|\setminus|\mathfrak{W}|)\equiv 0,~\psi\omega|(|\mathfrak{W}|)\equiv \omega$ als Element von $\mathcal{E}(|\mathfrak{U}^*|)^{(1)}$ auffassen. Nach dem Lemma von Dolbeault (\ref{satz:dolbeault}) gibt es Funktionen $h_i\in\mathcal{E}(U_i^*)$, sodass
+Also lässt sich $\psi\omega$ mit $\psi\omega|(|\mathfrak{U}^*|\setminus|\mathfrak{W}|)\equiv 0,~\psi\omega|(|\mathfrak{W}|)\equiv \omega$ als Element von $\mathcal{E}^{(1)}(|\mathfrak{U}^*|)$ auffassen. Nach dem Lemma von Dolbeault (\ref{satz:dolbeault}) gibt es Funktionen $h_i\in\mathcal{E}(U_i^*)$, sodass
 \[
 \mathrm{d}''h_i=\psi\omega\text{ auf } U_i^*.
 \]
@@ -882,7 +886,7 @@ mit der Norm
 \[
 \norm{(\zeta,\xi,\eta)}_{H}\coloneqq \left( \norm{\zeta}_{\mathcal{L}^2(\mathfrak{U})}^2+\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}^2+\norm{\eta}_{\mathcal{L}^2(\mathfrak{W})}^2\right)^{1/2}.
 \]
-Dieser ist als Produkt von Hilberträumen auch ein Hilbertraum. Sei 
+Dieser ist auch ein Hilbertraum. Sei 
 \[
 L\coloneqq\left\{ (\zeta,\xi,\eta)\in H; \zeta=\xi+\delta\eta\text{ auf } \mathfrak{W}\right\}.
 \]
@@ -891,7 +895,7 @@ Dieser Raum ist abgeschlossen, also auch ein Hilbertraum. Nach dem ersten Teil d
 \pi:L\rightarrow Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O}),~(\zeta,\xi,\eta)\mapsto \xi
 \]
 surjektiv. 
-Nach dem Satz von der offenen Abbildung ist $\pi$ offen (vgl.\cite[~S.168]{funkana}) und es gibt damit auch eine Konstante $C>0$, sodass für alle $\xi\in Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O})$ ein $x=(\zeta,\xi,\eta)\in L$ existiert mit $\pi(x))\xi$ und $\norm{x}_H\leq C\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}$ .
+Nach dem Satz von der offenen Abbildung ist $\pi$ als lineare Abbildung zwischen Hilberträumen offen (vgl.\cite[~S.168]{funkana}) und damit die Umkehrabbildung stetig. Also gibt es eine Konstante $C>0$, sodass für alle $\xi\in Z^1_{\mathcal{L}^2}(\mathfrak{V},\mathcal{O})$ ein $x=(\zeta,\xi,\eta)\in L$ existiert mit $\pi(x))\xi$ und $\norm{x}_H\leq C\norm{\xi}_{\mathcal{L}^2(\mathfrak{W})}$ .
 Damit ist die zweite Aussage des Satzes erfüllt.
 \end{proof}
 Das folgende Lemma ist ähnlich, aber es wird nicht die Integrierbarkeit der jeweiligen Elemente voraussetzt. Damit erhält man ein wichtiges Resultat über die Kohomologiegruppen.
@@ -909,9 +913,13 @@ H^1(\mathfrak{U},\mathcal{O})\rightarrow H^1(\mathfrak{W},\mathcal{O})
 \]
 ein endlich-dimensionales Bild.
 \end{lemma}
+\nomenclature[At]{$A\oplus B$}{Die direkte Summe der Vektorräume,Gruppen,Ringe,etc. $A$ und $B$}
 \begin{proof}
-
-Wähle $C>0$ wie in \thref{schrumpfung} und $\varepsilon\coloneqq \frac{1}{2c}$. Dann gibt es nach \thref{norm} einen abgeschlossenen Untervektorraum $A\subset Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ mit endlicher Kodimension, sodass
+Sei $\xi\in Z^1(\mathfrak{U},\mathcal{O})$ beliebig. Aus $\mathfrak{V}\ll \mathfrak{U}$ folgt nach \thref{schrumpfung}
+\[
+\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}\eqqcolon M <\infty.
+\]
+Wähle $C>0$ wie in (\ref{schrumpfung}) und $\varepsilon\coloneqq \frac{1}{2c}$. Dann gibt es nach \thref{norm} einen abgeschlossenen Untervektorraum $A\subset Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ mit endlicher Kodimension, sodass
 \[
 \norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}\leq \varepsilon\norm{\xi}_{\mathcal{L}^2(\mathfrak{U})}.
 \]
@@ -919,10 +927,7 @@ Sei $S$ das eindeutig bestimmte orthogonale Komplement von $A$ in $Z^1_{\mathcal
 \[
 Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O}) = A\oplus S.
 \]
-Sei $\xi\in Z^1(\mathfrak{U},\mathcal{O})$ beliebig. Aus $\mathfrak{V}\ll \mathfrak{U}$ folgt nach \thref{schrumpfung}
-\[
-\norm{\xi}_{\mathcal{L}^2(\mathfrak{V})}\eqqcolon M <\infty.
-\]
+
 Wir konstruieren zunächst per vollständiger Induktion Elemente 
 \[
 \zeta_n\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O}),~\eta_n\in C^0_{\mathcal{L}^2}(\mathfrak{W},\mathcal{O}),~\xi_n\in A, ~\sigma_n\in S
@@ -955,7 +960,7 @@ und somit
 \norm{\xi_n}_{\mathcal{L}^2(\mathfrak{V})}^2\leq \varepsilon \norm{\xi_n}_{\mathcal{L}^2(\mathfrak{U})}^2 \leq 2^{-n}\varepsilon CM\leq
 2^{-n-1}M.
 \]
-Nach \thref{schrumpfung} gibt es wieder Elemente $\zeta_{n+1}\in Z^1_{\mathcal{L}^2(\mathfrak{U},\mathcal{O})}$ und $\eta\in C^0_{\mathcal{L}^2(\mathfrak{U},\mathcal{O})}$ mit
+Nach \thref{schrumpfung} gibt es wieder Elemente $\zeta_{n+1}\in Z^1_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ und $\eta_{n+1}\in C^0_{\mathcal{L}^2}(\mathfrak{U},\mathcal{O})$ mit
 \[
 \zeta_{n+1}=\xi_n+\delta \eta_{n+1}\text{ auf } \mathfrak{W}
 \]
@@ -969,14 +974,14 @@ Fasst man alle Gleichungen für $n=0,\ldots,k,~k\in\mathbb{N}$ zusammen und summ
 \sum_{n=0}^k \xi_{n-1}+\sum_{n=0}^k \sigma_n = \sum_{n=0}^k \xi_n+\delta\left(\sum_{n=0}^k \eta_n\right)
 \]
 und somit 
-\[
- \xi_{k}+\sum_{n=0}^k \sigma_n = \xi+\delta\left(\sum_{n=0}^k \eta_n\right).
-\]
+\begin{equation*}
+    \xi_{k}+\sum_{n=0}^k \sigma_n = \xi+\delta\left(\sum_{n=0}^k \eta_n\right).
+\end{equation*}
 Außerdem ergibt sich aus den Zerlegungen
 \[
 \mathrm{max}(\norm{\xi_n}_{\mathcal{L}^2(\mathfrak{U})},\norm{\sigma_n}_{\mathcal{L}^2(\mathfrak{U})},\norm{\eta_n}_{\mathcal{L}^2(\mathfrak{W})})\leq 2^{-n}CM.
 \]
-Die auftretenden Elemente sind also quadratisch integrierbar. Daher gilt $\lim_{k\rightarrow\infty}\xi_k=0$, woraus nach Umformung und Grenzwertbildung folgt
+Die auftretenden Elemente sind also quadratisch integrierbar. Daher gilt $\lim_{k\rightarrow\infty}\xi_k=0$, also folgt nach Umformung und Grenzwertbildung
 \[
 \sum_{n=0}^{\infty} (\sigma_n-\delta \eta_n)=\xi.
 \]
@@ -1047,7 +1052,7 @@ Nach diesem Satz können wir nun den Begriff Geschlecht auf sinnvolle Weise defi
 	ihr \emph{Geschlecht}.
 \end{defi}
 Aus der Definition der Kohomologie ergibt sich direkt, dass das Geschlecht eine Invariante unter Isomorphie für Riemannsche Flächen darstellt.  Aus \thref{bsp:kohomologie} folgt nun, dass das Geschlecht einer Kreisscheibe 0 ist, also auch genau die Anzahl der Löcher, welche das topologisch definierte Geschlecht zählen würde. 
-Im ltzten Abschnitt werden wir mit ein bisschen Arbeit zeigen, dass die toplogische Definition des Geschlechts tatsächlich mit der kohomologischen übereinstimmt. 
+Im letzten Abschnitt werden wir mit ein bisschen Arbeit zeigen, dass die toplogische Definition des Geschlechts tatsächlich mit der kohomologischen übereinstimmt. 
 %-----------------------Folgerungen------------------------------------------------------------------------%
 %----------------------------------------------------------------------------------------------------------%
 \section{Folgerungen}
@@ -1066,7 +1071,7 @@ Sei $(U_1,z_1)$ eine beliebige Koordinatenumgebung von $a$ mit $z(a)=0$ und $U_2
 \]
 mit 
 \[
-\zeta_j =(\zeta_{j_{1,1}},\zeta_{j_{1,2}},\zeta_{j_{2,1}},\zeta_{j_{2,2}})=(0,z^{-j},z^j,0).
+\zeta_j =(\zeta_{j_{1,1}},\zeta_{j_{1,2}},\zeta_{j_{2,1}},\zeta_{j_{2,2}})=(0,z^{-j},-z^{-j},0).
 \]
 Außerdem muss wegen der Wahl von $k$
 \[
@@ -1084,7 +1089,7 @@ also diese Summe kohomolog zum Nullelement ist. Folglich ergibt sich auf $U_1\ca
 Nach den 2. Garbenaxiom gibt es also ein $f\in \mathcal{M}(Y)$ mit \[f\mid (U_1\cap Y) =f_1 + \sum_{j=1}^{k+1}c_j z^{-j}\]
 und 
 \[
-f|U_2\cap Y = f_2.
+f|(U_2\cap Y) = f_2.
 \]
 Dieses $f$ hat eine Polstelle in $a$ und ist holomorph auf $Y\setminus \{ a \}$.
 \end{proof}
@@ -1126,7 +1131,7 @@ Die nächste Aussage beantwortet uns die Frage, ob auf nicht kompakten Riemannsc
 Sei $Y\Subset X$ eine relativ kompakte offene Teilmenge einer nicht kompakten riemannschen Fläche $X$. Dann existiert eine holomorphe Funktion $f:Y\rightarrow \mathbb{C}$, die nicht konstant auf allen Zusammenhangskomponenten von $X$ ist.
 \end{koro}
 \begin{proof}
-Da $X$ nicht kompakt ist lässt sich ein Gebiet $Y\Subset Y'\Subset X$ wählen, sodass $Y'\neq Y$. Wähle nun $a\in Y'\setminus Y$, dann kann man \thref{meromorph} auf $a$ anwenden und erhält eine auf $Y$ holomorphe Funktion. Nach Konstruktion im Beweis von \thref{meromorph} ist diese auf keiner Zusammenhangskomponente konstant.
+Da $X$ zusammenhängend und nicht kompakt ist lässt sich ein Gebiet $Y\Subset Y'\Subset X$ wählen, sodass $Y'\neq Y$. Wähle nun $a\in Y'\setminus Y$, dann kann man \thref{meromorph} auf $a$ anwenden und erhält eine auf $Y$ holomorphe Funktion. Nach Konstruktion im Beweis von \thref{meromorph} ist diese auf keiner Zusammenhangskomponente konstant.
 \end{proof}
 
 
@@ -1145,7 +1150,10 @@ Sei $X$ eine nicht kompakte Riemannsche Fläche und seien $Y\Subset Y'\subset X$
 	
 	Wir wissen nach \thref{endlichkeit}, dass 
 	\[L\coloneqq \Ima\left(H^1(Y',\mathcal{O})\rightarrow H^1(Y,\mathcal{O})\right)\]
-	ein endlich-dimensionaler Vektorraum ist. Sei $n\in\mathbb{N}$ seine Dimension. Wähle $\xi_1,\ldots,\xi_n\in H^1(Y',\mathcal{O})$ als die Kohomologieklassen, welche eingeschränkt auf $Y$ den Vektorraum $L$ aufspannen und $f\in\mathcal{O}(Y)$ nach \thref{koro:nicht konstant} als eine holomorphe Funktion, welche auf keiner Zusammenhangskomponente konstant ist. Durch komponentenweise Multiplikation lassen sich Produkte $f\xi_\nu\in H^1(Y',\mathcal{O})$ definieren. Da wir die $\xi_\nu$ als Basisvektoren gewählt hatten, existieren Konstanten $c_{\nu\mu}\in\mathbb{C}$, sodass
+	ein endlich-dimensionaler Vektorraum ist. Sei $n\in\mathbb{N}$ seine Dimension. Wähle $\xi_1,\ldots,\xi_n\in H^1(Y',\mathcal{O})$ als die Kohomologieklassen, welche eingeschränkt auf $Y$ den Vektorraum $L$ aufspannen und $f\in\mathcal{O}(Y)$ nach \thref{koro:nicht konstant} als eine holomorphe Funktion, welche auf keiner Zusammenhangskomponente konstant ist. Durch komponentenweise Multiplikation lassen sich Produkte $f\xi_\nu\in H^1(Y',\mathcal{O})$ definieren\footnote{
+	Es lassen sich für $f\in\mathcal{O}(Y)$ und $\xi=(h_{i,j})\in Z^1(Y,\mathcal{O})$ die holomorphen Abbildungen $f\circ z,~h_{i,j}\circ z$ in $\mathbb{C}$ für jede Koordinatenumgebung $(U,z)$ multiplizieren.
+	}. 
+	Da wir die $\xi_\nu$ als Basisvektoren gewählt hatten, existieren Konstanten $c_{\nu\mu}\in\mathbb{C}$, sodass
 	\[f\xi_\nu =\sum_{\mu=1}^n c_{\nu\mu}\xi_\mu \text{ auf } Y\text{ für } \nu=1,\ldots,n\]
 	gilt. Sei
 	\[
@@ -1156,7 +1164,7 @@ Sei $X$ eine nicht kompakte Riemannsche Fläche und seien $Y\Subset Y'\subset X$
 	F\xi_\nu\mid Y = 0\text{ für } \nu=1,\ldots,n.
 	\]
 	Sei nun $\zeta\in H^1(Y',\mathcal{O})$ eine beliebige Kohomologieklasse und $\mathfrak{U}=(U_i)_{i\in I}$ eine offene Überdeckung von $Y'$, sodass jedes $U_i$ maximal eine Nullstelle von $F$ enthält. Dann lässt sich $\zeta$ durch einen Kozykel $(f_{i,j})\in Z^1(\mathfrak{U},\mathcal{O})$ repräsentieren.
-	Daher verschwindet auch für $i\neq j$ die Einschränkung $F\mid U_i\cap U_j\in \mathcal{O}(U_i\cap U_j)$ nirgends und wir können somit durch komponentenweise Division einen Kozykel 
+	Daher verschwindet auch für $i\neq j$ die Einschränkung $F\mid U_i\cap U_j\in \mathcal{O}(U_i\cap U_j)$ nirgends und wir können somit durch komponentenweise Division wie in der Fußnote einen Kozykel 
 	\[(g_{i,j})\in Z^1(\mathfrak{U},\mathcal{O}))\]
 	finden,
 	sodass $f_{i,j}=Fg_{i,j}$ gilt. 
@@ -1176,7 +1184,7 @@ Sei $X$ eine nicht kompakte riemannsche Fläche und seien $Y\Subset Y'\subset X$
 \begin{proof}
 	Nach dem Lemma von Dolbeault (\ref{satz:dolbeault}) ist dieses Problem lokal auf Kreisscheiben lösbar. Folglich gibt es eine offene Überdeckung $\mathfrak{U}=(U_i)_{i\in I}$ von $Y'$ und für jedes $i\in I$ differenzierbare Funktionen $f_i\in \mathcal{E}(U_i)$ mit \[
 	\dif ''f_i = \omega \mid U_i.\] 
-	Dann gilt für die Differenzen $f_i-f_j\in\mathcal{O}(U_i\cap U_j)$, sie repräsentieren also nach der Kozykelrelation einen Kozykel $(f_i-f_j)\in Z^1(\mathfrak{U},\mathcal{O})$. Nach dem vorherigen \thref{satz:bild 0} zerfällt der Kozykel eingeschränkt auf $Y$, also existieren holomorphe Funktionen $g_i\in\mathcal{O}(U_i\cap Y)$, sodass
+	Dann gilt $\dif '' f_i=\dif'' f_j$ auf $U_i\cap U_j$ und damit $f_i-f_j\in\mathcal{O}(U_i\cap U_j)$; sie repräsentieren also nach der Kozykelrelation einen Kozykel $(f_i-f_j)\in Z^1(\mathfrak{U},\mathcal{O})$. Nach dem vorherigen \thref{satz:bild 0} zerfällt der Kozykel eingeschränkt auf $Y$, also existieren holomorphe Funktionen $g_i\in\mathcal{O}(U_i\cap Y)$, sodass
 	\[
 	f_i-f_j=g_i-g_j\text{ auf } U_i\cap U_j\cap Y
 	\]
@@ -1229,7 +1237,7 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 	x\mapsto \ord_x f
 	\]
 	ein Divisor, genannt \emph{Hauptdivisor}. Falls $(f)\geq D$ für einen Divisor $D$, so heißt $f$ \emph{Vielfaches} des Divisors $D$.
-	Sei $\omega\in\mathcal{M}^{(1)}(Y)$ und $(U,z)$ eine Koordinatenumgebung von $a\in X$, dann kann man auf $U\cap Y$ schreiben $\omega =f\dif z$, wobei $f\in\mathcal{M\cap Y}$. Wir definieren analog
+	Sei $\omega\in\mathcal{M}^{(1)}(Y)$ und $(U,z)$ eine Koordinatenumgebung von $a\in X$, dann kann man auf $U\cap Y$ schreiben $\omega =f\dif z$, wobei $f\in\mathcal{M}(Y)$. Wir definieren analog
 	\[\textstyle{\ord_a}\omega\coloneqq \textstyle{\ord_a}f.
 	\]
 	Dann ist auch $x\mapsto \ord_x\omega$ ein Divisor, notiert mit $(\omega)$ und genannt \emph{kanonischer Divisor}. Es lässt sich leicht zeigen, dass die Definition unabhängig von der gewählten Koordinatenumgebung ist. Zwei Divisoren $D,D'$ nennen wir \emph{äquivalent}, falls ihre Differenz $D'-D$ ein Hauptdivisor ist.
@@ -1250,7 +1258,7 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 	\end{align*}
 	\end{defi}
 \begin{bem}
-	Für Hauptdivisoren $(f)$ auf kompakten Riemannschen Flächen gilt $\deg(f)=0$, da dort meromorphe Funktionen die selbe Anzahl von Polstellen wie Nullstellen haben, vergleiche \cite[~S.28]{forster}. Daher haben äquivalente Divisoren den selben Grad.
+	Für Hauptdivisoren $(f)$ auf kompakten Riemannschen Flächen gilt $\deg(f)=0$, da dort meromorphe Funktionen die selbe Anzahl von Polstellen wie Nullstellen haben, vergleiche \cite[~S.28]{forster}. Daher haben äquivalente Divisoren dort den selben Grad.
 \end{bem}
 \begin{defi}[Die Garben $\mathcal{O}_D$ und $\Omega_D$]\thlabel{defi:divisorgarbe}
 	Sei $D\in Div(X)$ ein Divisor einer Riemannschen Fläche $X$. Wir definieren
@@ -1266,7 +1274,7 @@ Man kann nun sowohl meromorphen Funktionen, als auch meromorphen Differentialfor
 	\begin{enumerate}
 		\item Für zwei äquivalente Divisoren $D,D'\in Div(X)$ sind die Garben $\mathcal{O}_D$ und $\mathcal{O}_{D'}$ isomorph.
 		\item 
-		Für einen kanonischen Divisor $K=(\omega)$ einer nicht verschwindenden Differentialform $\omega\in \mathcal{M}^{(1)}(X)$ sind die Garben $\Omega_{D+k}$ und $\Omega_D$ isomorph.
+		Für einen kanonischen Divisor $K=(\omega)$ einer nicht verschwindenden Differentialform $\omega\in \mathcal{M}^{(1)}(X)$ sind die Garben $\mathcal{O}_{D+k}$ und $\Omega_D$ isomorph.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1320,7 +1328,7 @@ Für eine Riemannsche Fläche $X$ gilt
     
     Für die zweite Aussage wählen wir eine Kohomologieklasse $\xi\in H^1(X,\mathbb{C}_P)$, repräsentiert durch einen Kozykel in $Z^1(\mathfrak{U},\mathbb{C}_P)$ für eine Überdeckung $\mathfrak{U}=(U_i)_{i\in I}$. Dazu können wir eine feinere Überdeckung $\mathfrak{V}=(V_{\alpha})_{\alpha\in A}$ wählen, sodass $P$ in nur einem der $V_{\alpha}$ enthalten ist. Dann gilt deswegen
     \[
-    C^1(\mathfrak{V},\mathbb{C}_P)=\prod_{\alpha,\beta\in A^2} \mathbb{C}_P(V_{\alpha}\cap V_{\beta})=0
+    C^1(\mathfrak{V},\mathbb{C}_P)=\prod_{(\alpha,\beta)\in A^2} \mathbb{C}_P(V_{\alpha}\cap V_{\beta})=0
     \]
     und daher auch $Z^1(\mathfrak{V},\mathbb{C}_P)=0$. Per Definition der Kohomologiegruppe durch den induktiven Limes haben wir also $\xi = 0$.
 \end{proof}
@@ -1377,11 +1385,12 @@ Das folgende Korollar ergibt sich aus dieser exakten Garbensequenz, da aus jeder
 \end{koro}
 
 \begin{koro}
-Seien $D\leq D'$ Divisoren auf einer Riemannschen Fläche $X$. Dann gibt es einen Garbenepimorphismus
-\[ H^1(X,\mathcal{O}_D)\rightarrow H^1(X,\mathcal{O}_{D'}).\]
+Seien $D\leq D'$ Divisoren auf einer Riemannschen Fläche $X$. Dann gibt es einen Epimorphismus
+\[ H^1(X,\mathcal{O}_D)\rightarrow H^1(X,\mathcal{O}_{D'}),\]
+induziert durch die Inklusionsabbildung.
 \end{koro}
 \begin{proof}
-    Falls wir $D'=D+P$ schreiben können, ergibt sich diese Aussage direkt aus \thref{defi:punktdivisor}. Sonst können wir $D'=D+P_1+\ldots+P_M$ schreiben für $P_i\in X$, somit folgt die Aussage per Induktion.
+    Falls wir $D'=D+P$ schreiben können, ergibt sich diese Aussage direkt aus \thref{koro:exakte kohomologiesequenz}. Sonst können wir $D'=D+P_1+\ldots+P_M$ schreiben für $P_i\in X$, somit folgt die Aussage per Induktion.
 \end{proof}
 
 Schließlich kann der Satz von Riemann-Roch formuliert werden. Er gibt uns Auskunft über die Dimension der nullten und ersten Kohomologiegruppen bezüglich $\mathcal{O}_D$ und wie diese im Verhältnis miteinander stehen. Aus ihm lassen sich wichtige Folgerungen ziehen.
@@ -1482,7 +1491,7 @@ Eine weitere wichtige Folgerung betrifft den Grad von kanonischen Divisoren:
 	\]
 \end{satz}
 \begin{proof}
-		Sei $K\coloneqq \omega.$ Nach dem Satz von Riemann-Roch \ref{satz:riemann-roch} gilt die Gleichung
+		Sei $K\coloneqq (\omega).$ Nach dem Satz von Riemann-Roch (\ref{satz:riemann-roch}) gilt die Gleichung
 		\[
 		\dim H^0(X,\mathcal{O}_K)-\dim H^1(X,\mathcal{O}_K)=1-g+\deg K.
 		\]
@@ -1508,7 +1517,7 @@ f^*\omega = \psi(z^k)\dif (z^k) = kz^{k-1}\psi(z^k)dz.
 Also gilt 
 \begin{align*}
 	{\ord_x} (f*\omega) 	&= \ord_x(kz^{k-1}\psi(z))\\
-					  	&= \ord_x(kz^{k-1})+\ord_x(psi(z^k))\\
+					  	&= \ord_x(kz^{k-1})+\ord_x(\psi(z^k))\\
 					  	&= k-1 +k\ord_y(\psi(w))\\
 					  	&= v(f,x)-1+v(f,x) \ord_y(\omega).
 \end{align*}
@@ -1540,15 +1549,15 @@ Dazu müssen wir kurz den Begriff der Triangulierung definieren.
 \begin{defi}[Simplex]
 Seien $x_0,\ldots,x_q\in \mathbb{R}^n$. Der von diesen $q+1$ Punkten aufgespannte affine Untervektorraum des $\mathbb{R}^n$ ist 
 \[
-U\coloneqq \left\{x\in\mathbb{R}^n;~x=x_0+\sum_{i=1}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\lambda_q\in\mathbb{R}\right\}.
+U\coloneqq \left\{x\in\mathbb{R}^n;~x=x_0+\sum_{i=1}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\ldots,\lambda_q\in\mathbb{R}\right\}.
 \]
 Setzt man $\lambda_0=1-\sum_{i=1}^q \lambda_i$, so erhält man
 \[
-U= \left\{x\in\mathbb{R}^n;~x=\sum_{i=0}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\lambda_q\in\mathbb{R}\text{ mit } \sum_{i=0}^q \lambda_i =1\right\}.
+U= \left\{x\in\mathbb{R}^n;~x=\sum_{i=0}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\ldots,\lambda_q\in\mathbb{R}\text{ mit } \sum_{i=0}^q \lambda_i =1\right\}.
 \]
 Falls $\dim U =q$, so heißt die Menge
 \[
-\sigma=\sigma_q=\left\{x\in\mathbb{R}^n;~x=\sum_{i=0}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\lambda_q>0\text{ mit } \sum_{i=0}^q \lambda_i =1\right\}
+\sigma=\sigma_q=\left\{x\in\mathbb{R}^n;~x=\sum_{i=0}^q \lambda_i(x_i-x_0),\text{ für }\lambda_1,\ldots,\lambda_q>0\text{ mit } \sum_{i=0}^q \lambda_i =1\right\}
 \]
 \emph{(offenes) q-Simplex} mit \emph{Ecken} $x_0,\ldots,x_q$. Wir nennen $\dim \sigma \coloneqq q$ die \emph{Dimension} von $\sigma$.
 \end{defi}
@@ -1568,14 +1577,14 @@ Für zwei Simplizes $\sigma,\tau\in\mathbb{R}^n$ schreiben wir $\tau\leq\sigma$,
 \begin{defi}[Simplizialkomplex]
 Ein \emph{Simplizialkomplex} $T$ im $\mathbb{R}^n$ ist eine endliche Menge von Simplizes mit folgenden Eigenschaften:
 \begin{enumerate}
-    \item Falls $\sigma\in T$ und $\tau<\sigma$, so ist $\tau\in K$.
+    \item Falls $\sigma\in T$ und $\tau<\sigma$, so ist $\tau\in T$.
     \item Falls $\sigma,\tau\in T$ mit $\sigma\neq\tau$, so ist $\sigma\cap\tau=\emptyset$.
 \end{enumerate}
 Wir schreiben
 \[
 |T|\coloneqq \bigcup_{\sigma \in K} \sigma \subset \mathbb{R}^n
 \]
-und versehen diesen Raum mit der Teilraumtopologie. Die $0$-Simplizes in $K$ nennen wir \emph{Ecken}, die $1$-Simplizes \emph{Kanten} und die $2$-Simplizes \emph{Dreiecke}.
+und versehen diesen Raum mit der Teilraumtopologie. Die $0$-Simplizes in $T$ nennen wir \emph{Ecken}, die $1$-Simplizes \emph{Kanten} und die $2$-Simplizes \emph{Dreiecke}.
 \end{defi}
 
 \begin{defi}[Triangulierung]
@@ -1599,18 +1608,18 @@ g=g_{top}.
 \]
 \end{satz}
 \begin{proof}
-Nach \thref{koro:ueberlagerung} gibt es eine holomorphe Überlagerung $f:\rightarrow \mathbb{P}_1$ mit $n\leq g+1$ Blättern. Da das kohomologische Geschlecht der Zahlenkugel $0$ ist, gilt nach der Riemann-Hurwitz-Formel (\ref{satz:riemann-hurwitz}), dass
+Nach \thref{koro:ueberlagerung} gibt es eine holomorphe Überlagerung $f:X\rightarrow \mathbb{P}_1$ mit $n\leq g+1$ Blättern. Da das kohomologische Geschlecht der Zahlenkugel $0$ ist, gilt nach der Riemann-Hurwitz-Formel (\ref{satz:riemann-hurwitz}), dass
 \[
 2g-2=\sum_{x\in X}(v(f,x)-1)-2n.
 \]
-Wir wählen eine Triangulierung $T$ von $\mathbb{P}_1$ mit $E$ Ecken,$K$ Kanten und $F$ Flächen, sodass jeder Eckpunkt das Bild eines Verzweigungspunktes ist. Da die Überlagerung $f$ surjektiv ist nach (2.11) in \cite[~S.11]{forster} und per Definition offen, so bilden Urbilder dieser Triangulierung auch eine Triangulierung $T'$ von $X$ mit $E',K',F'$ Ecken, Kanten und Dreiecke,, bei der jeder Eckpunkt ein Verzweigungspunkt ist. Es gibt also keine Verzweigungspunkte in einem Dreieck oder in einer Kante, daher wird jedes Dreieck auf $n$ Dreiecke und jede Kante auf $n$ Kanten abgebildet. Für einen Eckpunkt $q$ von $T$ gilt mit einer Umformung
+Wir wählen eine Triangulierung $T$ von $\mathbb{P}_1$ mit $E$ Ecken, $K$ Kanten und $F$ Dreiecken, sodass jeder Eckpunkt das Bild eines Verzweigungspunktes ist. Da die Überlagerung $f$ surjektiv ist nach (2.11) in \cite[~S.11]{forster} und per Definition offen, so bilden Urbilder dieser Triangulierung auch eine Triangulierung $T'$ von $X$ mit $E',K',F'$ Ecken, Kanten und Dreiecken, bei der jeder Eckpunkt ein Verzweigungspunkt ist. Es gibt also keine Verzweigungspunkte in einem Dreieck oder in einer Kante, daher wird jedes Dreieck auf $n$ Dreiecke und jede Kante auf $n$ Kanten abgebildet. Für einen Eckpunkt $q$ von $T$ gilt mit einer Umformung
 \[
-|f^{-1}(q)|=\sum_{x\in f^{-1}(q)} 1 = n + \sum_{x\in f^{-1}(q)}(1-v(f,x))
+|f^{-1}(q)|=\sum_{x\in f^{-1}(q)} 1 = n + \sum_{x\in f^{-1}(q)}(1-v(f,x)),
 \]
 und damit für die Anzahl der Ecken in $X$ 
 \begin{align*}
-    E' &= \sum_{e \text{ Ecke von } T} \left(  n + \sum_{x\in f^{-1}(q)}(1-v(f,x))\right)\\
-        &=n E -\sum_{e \text{ Ecke von } T} \left(\sum_{x\in f^{-1}(q)}(v(f,x)-1)\right)\\
+    E' &= \sum_{q \text{ Ecke von } T} \left(  n + \sum_{x\in f^{-1}(q)}(1-v(f,x))\right)\\
+        &=n E -\sum_{q \text{ Ecke von } T} \left(\sum_{x\in f^{-1}(q)}(v(f,x)-1)\right)\\
         &=n E-\sum_{x \text{ Ecke von } T'}(v(f,x)-1)\\
         &=n E-\sum_{x\in X}(v(f,x)-1)
 \end{align*}
